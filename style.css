@@ -1,0 +1,55 @@
+#hpbar{
+  background-color: red;
+  height: 20px;
+  display: block; 
+}
+.logo{
+  margin:0px;
+  padding: 0px;
+  width: 165px;
+  height: 40px;
+}
+#MinionInfo{
+  text-align: right;
+}
+
+#map{
+  position: relative;
+  background-image: url("data/map.jpg");
+  background-repeat: no-repeat;
+}
+span{
+    font-weight: bold;
+}
+
+.round-button {
+    width:15px;
+    height:15px;
+    line-height:15px;
+    border: 2px solid black;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: yellow;
+    box-shadow: 0 0 3px gray;
+    font-size:10px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #262626;
+}
+#zone1{
+  position: absolute;
+  left: 90px;
+  top: 256px;
+}#zone2{
+  position: absolute;
+  left: 115px;
+  top: 232px;
+}
+#town{
+  position: absolute;;
+   left: 48px;
+  top: 235px;
+}
