@@ -63,7 +63,6 @@ function CheckWinLose(){
 	if(Player.hp <= 0){
 		alert("YOU LOST");
 		sammyApp.trigger('town-healer')
-		Minion = Object.create(getEnemy());
 
 	}
 	else if(Minion.hp <= 0){
@@ -71,7 +70,7 @@ function CheckWinLose(){
 		Player.gold += Minion.gold;
 		Player.ss += Minion.ss;
 		sammyApp.trigger('back-to-map')
-	Minion = Object.create(getEnemy());
+	
 
 				
 	}
