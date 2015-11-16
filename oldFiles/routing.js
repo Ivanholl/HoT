@@ -1,4 +1,4 @@
-var containerId = '#container',
+/*var containerId = '#container',
     target = $("#container"),
     Player = JSON.parse(localStorage.getItem('Player')),
     zoneNumber;
@@ -50,4 +50,4 @@ sammyApp.run('#/');
 
 $('body').on("click", "#zone1", function(){zoneNumber = 0})
 $('body').on("click", "#zone2", function(){zoneNumber = 1})
-
+*/

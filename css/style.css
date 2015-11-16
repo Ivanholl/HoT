@@ -1,3 +1,8 @@
+#container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 #hpbar{
   background-color: red;
   height: 20px;
@@ -15,7 +20,7 @@
 
 #map{
   position: relative;
-  background-image: url("data/map.jpg");
+  background-image: url('../data/map.jpg');
   background-repeat: no-repeat;
 }
 span{
@@ -39,17 +44,11 @@ span{
 .round-button:hover {
     background: #262626;
 }
-#zone1{
-  position: absolute;
-  left: 90px;
-  top: 256px;
-}#zone2{
-  position: absolute;
-  left: 115px;
-  top: 232px;
+#battleLog{
+  margin:50px;
+  height: 200px;
+  overflow-y: auto;
 }
-#town{
-  position: absolute;;
-   left: 48px;
-  top: 235px;
+#buildingList{
+  list-style: none;
 }
