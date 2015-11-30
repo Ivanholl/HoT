@@ -2,7 +2,9 @@
   display: none !important;
 }
 #container {
-  max-width: 1000px;
+  max-width: 1000px;  
+  padding-left: 5px;
+  padding-right: 5px;
   margin: 0 auto;
   box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.56);  
 }
@@ -48,6 +50,7 @@
 
 }
 #zoneInfo{
+  font-weight: 600;
   width: 450px;
   float: right;
   display: inline-block;
@@ -80,8 +83,8 @@ span{
 #buildingList{
   list-style: none;
 }
-#form{
-  width: 350px;
+#form{ /**********************************HERO CREATE*************************************/
+  width: 400px;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.56);
