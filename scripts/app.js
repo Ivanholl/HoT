@@ -12,9 +12,10 @@ var app = (function(){
             templateUrl: 'views/home.html'
         })        
         .when('/map', {
-            templateUrl: 'views/map.html'
+            templateUrl: 'views/map.html',
+            controller: 'mapController'
         })
-        .when('/battle/:numb', {
+        .when('/battle', {
             templateUrl: 'views/battle.html',
             controller: 'battleController'
         })
@@ -23,7 +24,8 @@ var app = (function(){
             controller: 'createHero'
         })
         .when('/town', {
-            templateUrl: 'views/town.html'
+            templateUrl: 'views/town.html',
+            controller: 'townController'
         })
         .when('/town/healer', {
             templateUrl: 'views/healer.html',

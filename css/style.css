@@ -1,6 +1,10 @@
+[ng\:cloak], [ng-cloak], .ng-cloak { /*ng-cloak fix for firefox*/
+  display: none !important;
+}
 #container {
   max-width: 1000px;
   margin: 0 auto;
+  box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.56);  
 }
 
 #hpbar{
@@ -16,17 +20,7 @@
 }
 #MinionInfo{
   text-align: right;
-}
-
-#map{
-  position: relative;
-  background-image: url('../data/map.jpg');
-  background-repeat: no-repeat;
-}
-span{
-    font-weight: bold;
-}
-
+}/********************************************MAP**************************************************/
 .round-button {
     width:15px;
     height:15px;
@@ -44,6 +38,40 @@ span{
 .round-button:hover {
     background: #262626;
 }
+#map{
+  width: 520px;
+  position: relative;
+  background-image: url('../data/map.jpg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.56);
+
+}
+#zoneInfo{
+  width: 450px;
+  float: right;
+  display: inline-block;
+  box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.56);
+}
+.selectedZone{
+  background-color: white;
+}
+.curZone{
+  background: red;
+}
+.legend{  
+   position: absolute;
+   margin: 5px;
+}
+.legendText{  
+   margin-left: 25px;
+}
+.legendTown{
+  background-color: yellowgreen;
+}
+span{
+    font-weight: bold;
+}
 #battleLog{
   margin:50px;
   height: 200px;
@@ -51,4 +79,11 @@ span{
 }
 #buildingList{
   list-style: none;
+}
+#form{
+  width: 350px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.56);
+
 }

@@ -1,11 +1,12 @@
-app.controller('battleController', function($scope, $routeParams) {
-	var zoneNumber = $routeParams.numb.substr($routeParams.numb.length - 1),
+app.controller('battleController', function($scope) {
+	$scope.player = JSON.parse(localStorage.getItem('Player'));
+
+	var zoneNumber = $scope.player.zone.slice(-1) -1,
 		count = 1;
 		enemyMove = false,
-		winLoseCheck = false; // Otherwise sometimes it checkes twice
+		winLoseCheck = false; // Otherwise sometimes it checkes win condition twice
 
-	$scope.player = JSON.parse(localStorage.getItem('Player'));
-	$scope.minion = Object.create(getEnemy());
+	$scope.minion = Object.create(getEnemy());	
 
 	function getEnemy(){	 
 		 return EnemyList[zoneNumber][getRandomInt(0, 4)];
@@ -67,6 +68,7 @@ app.controller('battleController', function($scope, $routeParams) {
 		}
 		else{
 			alert("You couldn't Escape!");
+			getEnemyMove();
 		}
 	}
 
@@ -131,7 +133,7 @@ app.controller('battleController', function($scope, $routeParams) {
 		count++;
 		$('#logger').append('You try to escape!').append('<br/>')		
 		Escape();
-		getEnemyMove();
+		//GetEnemyMove is in the Escape() function!
 	};
 
 	function updateScroll(){

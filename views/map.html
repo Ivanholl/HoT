@@ -1,24 +1,45 @@
-<div id="map">
-	<img src="data/map.jpg" style="visibility: hidden"/>
-	<a id="hzone1" href="#/battle/:0" class="round-button">1</a>
-	<a id="hzone2" href="#/battle/:1" class="round-button">2</a>
-	<a id="hzone3" href="#/battle/:2" class="round-button">3</a>
-	<a id="htown" href="#/town" class="round-button">T</a>
+<div>
+	<div id="map">
+		<img src="data/map.jpg" style="visibility: hidden"/>
 
-	<a id="ozone1" href="" class="round-button">1</a>
-	<a id="ozone2" href="" class="round-button">2</a>
-	<a id="ozone3" href="" class="round-button">3</a>
-	<a id="otown" href="" class="round-button">T</a>
+		<button id="hzone1" class="round-button" ng-click="zone(0, $event)">1</button>
+		<button id="hzone2" class="round-button" ng-click="zone(1, $event)">2</button>
+		<button id="hzone3" class="round-button" ng-click="zone(2, $event)">3</button>		
+		<button id="htown" class="round-button">T</button>
 
-	<a id="ezone1" href="" class="round-button">1</a>
-	<a id="ezone2" href="" class="round-button">2</a>
-	<a id="ezone3" href="" class="round-button">3</a>
-	<a id="etown" href="" class="round-button">T</a>
+		<a id="ozone1" href="" class="round-button">1</a>
+		<a id="ozone2" href="" class="round-button">2</a>
+		<a id="ozone3" href="" class="round-button">3</a>
+		<a id="otown" href="" class="round-button">T</a>
 
-	<a id="uzone1" href="" class="round-button">1</a>
-	<a id="uzone2" href="" class="round-button">2</a>
-	<a id="uzone3" href="" class="round-button">3</a>
-	<a id="utown" href="" class="round-button">T</a>
+		<a id="ezone1" href="" class="round-button">1</a>
+		<a id="ezone2" href="" class="round-button">2</a>
+		<a id="ezone3" href="" class="round-button">3</a>
+		<a id="etown" href="" class="round-button">T</a>
 
-	<a href="#/CreateNewHero" class="btn btn-danger">Back hero Create</a>
+		<a id="uzone1" href="" class="round-button">1</a>
+		<a id="uzone2" href="" class="round-button">2</a>
+		<a id="uzone3" href="" class="round-button">3</a>
+		<a id="utown" href="" class="round-button">T</a>
+
+		<div>
+			<a class="round-button legend legendTown"></a><span class="legendText">City</span></br>
+			<a class="round-button curZone legend"></a><span class="legendText">Current Location</span></br>			
+			<a class="round-button selectedZone legend"></a><span class="legendText">Selected Zone</span></br>		
+		</div>
+	</div>
+
+	<div id="zoneInfo">	
+		<div class="list-group">
+			<a class="list-group-item" ng-repeat="x in enemyList">{{x.name}}</a>
+		</div>
+		<a id="prev" class="btn btn-success disabled" ng-click="prev()">Prev Zone</a>
+		<a id="branch" class="btn btn-success disabled" ng-click="branch()">Branch Road</a>		
+		<a id="next" class="btn btn-success disabled" ng-click="next()">Next Zone</a>
+		<a id="battle" href="#/battle" class="btn btn-danger disabled">Battle</a>
+	</div>
+
+	<a href="#/CreateNewHero" class="btn btn-danger">Back hero Create</a>	
+
+	
 </div>

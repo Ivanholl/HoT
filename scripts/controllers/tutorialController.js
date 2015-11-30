@@ -7,7 +7,7 @@ app.controller('tutorialController', function tutorialController($scope, $routeP
 			firstEscape = false;
 
 	$scope.player = JSON.parse(localStorage.getItem('Player'));
-	$scope.minion = EnemyList[0][4];
+	$scope.minion = Object.create(EnemyList[0][4]);
 
 	if (!firstAttack) {
 		alert('Now we learn how to play!')
