@@ -1,0 +1,19 @@
+.container
+    .jumbotron
+        h1 Heroes of Trebichenburg
+        h2 some subtitle
+
+        .alert.alert-danger(ng-hide="identity.isAuthenticated()")
+            strong Please Log In.
+
+        a.btn.btn-success(href="#/hero" ng-show="identity.isAuthenticated()")
+            |Play Now
+    //.row
+        .col-md-6
+            .panel.panel-info
+                .panel-heading.text-center Featured
+                .panel-body(ng-include="'/partials/main/featured-courses'")
+        .col-md-6
+            .panel.panel-info
+                .panel-heading.text-center New
+                .panel-body(ng-include="'/partials/main/new-courses'")
