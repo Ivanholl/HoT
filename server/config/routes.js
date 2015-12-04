@@ -10,7 +10,7 @@ module.exports = function(app) {
     app.get('/api/courses/:id', controllers.courses.getCourseById);
 
     app.get('/api/minions', controllers.minions.getAllMinions);
-    app.get('api/minions/:id', controllers.minions.getMinionsByLocation);
+    app.get('api/minions/:location', controllers.minions.getMinionsByLocation);
 
     app.get('/partials/:partialArea/:partialName', function(req, res) {
         res.render('../../public/app/' + req.params.partialArea + '/' + req.params.partialName)

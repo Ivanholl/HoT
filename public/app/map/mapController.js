@@ -14,12 +14,17 @@ app.controller('mapController', function($scope, identity, movementOptions, Cach
         $scope.selectedZone = selectedZone;
 
         $scope.minions = CachedMinions.getMinionsByZone(selectedZone);
-        
+
         $("#" + selectedZone).addClass('selectedZone');
 
         if (lastSelectedZone != selectedZone) {
             $("#" + lastSelectedZone).removeClass('selectedZone');
             lastSelectedZone = selectedZone;
+        }
+        if (movementOptions.battle) {
+            $("#battle").removeClass('disabled');            
+        } else {
+            $("#battle").addClass('disabled');
         }
 
         if(curZoneID == selectedZone){

@@ -6,7 +6,8 @@ app.factory('movementOptions', function(identity){
                 nextZone: "hzone1",
                 hasBranchZone: false,
                 hasPrevZone: false,
-                hasNextZone: true
+                hasNextZone: true,
+                battle: false
             };
             break;
         case "hzone1": return {
@@ -15,7 +16,9 @@ app.factory('movementOptions', function(identity){
                 //nextZone: "hzone4",
                 hasBranchZone: true,
                 hasPrevZone: true,
-                hasNextZone: false
+                hasNextZone: false,
+                battle: true
+
             };
             break;
         case "hzone2": return {
@@ -23,14 +26,16 @@ app.factory('movementOptions', function(identity){
                 nextZone: "hzone3",
                 hasBranchZone: false,
                 hasPrevZone: true,
-                hasNextZone: true
+                hasNextZone: true,
+                battle: true
             };
             break;
         case "hzone3": return {
                 prevZone: "hzone2",
                 hasBranchZone: false,
                 hasPrevZone: true,
-                hasNextZone: false
+                hasNextZone: false,
+                battle: true
             };
             break;
 

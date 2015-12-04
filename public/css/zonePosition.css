@@ -14,14 +14,38 @@
   left: 113px;
   top: 276px;
 }
+#hzone5 {
+  left: 107px;
+  top: 298px;
+}
+#hzone6 {
+  left: 141px;
+  top: 285px;
+}
+#hzone7 {
+  left: 177px;
+  top: 296px;
+}
+#hzone8 {
+  left: 208px;
+  top: 301px;
+}
+#hzone9 {
+  left: 182px;
+  top: 336px;
+}
+#hzone10 {
+  left: 143px;
+  top: 343px;
+}
 #htown {
   left: 46px;
   top: 232px;
 }
 /*==========================================ORC===========================================*/
 #ozone1 {
-  left: 133px;
-  top: 525px;
+  left: 135px;
+  top: 523px;
 }
 #ozone2 {
   left: 128px;
@@ -30,6 +54,34 @@
 #ozone3 {
   left: 100px;
   top: 499px;
+}
+#ozone4 {
+  left: 148px;
+  top: 484px;
+}
+#ozone5 {
+  left: 143px;
+  top: 460px;
+}
+#ozone6 {
+  left: 119px;
+  top: 445px;
+}
+#ozone7 {
+  left: 163px;
+  top: 498px;
+}
+#ozone8 {
+  left: 186px;
+  top: 500px;
+}
+#ozone9 {
+  left: 203px;
+  top: 524px;
+}
+#ozone10 {
+  left: 181px;
+  top: 477px;
 }
 #otown {
   left: 107px;
@@ -47,6 +99,14 @@
 #ezone3 {
   left: 417px;
   top: 390px;
+}
+#ezone4 {
+  left: 457px;
+  top: 351px;
+}
+#ezone5 {
+  left: 395px;
+  top: 482px;
 }
 #etown {
   left: 403px;

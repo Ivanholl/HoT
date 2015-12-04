@@ -12,7 +12,7 @@ module.exports = {
         })
     },
     getMinionsByLocation: function(req, res, next) {
-        Minion.find({_id: req.params.id}).exec(function(err, collection) {
+        Minion.find({location: req.params.location}).exec(function(err, collection) {
             if (err) {
                 console.log('Course could not be loaded: ' + err);
             }

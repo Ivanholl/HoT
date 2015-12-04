@@ -6,20 +6,21 @@
             .col-md-4.hero-slot
                 .panel.panel-primary Hero Slot 1
                     .panel-heading
-                        .panel-title name: {{user.heroList[0].name}}
+                        .panel-title name: {{heroOne.name}}
                     .panel-body
-                        .text-primary Race: {{user.heroList[0].race}}
-                        .text-primary Ap: {{user.heroList[0].ap}}
-                        .text-danger HP: {{user.heroList[0].hp}}/{{user.heroList[0].maxHp}}
-                        .text-info MP: {{user.heroList[0].mp}}/{{user.heroList[0].maxMp}}
-                        .text-primary DM: {{user.heroList[0].dm}}  DF: {{user.heroList[0].df}}
-                        .text-success Gold: {{user.heroList[0].gold}} SS: {{user.heroList[0].ss}}
-                        .text-primary Location: {{user.heroList[0].location}}
+                        div(ng-hide="chooseDelete")
+                            .text-primary Race: {{heroOne.race}}
+                            .text-primary Ap: {{heroOne.ap}}
+                            .text-danger HP: {{heroOne.hp}}/{{user.heroOne.maxHp}}
+                            .text-info MP: {{heroOne.mp}}/{{user.heroOne.maxMp}}
+                            .text-primary DM: {{heroOne.dm}}  DF: {{heroOne.df}}
+                            .text-success Gold: {{heroOne.gold}} SS: {{heroOne.ss}}
+                            .text-primary Location: {{heroOne.location}}
                         div(ng-hide="show" ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical
-                            a.btn.btn-success(href="#/map") Choose Hero
-                            .btn.btn-info(ng-click="createHero()") Create Hero
-                            .btn.btn-danger Delete Hero
+                            a.btn.btn-success(href="#/map" ng-hide="chooseDelete") Choose Hero
+                            .btn.btn-info(ng-click="createHero()" ng-hide="create") Create Hero
+                            .btn.btn-danger(ng-hide="chooseDelete") Delete Hero
 
             .col-md-4.hero-slot
                 .panel.panel-primary Hero Slot 2
