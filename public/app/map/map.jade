@@ -1,0 +1,44 @@
+.container
+    .jumbotron
+        #map
+            img(src="/pictures/map.jpg" style="visibility: hidden")
+
+            #hzone1.round-button(ng-click="zone($event)")
+            #hzone2.round-button(ng-click="zone($event)")
+            #hzone3.round-button(ng-click="zone($event)")
+            #hzone4.round-button(ng-click="zone($event)")
+            #htown.round-button.town(ng-click="zone($event)")
+
+            #ozone1.round-button(ng-click="zone($event)")
+            #ozone2.round-button(ng-click="zone($event)")
+            #ozone3.round-button(ng-click="zone($event)")
+            #otown.round-button.town(ng-click="zone($event)")
+
+            #ezone1.round-button(ng-click="zone($event)")
+            #ezone2.round-button(ng-click="zone($event)")
+            #ezone3.round-button(ng-click="zone($event)")
+            #etown.round-button.town(ng-click="zone($event)")
+
+            #uzone1.round-button(ng-click="zone($event)")
+            #uzone2.round-button(ng-click="zone($event)")
+            #uzone3.round-button(ng-click="zone($event)")
+            #utown.round-button.town(ng-click="zone($event)")
+
+            div
+                a.round-button.legend.legendTown
+                span.legendText town
+                br
+                a.round-button.curZone.legend
+                span.legendText current location
+                br
+                a.round-button.selectedZone.legend
+                span.legendText selected zone
+
+        .zone-info
+            p {{selectedZone}}
+            .list-group
+                span.list-group-item
+            a#prev.btn.btn-success.disabled(ng-click="prev()") Prev Zone
+            a#branch.btn.btn-success.disabled(ng-click="branch()") Branch Zone
+            a#next.btn.btn-success.disabled(ng-click="next()") Next Zone
+            a#battle.btn.btn-danger.disabled battle

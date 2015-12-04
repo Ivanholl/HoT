@@ -1,0 +1,20 @@
+.container
+    form.form-horizontal
+        fieldset
+            legend Create New Hero
+            .form-group
+                label.col-md-2.control-label(for="Name") Name
+                .col-lg-10
+                    input.form-control(type="text", placeholder="Name",ng-model="hero.name", required)
+                label.col-md-2.control-label(for="Race") Race
+                .col-lg-10
+                    select.form-control(type="text", placeholder="Race",ng-model="hero.race" required)
+                        option(value="Human") Human
+                        option(value="Elf") Elf
+                        option(value="Orc") Orc
+                        option(value="Undead") Unded
+                        //option Dwarf
+            .form-group
+                .col-lg-10.col-lg-offset-2
+                    .btn.btn-default(type="reset") Cancel
+                    .btn.btn-primary(ng-click="createNewHero(hero)") Create

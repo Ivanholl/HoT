@@ -1,5 +1,10 @@
 .container
     table.table
+        tr.ta
+            td first name
+            td last name
+            td hero slot 1
         tr(ng-repeat="user in users")
             td {{ user.firstName }}
             td {{ user.lastName }}
+            td {{user.heroList[0].name}}

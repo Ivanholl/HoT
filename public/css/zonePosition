@@ -1,0 +1,67 @@
+#hzone1
+  left 90px
+  top 256px
+
+#hzone2
+  left 115px
+  top 232px
+
+#hzone3
+  left 101px
+  top 212px
+
+#hzone4
+  left 113px
+  top 276px
+
+#htown
+  left 46px
+  top 232px
+ /*==========================================ORC===========================================*/
+#ozone1
+  left 133px
+  top 525px
+
+#ozone2
+  left 128px
+  top 501px
+
+#ozone3
+  left 100px
+  top 499px
+
+#otown
+  left 107px
+  top 557px
+/*==========================================ELF==================================================*/
+#ezone1
+  left 448px
+  top 446px
+
+#ezone2
+  left 428px
+  top 411px
+
+#ezone3
+  left 417px
+  top 390px
+
+#etown
+  left 403px
+  top 438px
+/*====================================UNDEAD====================================================*/
+#uzone1
+  left 400px
+  top 96px
+
+#uzone2
+  left 430px
+  top 93px
+
+#uzone3
+  left 440px
+  top 56px
+
+#utown
+  left 356px
+  top 96px

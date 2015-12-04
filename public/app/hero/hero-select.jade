@@ -1,34 +1,46 @@
 .container
     .jumbotron
-        h2 Hello {{ user.userName }}
+        h2 Hello {{ user.username }}
         br
         .row
-            .col-md-4
-                .panel.panel-primary
+            .col-md-4.hero-slot
+                .panel.panel-primary Hero Slot 1
                     .panel-heading
-                        .panel-title Hero Name
+                        .panel-title name: {{user.heroList[0].name}}
                     .panel-body
-                        p Hero Info
-                        .btn.btn-success Choose Hero
-                        .btn.btn-info Create Hero
-                        .btn.btn-danger Delete Hero
+                        .text-primary Race: {{user.heroList[0].race}}
+                        .text-primary Race: {{user.heroList[0].ap}}
+                        .text-danger HP: {{user.heroList[0].hp}}/{{user.heroList[0].maxHp}}
+                        .text-info MP: {{user.heroList[0].mp}}/{{user.heroList[0].maxMp}}
+                        .text-primary DM: {{user.heroList[0].dm}}  DF: {{user.heroList[0].df}}
+                        .text-success Gold: {{user.heroList[0].gold}} SS: {{user.heroList[0].ss}}
+                        .text-primary Location: {{user.heroList[0].location}}
+                        div(ng-hide="show" ng-include="'/partials/hero/hero-create'")
+                        .btn-group-vertical
+                            a.btn.btn-success(href="#/map") Choose Hero
+                            .btn.btn-info(ng-click="createHero()") Create Hero
+                            .btn.btn-danger Delete Hero
 
-            .col-md-4
-                .panel.panel-primary
+            .col-md-4.hero-slot
+                .panel.panel-primary Hero Slot 2
                     .panel-heading
-                        .panel-title Hero Name
+                        .panel-title
                     .panel-body
-                        p Hero Info
-                        .btn.btn-success.disabled Choose Hero
-                        .btn.btn-info.disabled Choose Hero
-                        .btn.btn-danger.disabled Choose Hero
+                        p
+                        div(ng-hide='true' ng-include="'/partials/hero/hero-create'")
+                        .btn-group-vertical
+                            .btn.btn-success.disabled Choose Hero
+                            .btn.btn-info.disabled Choose Hero
+                            .btn.btn-danger.disabled Choose Hero
 
-            .col-md-4
-                .panel.panel-primary
+            .col-md-4.hero-slot
+                .panel.panel-primary Hero Slot 3
                     .panel-heading
-                        .panel-title Hero Name
+                        .panel-title
                     .panel-body
-                        p Hero Info
-                        .btn.btn-success.disabled Choose Hero
-                        .btn.btn-info.disabled Choose Hero
-                        .btn.btn-danger.disabled Choose Hero
+                        p
+                        div(ng-hide="true" ng-include="'/partials/hero/hero-create'")
+                        .btn-group-vertical
+                            .btn.btn-success.disabled Choose Hero
+                            .btn.btn-info.disabled Choose Hero
+                            .btn.btn-danger.disabled Choose Hero

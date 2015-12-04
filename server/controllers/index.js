@@ -1,7 +1,9 @@
-var usersController = require('../controllers/usersController');
-var coursesController = require('../controllers/coursesController');
+var usersController = require('../controllers/usersController'),
+    coursesController = require('../controllers/coursesController'),
+    minionController = require('../controllers/minionController');
 
 module.exports = {
     users: usersController,
-    courses: coursesController
+    courses: coursesController,
+    minions: minionController
 }
