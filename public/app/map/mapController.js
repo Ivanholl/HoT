@@ -1,16 +1,11 @@
-app.controller('mapController', function($scope, identity, movementOptions, MinionResource, updateLocation){
+app.controller('mapController', function($scope, identity, movementOptions, CachedMinions, updateLocation){
     $scope.user = identity.currentUser;
 
     var curZoneID = $scope.user.heroList[0].location,
         lastSelectedZone = curZoneID,
         selectedZone = lastSelectedZone;
 
-    $scope.dsa = MinionResource;
-    $scope.$watch('dsa.length', function(length) {
-        if(length) { // <= first time length is changed from undefined to 0
-            console.log('(watch) read more ' + $scope.dsa.length); // <= will log correct length
-        }
-    });
+    $scope.minions = [];
 
     $('#' + curZoneID).addClass('curZone');
 
@@ -18,6 +13,8 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
         selectedZone = event.target.id;
         $scope.selectedZone = selectedZone;
 
+        $scope.minions = CachedMinions.getMinionsByZone(selectedZone);
+        
         $("#" + selectedZone).addClass('selectedZone');
 
         if (lastSelectedZone != selectedZone) {

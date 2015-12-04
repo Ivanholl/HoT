@@ -35,9 +35,9 @@
                 span.legendText selected zone
 
         .zone-info
-            p {{selectedZone}}
+            h3 {{selectedZone}}
             .list-group
-                span.list-group-item
+                a.list-group-item(ng-repeat="minion in minions") {{minion.name}}
             a#prev.btn.btn-success.disabled(ng-click="prev()") Prev Zone
             a#branch.btn.btn-success.disabled(ng-click="branch()") Branch Zone
             a#next.btn.btn-success.disabled(ng-click="next()") Next Zone

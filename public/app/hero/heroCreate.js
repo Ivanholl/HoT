@@ -4,6 +4,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
             case "Human":
                 return {
                     name: hero.name,
+                    ap: 0,
                     hp: 15,
                     maxHp: 15,
                     mp: 5,
@@ -19,6 +20,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
             case "Elf":
                 return {
                     name: hero.name,
+                    ap: 0,
                     hp: 13,
                     maxHp: 13,
                     mp: 6,
@@ -34,6 +36,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
             case "Orc":
                 return {
                     name: hero.name,
+                    ap: 0,
                     hp: 10,
                     maxHp: 10,
                     mp: 3,
@@ -49,6 +52,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
             /*case "Dwarf":
                  return {
                      name: hero.name,
+                     ap: 0,
                      hp: 15,
                      maxHp: 15,
                      mp: 5,
@@ -65,6 +69,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
             case "Undead":
                 return {
                     name: hero.name,
+                    ap: 0,
                     hp: 16,
                     maxHp: 16,
                     mp: 5,
