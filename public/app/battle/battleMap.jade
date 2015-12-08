@@ -1,0 +1,55 @@
+#container
+   .jumbotron
+      h3 {{zone}}
+      .battle-info
+         .minion-info.list-group(ng-repeat="minion in minions")
+            .list-group-item
+               img(src="pictures/character icon.png")
+               span {{minion.name}}
+            .list-group-item
+               img(src="pictures/Hp2.png")
+               span {{minion.hp}}/{{minion.maxHp}}
+            .list-group-item
+               img(src="pictures/Mana.png")
+               span {{minion.mp}}/{{minion.maxMp}}
+            .list-group-item
+               img(src="pictures/sword.png")
+               span {{minion.dm}}
+               img(src="pictures/deffence.png")
+               span {{minion.df}}
+            .list-group-item
+               img(src="pictures/gold.png")
+               span {{minion.gold}}
+               img(src="pictures/soul stone2.png")
+               span {{minion.ss}}
+
+         .player-info.list-group
+            .list-group-item
+               img(src="pictures/character icon.png")
+               span {{hero.name}}
+            .list-group-item
+               img(src="pictures/Hp2.png")
+               span {{hero.hp}}/{{hero.maxHp}}
+            .list-group-item
+               img(src="pictures/Mana.png")
+               span {{hero.mp}}/{{hero.maxMp}}
+            .list-group-item
+               img(src="pictures/sword.png")
+               span {{hero.dm}}
+               img(src="pictures/deffence.png")
+               span {{hero.df}}
+            .list-group-item
+               img(src="pictures/gold.png")
+               span {{hero.gold}}
+               img(src="pictures/soul stone2.png")
+               span {{hero.ss}}
+
+      .btn-group
+         #attack.btn.btn-danger(ng-click) Attack
+         #defend.btn.btn-success(ng-click) Defend
+         .btn.btn-info Magic
+         .btn.btn-warning Item
+         #escape.btn.btn-primary(ng-click) Escape
+
+      #battleLog
+         #logger

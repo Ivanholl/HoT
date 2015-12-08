@@ -1,4 +1,4 @@
-.container
+#container
     .jumbotron
         #map
             img(src="/pictures/map.jpg" style="visibility: hidden")
@@ -56,10 +56,10 @@
                 span.legendText selected zone
 
         .zone-info
-            h3 {{selectedZone}}
             .list-group
-                a.list-group-item(ng-repeat="minion in minions") {{minion.name}}
+                .list-group-item.active {{selectedZone}}
+                .list-group-item(ng-repeat="minion in minions") {{minion.name}}
             a#prev.btn.btn-success.disabled(ng-click="prev()") Prev Zone
             a#branch.btn.btn-success.disabled(ng-click="branch()") Branch Zone
             a#next.btn.btn-success.disabled(ng-click="next()") Next Zone
-            a#battle.btn.btn-danger.disabled battle
+            a#battle.btn.btn-danger.disabled(href="#/battle") battle

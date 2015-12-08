@@ -1,4 +1,4 @@
-.container
+#container
     .jumbotron
         h2 Hello {{ user.username }}
         br
@@ -11,8 +11,8 @@
                         div(ng-hide="chooseDelete")
                             .text-primary Race: {{heroOne.race}}
                             .text-primary Ap: {{heroOne.ap}}
-                            .text-danger HP: {{heroOne.hp}}/{{user.heroOne.maxHp}}
-                            .text-info MP: {{heroOne.mp}}/{{user.heroOne.maxMp}}
+                            .text-danger HP: {{heroOne.hp}}/{{heroOne.maxHp}}
+                            .text-info MP: {{heroOne.mp}}/{{heroOne.maxMp}}
                             .text-primary DM: {{heroOne.dm}}  DF: {{heroOne.df}}
                             .text-success Gold: {{heroOne.gold}} SS: {{heroOne.ss}}
                             .text-primary Location: {{heroOne.location}}

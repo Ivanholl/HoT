@@ -21,17 +21,26 @@ footer p {
   padding-top: 10px;
 }
 .logo {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   width: 165px;
   height: 40px;
 }
-#map {
+#container {
+  max-width: 1000px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 auto;
+  margin-top: 40px;
+  box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+}
+#map/**************************************************map*********************/ {
   width: 520px;
   position: relative;
   background-image: url("/pictures/map.jpg");
   background-repeat: no-repeat;
   display: inline-block;
+  box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
 .round-button {
   width: 15px;
@@ -80,4 +89,23 @@ footer p {
   width: 450px;
   float: right;
   display: inline-block;
+  box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+}
+.battle-info {
+  height: 250px;
+}
+.minion-info {
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+.player-info {
+  text-align: left;
+  display: inline-block;
+  float: left;
+}
+#battleLog {
+  margin: 50px;
+  height: 200px;
+  overflow-y: auto;
 }

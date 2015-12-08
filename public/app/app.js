@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource', 'ngRoute']).value('toastr', toastr);
+var app = angular.module('app', ['restangular', 'ngResource', 'ngRoute']).value('toastr', toastr);
 
 app.config(function($routeProvider, $locationProvider) {
     // $locationProvider.html5Mode(true);
@@ -29,6 +29,10 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/map', {
             templateUrl: '/partials/map/map',
             controller: 'mapController'
+        })
+        .when('/battle', {
+            templateUrl: '/partials/battle/battleMap',
+            controller: 'batlleCtrl'
         })
         .when('/courses', {
             templateUrl: '/partials/courses/courses-list',
