@@ -6,15 +6,29 @@
             .col-md-4.hero-slot
                 .panel.panel-primary Hero Slot 1
                     .panel-heading
-                        .panel-title name: {{heroOne.name}}
+                        .panel-title
+                            img(src="pictures/symbols/character icon.png")
+                            span {{heroOne.name}}
                     .panel-body
                         div(ng-hide="chooseDelete")
                             .text-primary Race: {{heroOne.race}}
                             .text-primary Ap: {{heroOne.ap}}
-                            .text-danger HP: {{heroOne.hp}}/{{heroOne.maxHp}}
-                            .text-info MP: {{heroOne.mp}}/{{heroOne.maxMp}}
-                            .text-primary DM: {{heroOne.dm}}  DF: {{heroOne.df}}
-                            .text-success Gold: {{heroOne.gold}} SS: {{heroOne.ss}}
+                            img(src="pictures/symbols/Hp2.png")
+                            span.text-danger {{heroOne.hp}}/{{heroOne.maxHp}}
+                            br
+                            img(src="pictures/symbols/Mana.png")
+                            span.text-info {{heroOne.mp}}/{{heroOne.maxMp}}
+                            br
+                            img(src="pictures/symbols/sword.png")
+                            span.text-primary {{heroOne.dm}}
+                            img(src="pictures/symbols/deffence.png")
+                            span.text-primary {{heroOne.df}}
+                            br
+                            img(src="pictures/symbols/gold.png")
+                            span.text-success {{heroOne.gold}}
+                            img(src="pictures/symbols/soul stone2.png")
+                            span.text-success {{heroOne.ss}}
+                            br
                             .text-primary Location: {{heroOne.location}}
                         div(ng-hide="show" ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical

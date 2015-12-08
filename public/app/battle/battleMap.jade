@@ -4,44 +4,48 @@
       .battle-info
          .minion-info.list-group(ng-repeat="minion in minions")
             .list-group-item
-               img(src="pictures/character icon.png")
+               img(src="{{minion.avatar}}")
+            .list-group-item
+               img(src="pictures/symbols/character icon.png")
                span {{minion.name}}
             .list-group-item
-               img(src="pictures/Hp2.png")
+               img(src="pictures/symbols/Hp2.png")
                span {{minion.hp}}/{{minion.maxHp}}
             .list-group-item
-               img(src="pictures/Mana.png")
+               img(src="pictures/symbols/Mana.png")
                span {{minion.mp}}/{{minion.maxMp}}
             .list-group-item
-               img(src="pictures/sword.png")
+               img(src="pictures/symbols/sword.png")
                span {{minion.dm}}
-               img(src="pictures/deffence.png")
+               img(src="pictures/symbols/deffence.png")
                span {{minion.df}}
             .list-group-item
-               img(src="pictures/gold.png")
+               img(src="pictures/symbols/gold.png")
                span {{minion.gold}}
-               img(src="pictures/soul stone2.png")
+               img(src="pictures/symbols/soul stone2.png")
                span {{minion.ss}}
 
          .player-info.list-group
             .list-group-item
-               img(src="pictures/character icon.png")
+               img(src="{{hero.avatar}}")
+            .list-group-item
+               img(src="pictures/symbols/character icon.png")
                span {{hero.name}}
             .list-group-item
-               img(src="pictures/Hp2.png")
+               img(src="pictures/symbols/Hp2.png")
                span {{hero.hp}}/{{hero.maxHp}}
             .list-group-item
-               img(src="pictures/Mana.png")
+               img(src="pictures/symbols/Mana.png")
                span {{hero.mp}}/{{hero.maxMp}}
             .list-group-item
-               img(src="pictures/sword.png")
+               img(src="pictures/symbols/sword.png")
                span {{hero.dm}}
-               img(src="pictures/deffence.png")
+               img(src="pictures/symbols/deffence.png")
                span {{hero.df}}
             .list-group-item
-               img(src="pictures/gold.png")
+               img(src="pictures/symbols/gold.png")
                span {{hero.gold}}
-               img(src="pictures/soul stone2.png")
+               img(src="pictures/symbols/soul stone2.png")
                span {{hero.ss}}
 
       .btn-group

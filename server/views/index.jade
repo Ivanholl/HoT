@@ -14,7 +14,8 @@ block main-content
                 div(ng-include="'partials/account/login'")
 
     section
-        div(ng-view)
+        route-loading-indicator
+        div(ng-if="!isRouteLoading" ng-view)
 
     footer
         p.text-center

@@ -3,6 +3,9 @@ body {
   maring: 0px;
   padding: 0px;
 }
+section {
+  margin-top: 40px;
+}
 .navbar-right .navbar-form input {
   margin-right: 10px;
 }

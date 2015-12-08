@@ -1,4 +1,4 @@
-app.factory('battle', function(){
+app.factory('battle', function(updateHero, identity){
 
         return {
             battle: function(hero, minion){  //Otherwise it is used once
@@ -73,7 +73,7 @@ app.factory('battle', function(){
                     if (hero.hp <= 0 && winLoseCheck == false) {
                         winLoseCheck = true;
                         alert("YOU LOST");
-                        window.location.href = '#/town/healer';
+                        updateHero.update(hero, identity.currentUser)
                     }
                     if (minion[0].hp <= 0 && winLoseCheck == false) {
                         winLoseCheck = true;
@@ -82,8 +82,7 @@ app.factory('battle', function(){
                         hero.ss += minion[0].ss;
                         window.location.href = '#/map';
                     }
-
-                    localStorage.setItem('Player', JSON.stringify(hero));
+                    updateHero.update(hero, identity.currentUser)
                 }
 
                 function getEnemyMove() {
