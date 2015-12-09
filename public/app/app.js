@@ -28,11 +28,18 @@ app.config(function($routeProvider, $locationProvider) {
         })
         .when('/map', {
             templateUrl: '/partials/map/map',
-            controller: 'mapController'
+            controller: 'mapController',
+            resolve: routeUserChecks.authenticated
         })
         .when('/battle', {
             templateUrl: '/partials/battle/battleMap',
-            controller: 'batlleCtrl'
+            controller: 'batlleCtrl',
+            resolve: routeUserChecks.authenticated
+        })
+        .when('/town',{
+            templateUrl: '/partials/town/town',
+            controller: 'townCtrl',
+            resolve: routeUserChecks.authenticated
         })
         .when('/courses', {
             templateUrl: '/partials/courses/courses-list',

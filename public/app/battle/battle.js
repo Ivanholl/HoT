@@ -74,6 +74,7 @@ app.factory('battle', function(updateHero, identity){
                         winLoseCheck = true;
                         alert("YOU LOST");
                         updateHero.update(hero, identity.currentUser)
+                        window.location.href = '#/town';
                     }
                     if (minion[0].hp <= 0 && winLoseCheck == false) {
                         winLoseCheck = true;

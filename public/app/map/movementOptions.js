@@ -21,7 +21,6 @@ app.factory('movementOptions', function(identity){
                     hasPrevZone: true,
                     hasNextZone: false,
                     battle: true
-
                 };
                     break;
                 case "hzone2": return {
