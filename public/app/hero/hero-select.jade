@@ -29,7 +29,8 @@
                             img(src="pictures/symbols/soul stone2.png")
                             span.text-success {{heroOne.ss}}
                             br
-                            .text-primary Location: {{heroOne.location}}
+                            img(src="pictures/symbols/location.png")
+                            span.text-primary {{heroOne.location}}
                         div(ng-hide="show" ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical
                             a.btn.btn-success(href="#/map" ng-hide="chooseDelete") Choose Hero

@@ -87,6 +87,9 @@ footer p {
 .legendTown {
   background-color: #9acd32;
 }
+.orange {
+  background-color: #ffa500;
+}
 .zone-info {
   font-weight: 600;
   width: 450px;
@@ -111,4 +114,5 @@ footer p {
   margin: 50px;
   height: 200px;
   overflow-y: auto;
+  text-align: center;
 }
