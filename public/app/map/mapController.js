@@ -22,7 +22,7 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
             lastSelectedZone = selectedZone;
         }
         if (movementOptions.getMovementOptions().battle) {
-            $("#battle").removeClass('disabled');            
+            $("#battle").removeClass('disabled');
         } else {
             $("#battle").addClass('disabled');
         }

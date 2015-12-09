@@ -33,7 +33,13 @@ app.config(function($routeProvider, $locationProvider) {
         })
         .when('/battle', {
             templateUrl: '/partials/battle/battleMap',
+
             controller: 'batlleCtrl',
+            resolve: routeUserChecks.authenticated
+        })
+        .when('/town',{
+            templateUrl: '/partials/town/town',
+            controller: 'townCtrl',
             resolve: routeUserChecks.authenticated
         })
         .when('/courses', {
