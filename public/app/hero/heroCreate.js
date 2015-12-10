@@ -3,6 +3,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
         switch(hero.race) {
             case "Human":
                 return {
+                    avatar: 'pictures/avatar/playerAvatar.png',
                     name: hero.name,
                     ap: 0,
                     hp: 15,
@@ -19,6 +20,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                 break;
             case "Elf":
                 return {
+                    avatar: 'pictures/avatar/playerAvatar.png',
                     name: hero.name,
                     ap: 0,
                     hp: 13,
@@ -35,6 +37,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                 break;
             case "Orc":
                 return {
+                    avatar: 'pictures/avatar/playerAvatar.png',
                     name: hero.name,
                     ap: 0,
                     hp: 10,
@@ -49,8 +52,9 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     race: hero.race
                 };
                 break;
-            /*case "Dwarf":
+            case "Dwarf":
                  return {
+                     avatar: 'pictures/avatar/playerAvatar.png',
                      name: hero.name,
                      ap: 0,
                      hp: 15,
@@ -65,9 +69,10 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                      location: 'dzone1',
                      race: hero.race
              };
-             break;*/
+             break;
             case "Undead":
                 return {
+                    avatar: 'pictures/avatar/playerAvatar.png',
                     name: hero.name,
                     ap: 0,
                     hp: 16,

@@ -35,7 +35,7 @@
                         .btn-group-vertical
                             a.btn.btn-success(href="#/map" ng-hide="chooseDelete") Choose Hero
                             .btn.btn-info(ng-click="createHero()" ng-hide="create") Create Hero
-                            .btn.btn-danger(ng-hide="chooseDelete") Delete Hero
+                            .btn.btn-danger(ng-click="delete()" ng-hide="chooseDelete") Delete Hero
 
             .col-md-4.hero-slot
                 .panel.panel-primary Hero Slot 2
