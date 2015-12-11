@@ -83,7 +83,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     df: 3,
                     gold: 0,
                     ss: 0,
-                    location: 'ozone1',
+                    location: 'uzone1',
                     race: hero.race
                 };
                 break;

@@ -23,6 +23,9 @@ module.exports.seedTestMinion = function() {
             console.log('Cannot find users: ' + err);
             return;
         }
+        /*Minion.remove({}, function(err) { 
+            console.log('collection removed') 
+        });*/
         if (collection.length === 0) {
             //Human
             Minion.create({hp:15,maxHp:15,mp:0,maxMp:0,dm:[3,4],df:2,gold:10,ss:10,location:'hzone1', name: "Kymerian Wolf",avatar:"pictures/avatar/minion/tba.jpg"});

@@ -113,11 +113,11 @@ app.factory('movementOptions', function(identity){
                     break;
                 case "etown": return { //*********************ELF
                     nextZone: "ezone1",
-                    //prevZone: 'dzone6',
+                    //prevZone: 'ezone6',
                     hasNextZone: true,
                     hasPrevZone:false,
                     hasBranchZone: false,
-                    battle: true
+                    battle: false
                 };
                     break;
                 case "ezone1": return {
@@ -131,7 +131,7 @@ app.factory('movementOptions', function(identity){
                     break;
                 case "ezone2": return {
                     nextZone: "ezone3",
-                    nextZone: "ezone1",
+                    prevZone: "ezone1",
                     hasBranchZone: false,
                     hasNextZone: true,
                     hasPrevZone: true,
@@ -153,7 +153,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: true,
                     hasPrevZone:false,
                     hasBranchZone: false,
-                    battle: true
+                    battle: false
                 };
                     break;
                 case "uzone1": return {
@@ -167,7 +167,7 @@ app.factory('movementOptions', function(identity){
                     break;
                 case "uzone2": return {
                     nextZone: "uzone3",
-                    nextZone: "uzone1",
+                    prevZone: "uzone1",
                     hasBranchZone: false,
                     hasNextZone: true,
                     hasPrevZone: true,
