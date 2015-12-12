@@ -1,8 +1,11 @@
 #container
    .jumbotron
+      div(ng-if="healer" ng-include="'partials/town/healer.jade'")
+      div(ng-if="library" ng-include="'partials/town/library.jade'")
+      br
       #buildingList
-         a.btn.btn-warning Library
-         a.btn.btn-warning Healer
+         a.btn.btn-warning(ng-click="enterBuilding('library')") Library
+         a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
          a.btn.btn-warning.disabled Mage
          a.btn.btn-warning.disabled Bank
          a.btn.btn-warning.disabled Armory
