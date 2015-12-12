@@ -4,7 +4,6 @@ app.controller('townCtrl', function($scope, identity) {
     $scope.library = false;
 
     $scope.toMap = function () {
-        $scope.hero.location = 'hzone1';
         window.location.href  = '#/map';
     };
 
