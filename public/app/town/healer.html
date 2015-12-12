@@ -1,1 +1,1 @@
-<div><h3>Healing costs 4gold</h3><div ng-click="heal()" class="btn btn-success">Heal</div><ul class="nav nav-pills"><li class="active"><a ng-click="fullheal()">Full Heal<span class="badge">123</span></a></li></ul></div>
+<div ng-controller="healerCtrl"><h3>Healing costs 4gold</h3><input ng-model="healAmount"/><div ng-click="heal(healAmount)" class="btn btn-success">Heal</div><ul class="nav nav-pills"><li class="active"><a ng-click="fullHeal()">Full Heal<span class="badge">{{fullHealCost}}g</span></a></li></ul></div>
