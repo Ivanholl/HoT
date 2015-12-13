@@ -31,7 +31,7 @@ module.exports.seedTestMinion = function() {
             Minion.create({hp:15,maxHp:15,mp:0,maxMp:0,dm:[3,4],df:2,gold:10,ss:10,location:'hzone1', name: "Kymerian Wolf",avatar:"pictures/avatar/minion/tba.jpg"});
             Minion.create({hp:13,maxHp:13,mp:0,maxMp:0,dm:[2,3],df:2,gold:10,ss:5,location:'hzone1',name: "Kymerian Tiger",avatar:"pictures/avatar/minion/tba.jpg"});
             Minion.create({hp:10,maxHp:10,mp:0,maxMp:0,dm:[2,3],df:1,gold:15,ss:10,location:'hzone1',name: "Naga Scout",avatar:"pictures/avatar/minion/nagaScout.jpg"});
-            Minion.create({hp:15,maxHp:15,mp:0,maxMp:0,dm:[2,3],df:3,gold:10,ss:5,location:'hzone1',name: "Common Thief",avatar:"pictures/avatar/minion/nagaScout.jpg"});
+            Minion.create({hp:15,maxHp:15,mp:0,maxMp:0,dm:[2,3],df:3,gold:10,ss:5,location:'hzone1',name: "Common Thief",avatar:"pictures/avatar/minion/tba.jpg"});
             Minion.create({hp:13,maxHp:13,mp:0,maxMp:0,dm:[1,2],df:1,gold:10,ss:5,location:'hzone1',name: "Orange Kymerian Tiger",avatar:"pictures/avatar/minion/nagaScout.jpg"});
 
             Minion.create({hp:10,maxHp:10,mp:0,maxMp:0,dm:[2,3],df:2,gold:15,ss:10,location:'hzone2',name: "Naga Scout",avatar:"pictures/avatar/minion/nagaScout.jpg"});

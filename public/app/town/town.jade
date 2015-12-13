@@ -3,17 +3,29 @@
       div(ng-if="healer" ng-include="'partials/town/healer.jade'")
       div(ng-if="library" ng-include="'partials/town/library.jade'")
       br
-      #buildingList
-         a.btn.btn-warning(ng-click="enterBuilding('library')") Library
-         a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
-         a.btn.btn-warning.disabled Mage
-         a.btn.btn-warning.disabled Bank
-         a.btn.btn-warning.disabled Armory
-         a.btn.btn-warning.disabled Market Place
-         a.btn.btn-warning.disabled Merchant
-         a.btn.btn-warning.disabled Tailory
-         a.btn.btn-warning.disabled Bar
-         a.btn.btn-warning.disabled Jewery
+      div(ng-include="'partials/common/playerInfoWindow'")
+
+      ul#buildingList
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('library')") Library
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
+         li
+            a.btn.btn-warning.disabled Mage
+         li
+            a.btn.btn-warning.disabled Bank
+         li
+            a.btn.btn-warning.disabled Armory
+         li
+            a.btn.btn-warning.disabled Market Place
+         li
+            a.btn.btn-warning.disabled Merchant
+         li
+            a.btn.btn-warning.disabled Tailory
+         li
+            a.btn.btn-warning.disabled Bar
+         li
+            a.btn.btn-warning.disabled Jewery
 
       .btn.btn-danger(ng-click="toMap()") Back to Map
 

@@ -116,3 +116,7 @@ footer p {
   overflow-y: auto;
   text-align: center;
 }
+#buildingList {
+  display: inline-block;
+  list-style: none;
+}

@@ -12,12 +12,12 @@ app.controller('heroSelectCtrl', function($scope,identity, heroCreate, notifier,
         heroCreate.createNewHero(hero, identity.currentUser).then(function() {
             notifier.success('Hero Created!');
         });
-        $scope.chooseDelete = true;
+        window.location.href = '#/map';
     };
 
     $scope.delete = function(){
         updateHero.update({}, $scope.user);
-        $scope.show = $scope.show;
+        $scope.show = !$scope.show;
     };
 
     if (!$scope.heroOne) {
