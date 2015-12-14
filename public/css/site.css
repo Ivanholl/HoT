@@ -37,6 +37,17 @@ footer p {
   margin-top: 40px;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
+.quickAccessBar {
+  float: right;
+}
+.quickAccessWindow {
+  padding: 20px;
+  position: absolute;
+  margin-top: 5px;
+  left: 50%;
+  z-index: 3;
+  box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+}
 #map/**************************************************map*********************/ {
   width: 520px;
   position: relative;
