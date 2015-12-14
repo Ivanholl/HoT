@@ -12,9 +12,11 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     maxMp:5,
                     dm: [3,4],
                     df: 2,
+                    str: 10,
                     gold: 0,
                     ss: 0,
                     location: 'hzone1',
+                    inventory: [],
                     race: hero.race
                 };
                 break;
@@ -29,9 +31,11 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     maxMp:6,
                     dm: [2,3],
                     df: 2,
+                    str: 10,
                     gold: 0,
                     ss: 0,
                     location: 'ezone1',
+                    inventory: [],
                     race: hero.race
                 };
                 break;
@@ -46,9 +50,11 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     maxMp:3,
                     dm: [4,5],
                     df: 3,
+                    str: 10,
                     gold: 0,
                     ss: 0,
                     location: 'ozone1',
+                    inventory: [],
                     race: hero.race
                 };
                 break;
@@ -64,9 +70,11 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                      st: 9,
                      dm: [2,3],
                      df: 5,
+                     str: 10,
                      gold: 0,
                      ss: 0,
                      location: 'dzone1',
+                     inventory: [],
                      race: hero.race
              };
              break;
@@ -81,9 +89,11 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     maxMp:5,
                     dm: [2,3],
                     df: 3,
+                    str: 10,
                     gold: 0,
                     ss: 0,
                     location: 'uzone1',
+                    inventory: [],
                     race: hero.race
                 };
                 break;

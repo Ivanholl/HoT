@@ -1,0 +1,8 @@
+div(ng-controller="inventoryCtrl")
+   ul.itemList
+      li
+         span Item Weight
+      li(ng-repeat="item in inventory")
+         span {{item.title}} {{item.weight}}
+   .equiped
+   .selectedItem
