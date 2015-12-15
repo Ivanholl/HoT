@@ -1,8 +1,9 @@
-div(ng-controller="inventoryCtrl")
+.inventory(ng-controller="inventoryCtrl")
    ul.itemList
       li
          span Item Weight
       li(ng-repeat="item in inventory")
          span {{item.title}} {{item.weight}}
-   .equiped
+   .equipped
+      img(src="/pictures/inventory.jpg" style="visibility: hidden")
    .selectedItem
