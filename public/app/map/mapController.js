@@ -10,7 +10,7 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
     $('#' + curZoneID).addClass('curZone');
 
     $scope.zone = function(event){
-        selectedZone = event.target.id;
+        var selectedZone = event.target.id;
         $scope.selectedZone = selectedZone;
 
         $scope.minions = MinionResource.getMinionsByZone(selectedZone);

@@ -131,16 +131,3 @@ footer p {
   display: inline-block;
   list-style: none;
 }
-.inventory {
-  padding: 0px;
-}
-.equipped {
-  background-image: url("/pictures/inventory.jpg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  float: right;
-}
-.itemList {
-  float: left;
-  display: inline-block;
-}
