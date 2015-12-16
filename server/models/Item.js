@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var itemScheman = mongoose.Schema({
     title: String,
+    pic: String,
     type: String,
     weight: Number,
     bonus: [String]

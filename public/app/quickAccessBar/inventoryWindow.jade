@@ -1,9 +1,42 @@
 .inventory(ng-controller="inventoryCtrl")
-   ul.itemList
-      li
-         span Item Weight
-      li(ng-repeat="item in inventory")
-         span {{item.title}} {{item.weight}}
+   .itemList
+      table.table.table-striped.table-hover
+         thead
+            th Item
+            th Weight
+         tbody
+            tr(ng-repeat="item in inventory")
+               td {{item.title}}
+               td {{item.weight}}
    .equipped
-      img(src="/pictures/inventory.jpg" style="visibility: hidden")
+      img(src="pictures/inventory.jpg" style="visibility: hidden")
+      .item.helm
+         img(src="{{hero.equipment.helm.pic}}")
+      .item.chest
+         img(src="{{hero.equipment.chest.pic}}")
+      .item.belt
+         img(src="{{hero.equipment.belt.pic}}")
+      .item.pants
+         img(src="{{hero.equipment.pants.pic}}")
+      .item.boots
+         img(src="{{hero.equipment.boots.pic}}")
+      .item.symbol
+         img(src="{{hero.equipment.symbol.pic}}")
+      .item.weapon
+         img(alt="{{hero.equipment.weapon.title}}" src="{{hero.equipment.weapon.pic}}")
+      .item.gloves
+         img(src="{{hero.equipment.gloves.pic}}")
+      .item.ring
+         img(src="{{hero.equipment.ring.pic}}")
+      .item.mantle
+         img(src="{{hero.equipment.mantle.pic}}")
+      .item.shield
+         img(src="{{hero.equipment.shield.pic}}")
+      .item.bracelet
+         img(src="{{hero.equipment.bracelet.pic}}")
+      .item.secRing
+         img(src="{{hero.equipment.secRing.pic}}")
+      .item.neckless
+         img(src="{{hero.equipment.neckless.pic}}")
+
    .selectedItem

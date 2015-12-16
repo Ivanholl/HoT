@@ -41,12 +41,88 @@ footer p {
   float: right;
 }
 .quickAccessWindow {
-  padding: 20px;
+  padding: 5px;
   position: absolute;
   margin-top: 5px;
   left: 50%;
   z-index: 3;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+}
+.inventory {
+  padding: 0;
+}
+.equipped {
+  background-image: url("/pictures/inventory.jpg");
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+.itemList {
+  float: left;
+  display: inline-block;
+  width: 200px;
+}
+.item {
+  position: absolute;
+  width: 80px;
+  height: 105px;
+  border: 3px solid #000;
+}
+.helm {
+  top: 25px;
+  left: 110px;
+}
+.chest {
+  top: 155px;
+  left: 110px;
+}
+.belt {
+  top: 290px;
+  left: 110px;
+}
+.pants {
+  top: 420px;
+  left: 110px;
+}
+.boots {
+  top: 550px;
+  left: 110px;
+}
+.symbol {
+  top: 550px;
+  left: 15px;
+}
+.bracelet {
+  top: 155px;
+  left: 15px;
+}
+.weapon {
+  top: 290px;
+  left: 15px;
+}
+.gloves {
+  top: 420px;
+  left: 15px;
+}
+.neckless {
+  top: 25px;
+  left: 205px;
+}
+.mantle {
+  top: 155px;
+  left: 205px;
+}
+.shield {
+  top: 290px;
+  left: 205px;
+}
+.secRing {
+  top: 420px;
+  left: 205px;
+}
+.ring {
+  top: 550px;
+  left: 205px;
 }
 #map/**************************************************map*********************/ {
   width: 520px;
