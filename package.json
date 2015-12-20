@@ -1,30 +1,25 @@
 {
-  "name": "HoT",
-  "version": "1.0.1",
-  "description": "Heroes of Trebichenburg",
+  "name": "hot",
+  "version": "1.0.0",
+  "description": "browser MMORPG",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "engines": {
-    "node": "0.10.x",
-    "npm": "1.4.x"
-  },
-  "author": "Az",
+  "author": "Arelam",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.4.8",
-    "body-parser": "^1.14.1",
+    "body-parser": "^1.14.2",
     "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
     "express-session": "^1.12.1",
     "jade": "^1.11.0",
-    "mongodb": "^2.0.49",
-    "mongoose": "^4.2.8",
+    "mongodb": "^2.0.52",
+    "mongoose": "^4.3.3",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "stylus": "^0.52.4"
-  },
-  "devDependencies": {}
+    "stylus": "^0.53.0"
+  }
 }
