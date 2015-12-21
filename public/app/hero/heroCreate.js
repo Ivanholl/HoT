@@ -17,6 +17,22 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     ss: 0,
                     location: 'hzone1',
                     inventory: [],
+                    equipment: {
+                        helm:{},
+                        chest:{},
+                        belt:{},
+                        pants:{},
+                        boots:{},
+                        symbol:{},
+                        weapon:{},
+                        gloves:{},
+                        ring:{},
+                        mantle:{},
+                        shield:{},
+                        bracelet:{},
+                        secRing:{},
+                        neckless:{}
+                    },
                     race: hero.race
                 };
                 break;
@@ -36,6 +52,22 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     ss: 0,
                     location: 'ezone1',
                     inventory: [],
+                    equipment: {
+                        helm:{},
+                        chest:{},
+                        belt:{},
+                        pants:{},
+                        boots:{},
+                        symbol:{},
+                        weapon:{},
+                        gloves:{},
+                        ring:{},
+                        mantle:{},
+                        shield:{},
+                        bracelet:{},
+                        secRing:{},
+                        neckless:{}
+                    },
                     race: hero.race
                 };
                 break;
@@ -55,6 +87,22 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     ss: 0,
                     location: 'ozone1',
                     inventory: [],
+                    equipment: {
+                        helm:{},
+                        chest:{},
+                        belt:{},
+                        pants:{},
+                        boots:{},
+                        symbol:{},
+                        weapon:{},
+                        gloves:{},
+                        ring:{},
+                        mantle:{},
+                        shield:{},
+                        bracelet:{},
+                        secRing:{},
+                        neckless:{}
+                    },
                     race: hero.race
                 };
                 break;
@@ -75,6 +123,22 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                      ss: 0,
                      location: 'dzone1',
                      inventory: [],
+                     equipment: {
+                         helm:{},
+                         chest:{},
+                         belt:{},
+                         pants:{},
+                         boots:{},
+                         symbol:{},
+                         weapon:{},
+                         gloves:{},
+                         ring:{},
+                         mantle:{},
+                         shield:{},
+                         bracelet:{},
+                         secRing:{},
+                         neckless:{}
+                     },
                      race: hero.race
              };
              break;
@@ -94,6 +158,22 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     ss: 0,
                     location: 'uzone1',
                     inventory: [],
+                    equipment: {
+                        helm:{},
+                        chest:{},
+                        belt:{},
+                        pants:{},
+                        boots:{},
+                        symbol:{},
+                        weapon:{},
+                        gloves:{},
+                        ring:{},
+                        mantle:{},
+                        shield:{},
+                        bracelet:{},
+                        secRing:{},
+                        neckless:{}
+                    },
                     race: hero.race
                 };
                 break;
@@ -109,7 +189,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
             var updatedUser = new UsersResource(user);
             updatedUser._id = identity.currentUser._id;
             updatedUser.heroList[0] = newHero;
-
+            console.log(newHero)
             updatedUser.$update().then(function() {
                 identity.currentUser.heroList[0] = newHero;
                 deferred.resolve();

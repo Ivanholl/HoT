@@ -40,3 +40,43 @@
     -o-animation: glowing 1500ms infinite;
     animation: glowing 1500ms infinite;
 }
+
+
+
+
+
+.p-bar {
+    max-width: 32em;
+    margin: 5em auto;
+    background: transparent;
+    border: 2px solid #ff060a;
+    border-radius: 20px;
+}
+
+.inner {
+    background: repeating-linear-gradient(
+            45deg,
+            #f90a0d,
+            #f90a0d 10px,
+            #ff060a 10px,
+            #ff060a 20px
+    );
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.onehundred {
+    max-width: 100%
+}
+
+.seventyfive {
+    max-width: 20%;
+}
+
+.fifty {
+    max-width: 50%;
+}
+
+.twentyfive {
+    max-width: 25%;
+}

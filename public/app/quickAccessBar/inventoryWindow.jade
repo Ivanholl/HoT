@@ -3,11 +3,12 @@
       table.table.table-striped.table-hover
          thead
             th Item
-            th Weight
+            th(style="float:right;") Weight
          tbody
             tr(ng-repeat="item in inventory")
                td {{item.title}}
-               td {{item.weight}}
+               td(style="float:right;") {{item.weight}}
+               td.btn-info(ng-click="equip(item)") equip
    .equipped
       img(src="pictures/inventory.jpg" style="visibility: hidden")
       .item.helm

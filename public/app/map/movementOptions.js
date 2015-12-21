@@ -10,7 +10,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasPrevZone: false,
                     hasNextZone: true,
-                    battle: false
+                    hasBattle: false
                 };
                     break;
                 case "hzone1": return {
@@ -20,7 +20,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: true,
                     hasPrevZone: true,
                     hasNextZone: false,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "hzone2": return {
@@ -29,7 +29,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasPrevZone: true,
                     hasNextZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "hzone3": return {
@@ -37,7 +37,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasPrevZone: true,
                     hasNextZone: false,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "otown": return { //***********************ORC
@@ -45,7 +45,7 @@ app.factory('movementOptions', function(identity){
                     hasPrevZone: false,
                     hasBranchZone: false,
                     hasNextZone: true,
-                    battle: false
+                    hasBattle: false
                 };
                 case "ozone1": return {
                     //nextZone: "ozone7"
@@ -54,7 +54,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: false,
                     hasPrevZone: true,
                     hasBranchZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "ozone2": return {
@@ -64,7 +64,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: false,
                     hasPrevZone: true,
                     hasBranchZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "ozone3": return {
@@ -72,7 +72,7 @@ app.factory('movementOptions', function(identity){
                     hasPrevZone: true,
                     hasNextZone: false,
                     hasBranchZone: false,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "dtown": return { //********************dwarf
@@ -80,7 +80,7 @@ app.factory('movementOptions', function(identity){
                     hasPrevZone:false,
                     hasNextZone: true,
                     hasBranchZone:false,
-                    battle: false
+                    hasBattle: false
                 };
                     break;
                 case "dzone1": return {
@@ -89,7 +89,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: true,
                     hasPrevZone:true,
                     hasBranchZone: false,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "dzone2": return {
@@ -98,7 +98,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: true,
                     hasPrevZone:true,
                     hasBranchZone: false,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "dzone3": return {
@@ -108,7 +108,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: false,
                     hasPrevZone:true,
                     hasBranchZone: false,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "etown": return { //*********************ELF
@@ -117,7 +117,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: true,
                     hasPrevZone:false,
                     hasBranchZone: false,
-                    battle: false
+                    hasBattle: false
                 };
                     break;
                 case "ezone1": return {
@@ -126,7 +126,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasNextZone: true,
                     hasPrevZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "ezone2": return {
@@ -135,7 +135,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasNextZone: true,
                     hasPrevZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "ezone3": return {
@@ -144,7 +144,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: false,
                     hasBranchZone: false,
                     hasPrevZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "utown": return { //*********************ELF
@@ -153,7 +153,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: true,
                     hasPrevZone:false,
                     hasBranchZone: false,
-                    battle: false
+                    hasBattle: false
                 };
                     break;
                 case "uzone1": return {
@@ -162,7 +162,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasNextZone: true,
                     hasPrevZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "uzone2": return {
@@ -171,7 +171,7 @@ app.factory('movementOptions', function(identity){
                     hasBranchZone: false,
                     hasNextZone: true,
                     hasPrevZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 case "uzone3": return {
@@ -180,7 +180,7 @@ app.factory('movementOptions', function(identity){
                     hasNextZone: false,
                     hasBranchZone: false,
                     hasPrevZone: true,
-                    battle: true
+                    hasBattle: true
                 };
                     break;
                 default:

@@ -21,14 +21,13 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
             $("#" + lastSelectedZone).removeClass('selectedZone');
             lastSelectedZone = selectedZone;
         }
-        if (movementOptions.getMovementOptions().battle) {
+        if (movementOptions.getMovementOptions().hasBattle) {
             $("#battle").removeClass('disabled');
         } else {
             $("#battle").addClass('disabled');
         }
 
         if(curZoneID == selectedZone){
-            $("#battle").removeClass('disabled');
             if (movementOptions.getMovementOptions().hasNextZone) {
                 $("#next").removeClass('disabled');
 
@@ -62,7 +61,7 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
     };
 
     function checkIfBattle(){
-        if(movementOptions.getMovementOptions().battle){
+        if(movementOptions.getMovementOptions().hasBattle){
             window.location.href = '#/battle';
         } else {
             window.location.href = '#/town';
