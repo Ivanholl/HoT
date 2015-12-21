@@ -70,7 +70,17 @@ footer
   position absolute
   width 80px
   height 105px
-  border 3px solid black
+  //border 3px solid black
+
+.itemInfo
+  visibility hidden
+  position absolute
+  z-index 3
+  background-color black
+
+.item:hover .itemInfo
+  visibility visible
+
 
 .helm
   top 25px

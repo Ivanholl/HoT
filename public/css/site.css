@@ -67,7 +67,15 @@ footer p {
   position: absolute;
   width: 80px;
   height: 105px;
-  border: 3px solid #000;
+}
+.itemInfo {
+  visibility: hidden;
+  position: absolute;
+  z-index: 3;
+  background-color: #000;
+}
+.item:hover .itemInfo {
+  visibility: visible;
 }
 .helm {
   top: 25px;

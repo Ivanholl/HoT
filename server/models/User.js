@@ -6,7 +6,7 @@ var userSchema = mongoose.Schema({
     username: { type: String, require: '{PATH} is required', unique: true },
     firstName: { type: String, require: '{PATH} is required' },
     lastName: { type: String, require: '{PATH} is required' },
-    heroList: [Hero],
+    heroList: [{}],
     salt: String,
     hashPass: String,
     roles: [String]
