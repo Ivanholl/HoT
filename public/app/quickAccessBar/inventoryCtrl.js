@@ -31,7 +31,7 @@ app.controller('inventoryCtrl', function($scope, identity, updateHero, equipment
             pic: "pictures/items/item.jpg",
             type: 'weapon',
             weight: '1',
-            bonus: ['DF+1']
+            bonus: ['df','1']
         });
 
         updateHero.update($scope.hero, identity.currentUser)
@@ -42,9 +42,6 @@ app.controller('inventoryCtrl', function($scope, identity, updateHero, equipment
         updateHero.update($scope.hero, identity.currentUser)
     };
     $scope.unequip = function(item){
-
-        console.log(item)
-
         equipment.unequip($scope.hero, item);
         updateHero.update($scope.hero, identity.currentUser)
     }

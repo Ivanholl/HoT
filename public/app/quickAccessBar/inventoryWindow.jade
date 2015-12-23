@@ -13,85 +13,85 @@
       img(src="pictures/inventory.jpg" style="visibility: hidden")
       .item.helm
          img(src="{{hero.equipment[0].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[0]")
             p {{hero.equipment[0].title}}
             p {{hero.equipment[0].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[0])") unequip
       .item.chest
          img(src="{{hero.equipment[1].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[1]")
             p {{hero.equipment[1].title}}
             p {{hero.equipment[1].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[1])") unequip
       .item.belt
          img(src="{{hero.equipment[2].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[2]")
             p {{hero.equipment[2].title}}
             p {{hero.equipment[2].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[2])") unequip
       .item.pants
          img(src="{{hero.equipment[3].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[3]")
             p {{hero.equipment[3].title}}
             p {{hero.equipment[3].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
       .item.boots
          img(src="{{hero.equipment[4].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[4]")
             p {{hero.equipment[4].title}}
             p {{hero.equipment[4].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[4])") unequip
       .item.symbol
          img(src="{{hero.equipment[10].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[10]")
             p {{hero.equipment[10].title}}
             p {{hero.equipment[10].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[10])") unequip
       .item.weapon
          img(src="{{hero.equipment[5].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[5]")
             p {{hero.equipment[5].title}}
             p {{hero.equipment[5].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[5])") unequip
       .item.gloves
          img(src="{{hero.equipment[6].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[6]")
             p {{hero.equipment[6].title}}
             p {{hero.equipment[6].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[6])") unequip
       .item.ring
          img(src="{{hero.equipment[11].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[11]")
             p {{hero.equipment[11].title}}
             p {{hero.equipment[11].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[11])") unequip
       .item.mantle
          img(src="{{hero.equipment[7].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[7]")
             p {{hero.equipment[7].title}}
             p {{hero.equipment[7].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[7])") unequip
       .item.shield
          img(src="{{hero.equipment[8].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[8]")
             p {{hero.equipment[8].title}}
             p {{hero.equipment[8].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[8])") unequip
       .item.bracelet
          img(src="{{hero.equipment[9].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[9]")
             p {{hero.equipment[9].title}}
             p {{hero.equipment[9].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[9])") unequip
       .item.secRing
          img(src="{{hero.equipment[12].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[12]")
             p {{hero.equipment[12].title}}
             p {{hero.equipment[12].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[12])") unequip
       .item.neckless
          img(src="{{hero.equipment[13].pic}}")
-         .itemInfo
+         .itemInfo(ng-if="hero.equipment[13]")
             p {{hero.equipment[13].title}}
             p {{hero.equipment[13].type}}
             .btn.btn-info(ng-click="unequip(hero.equipment[13])") unequip
