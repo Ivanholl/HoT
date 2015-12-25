@@ -6,11 +6,11 @@ module.exports = function(app) {
     app.post('/api/users', controllers.users.createUser);
     app.put('/api/users', auth.isAuthenticated, controllers.users.updateUser);
 
-    app.get('/api/courses', controllers.courses.getAllCourses);
-    app.get('/api/courses/:id', controllers.courses.getCourseById);
-
     app.get('/api/minions', controllers.minions.getAllMinions);
     app.get('api/minions/:location', controllers.minions.getMinionsByLocation);
+
+    app.get('/api/items', controllers.items.getAllItems);
+    app.get('/api/items/:type', controllers.items.getItemsByType);
 
     app.get('/partials/:partialArea/:partialName', function(req, res) {
         res.render('../../public/app/' + req.params.partialArea + '/' + req.params.partialName)

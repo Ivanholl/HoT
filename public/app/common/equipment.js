@@ -1,36 +1,36 @@
-app.factory('equipment', function(){
-   return {
-       equip: function(hero, item){
-           var slot = GetSlotNumb(item);
+app.factory('equipment', function() {
+    return {
+        equip: function (hero, item) {
+            var slot = GetSlotNumb(item);
 
-           if(!hero.equipment[slot]){
-               hero.equipment[slot] = item;
-               getBonus(hero, item);
-           }
-       },
-       unequip: function(hero, item){
-           var slot = GetSlotNumb(item);
+            if (!hero.equipment[slot]) {
+                hero.equipment[slot] = item;
+                getBonus(hero, item);
+            }
+        },
+        unequip: function (hero, item) {
+            var slot = GetSlotNumb(item);
 
-           if(slot){
-               removeBonus(hero, item);
-               hero.equipment[slot] = null;
-           }
-       }
-   };
-    function getBonus(hero, item){
-        for(var i = 0; i < item.bonus.length; i+=2){
+            if (hero.equipment[slot]) {
+                removeBonus(hero, item);
+                hero.equipment[slot] = null;
+            }
+        }
+    };
+    function getBonus(hero, item) {
+        for (var i = 0; i < item.bonus.length; i += 2) {
             eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
         }
     }
 
-    function removeBonus(hero, item){
-        for(var i = 0; i < item.bonus.length; i+=2){
+    function removeBonus(hero, item) {
+        for (var i = 0; i < item.bonus.length; i += 2) {
             eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
         }
     }
 
-    function GetSlotNumb(item){
-        switch (item.type){
+    function GetSlotNumb(item) {
+        switch (item.type) {
             case "helm" : return 0;
             case "chest" : return 1;
             case "belt" : return 2;

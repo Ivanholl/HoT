@@ -1,8 +1,8 @@
 var mongoose = require('mongoose'),
     user = require('../models/User'),
-    course = require('../models/Course'),
     hero = require('../models/Hero'),
-    minion = require('../models/Minion');
+    minion = require('../models/Minion'),
+    item = require('../models/Item');
 
 module.exports = function(config) {
     mongoose.connect(config.db);
@@ -22,7 +22,7 @@ module.exports = function(config) {
     });
 
     user.seedInitialUsers();
-    course.seedInitialCourses();
     //hero.seedTestHero();
     minion.seedTestMinion();
+    item.seedInitialItems();
 };

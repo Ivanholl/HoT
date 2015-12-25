@@ -24,6 +24,17 @@ footer p {
   border-top: 1px solid #808080;
   padding-top: 10px;
 }
+.news {
+  background-color: #485563;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 50px;
+}
+.news h2 {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #808080;
+}
 .logo {
   margin: 0;
   padding: 0;
@@ -69,10 +80,15 @@ footer p {
   height: 105px;
 }
 .itemInfo {
+  width: 200px;
+  heigh: 100px;
   visibility: hidden;
   position: absolute;
   z-index: 3;
-  background-color: #000;
+  background-color: rgba(43,62,80,0.9);
+  boder: 1px solid #000;
+  border-radius: 10px;
+  padding: 3px;
 }
 .item:hover .itemInfo {
   visibility: visible;

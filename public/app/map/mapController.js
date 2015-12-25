@@ -21,23 +21,9 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
             $("#" + lastSelectedZone).removeClass('selectedZone');
             lastSelectedZone = selectedZone;
         }
-        if (movementOptions.getMovementOptions().hasBattle) {
-            $("#battle").removeClass('disabled');
-        } else {
-            $("#battle").addClass('disabled');
-        }
 
         if(curZoneID == selectedZone){
-            if (movementOptions.getMovementOptions().hasNextZone) {
-                $("#next").removeClass('disabled');
-
-            }
-            if (movementOptions.getMovementOptions().hasPrevZone) {
-                $("#prev").removeClass('disabled');
-            }
-            if (movementOptions.getMovementOptions().hasBranchZone) {
-                $("#branch").removeClass('disabled');
-            }
+            SetMovementOptions()
         } else {
             $("#battle").addClass('disabled');
             $("#prev").addClass('disabled');
@@ -45,6 +31,29 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
             $("#next").addClass('disabled');
         }
     };
+
+    function SetMovementOptions(){
+        if (movementOptions.getMovementOptions().hasNextZone) {
+            $("#next").removeClass('disabled');
+
+        }
+        if (movementOptions.getMovementOptions().hasPrevZone) {
+            $("#prev").removeClass('disabled');
+        }
+        if (movementOptions.getMovementOptions().hasBranchZone) {
+            $("#branch").removeClass('disabled');
+        }
+        if (movementOptions.getMovementOptions().hasBattle) {
+            $("#battle").removeClass('disabled');
+            $("#battle").addClass('btn-danger');
+        } else {
+            $("#battle").removeClass('disabled');
+            $("#battle").html('Enter');
+            $("#battle").addClass('btn-info');
+        }
+    }
+
+    SetMovementOptions();
 
     $scope.prev = function(){
         updateLocation.updateLocation(movementOptions.getMovementOptions().prevZone);
@@ -57,6 +66,10 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
     };
     $scope.branch = function(){
         updateLocation.updateLocation(movementOptions.getMovementOptions().branchZone);
+        checkIfBattle()
+    };
+
+    $scope.battle = function(){
         checkIfBattle()
     };
 

@@ -3,6 +3,7 @@
    .jumbotron
       div(ng-if="healer" ng-include="'partials/town/healer.jade'")
       div(ng-if="library" ng-include="'partials/town/library.jade'")
+      div(ng-if="armory" ng-include="'partials/town/armory.jade'")
       br
       div(ng-include="'partials/common/playerInfoWindow'")
 
@@ -16,7 +17,7 @@
          li
             a.btn.btn-warning.disabled Bank
          li
-            a.btn.btn-warning.disabled Armory
+            a.btn.btn-warning(ng-click="enterBuilding('armory')") Armory
          li
             a.btn.btn-warning.disabled Market Place
          li

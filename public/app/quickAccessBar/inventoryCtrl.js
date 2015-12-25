@@ -4,27 +4,27 @@ app.controller('inventoryCtrl', function($scope, identity, updateHero, equipment
 
     //console.log($scope.hero);
 
-    if ($scope.hero.inventory.length <= 0) {
+   /* if ($scope.hero.inventory.length <= 0) {
         $scope.hero.inventory.push({
             title: "Stick",
             pic: "pictures/items/stick.png",
             type: 'weapon',
             weight: '1',
-            bonus: ['DMmin+1']
+            bonus: ['dm[0]','1']
         });
         $scope.hero.inventory.push({
             title: "Helm",
             pic: "pictures/items/pot.png",
             type: 'helm',
             weight: '1',
-            bonus: ['DF+1']
+            bonus: ['df','1']
         });
         $scope.hero.inventory.push({
             title: "neckless",
             pic: "pictures/items/item.jpg",
             type: 'neckless',
             weight: '1',
-            bonus: ['DF+1']
+            bonus: ['df','1']
         });
         $scope.hero.inventory.push({
             title: "wep 2",
@@ -35,7 +35,7 @@ app.controller('inventoryCtrl', function($scope, identity, updateHero, equipment
         });
 
         updateHero.update($scope.hero, identity.currentUser)
-    }
+    }*/
 
     $scope.equip = function (item) {
         equipment.equip($scope.hero, item);
