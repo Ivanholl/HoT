@@ -1,4 +1,4 @@
-Telerik-Academy-Courses
+Heroes of Trebichenburg
 =======================
 
-MEAN Stack Application
+some browser game
