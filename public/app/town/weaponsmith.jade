@@ -1,0 +1,35 @@
+div(ng-controller="weaponsmithCtrl")
+   ul.nav.nav-tabs
+      li
+         .btn.btn-primary(ng-click="sortByType('weapon')") Swords
+      li
+         .btn.btn-primary(ng-click="sortByType('weapon')") Axes
+      li
+         .btn.btn-primary.disabled(ng-click="sortByType('weapon')") Spears
+      li
+         .btn.btn-primary.disabled(ng-click="sortByType('weapon')") Daggers
+      li
+         .btn.btn-primary.disabled(ng-click="sortByType('weapon')") Bows
+      li
+         .btn.btn-primary.disabled(ng-click="sortByType('weapon')") Staves
+      li
+         .btn.btn-primary(ng-click="sortByType('weapon')") Wands
+      li
+         .btn.btn-primary(ng-click="sortByType('shield')") Shields
+      li
+         .btn.btn-primary.disabled(ng-click="sortByType('shield')") Charms
+
+   div(ng-if="type")
+      table.table.table-striped.table-hover
+         thead
+            th.item Item
+            th(style="float:right;") Price
+         tbody
+            tr(ng-repeat="item in items")
+               td.item {{item.title}}
+                  .itemInfo
+                     h4.text-primary {{item.title}}
+                     p.text-warning {{item.type}}
+                     span(ng-repeat="bonus in item.bonus") {{bonus}} +
+               td(style="float:right;") {{item.price}}
+               td.btn-info(ng-click="buy(item)") buy
