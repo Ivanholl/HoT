@@ -2,7 +2,8 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
     var oneHpPrice = 50,
         oneDmMinPrice = 75,
         oneDmMaxPrice = 75,
-        oneDfPrice = 110;
+        oneDfPrice = 110,
+        oneStrPrice = 120;
 
     $scope.hero = identity.currentUser.heroList[0];
     
@@ -51,6 +52,18 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
         if ($scope.hero.ss >= oneDfPrice) {
 
             $scope.hero.df++;
+            $scope.hero.ss -= oneDfPrice;
+
+            updateHero.update($scope.hero, identity.currentUser);
+        } else {
+            alert('Not Enough Soul Stones!')
+        }
+    };
+
+    $scope.buyOneStr = function(){
+        if ($scope.hero.ss >= oneStrPrice) {
+
+            $scope.hero.str++;
             $scope.hero.ss -= oneDfPrice;
 
             updateHero.update($scope.hero, identity.currentUser);

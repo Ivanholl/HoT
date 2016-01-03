@@ -1,15 +1,15 @@
 div(ng-controller="armoryCtrl")
    ul.nav.nav-tabs
       li.active
-         .btn.btn-warning(ng-click="sortByType('helm')") Helms
+         .btn.btn-primary(ng-click="sortByType('helm')") Helms
       li
-         .btn.btn-warning(ng-click="sortByType('chest')") Chest
+         .btn.btn-primary(ng-click="sortByType('chest')") Chest
       li
-         .btn.btn-warning(ng-click="sortByType('pants')") Leggings
+         .btn.btn-primary(ng-click="sortByType('pants')") Leggings
       li
-         .btn.btn-warning(ng-click="sortByType('boots')") Boots
+         .btn.btn-primary(ng-click="sortByType('boots')") Boots
       li
-         .btn.btn-warning(ng-click="sortByType('gloves')") Gloves
+         .btn.btn-primary(ng-click="sortByType('gloves')") Gloves
 
    div(ng-if="type")
       table.table.table-striped.table-hover
