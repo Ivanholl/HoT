@@ -5,6 +5,7 @@
       div(ng-if="library" ng-include="'partials/town/library.jade'")
       div(ng-if="armory" ng-include="'partials/town/armory.jade'")
       div(ng-if="weaponsmith" ng-include="'partials/town/weaponsmith.jade'")
+      div(ng-if="bar" ng-include="'partials/town/bar.jade'")
       br
       div(ng-include="'partials/common/playerInfoWindow'")
 
@@ -30,7 +31,7 @@
          li
             a.btn.btn-warning.disabled Market Place
          li
-            a.btn.btn-warning.disabled Bar
+            a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
 
       .btn.btn-danger(ng-click="toMap()") Back to Map
 
