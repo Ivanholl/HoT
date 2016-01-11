@@ -1,4 +1,6 @@
 .itemTooltip(ng-controller="ItemTooltipCtrl")
-   img.itemPic(src="{{item.pic}}")
-   .itemTitle {{item.title}}
-   .itemType {{item.type}}
+   img.itemPic(src="{{tooltipItem.pic}}")
+   .itemTitle {{tooltipItem.title}}
+   .itemType {{tooltipItem.type}}
+   div(ng-reapeat="bonus in tooltipItem")
+      span bonus
