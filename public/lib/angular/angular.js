@@ -286,7 +286,7 @@ function isArrayLike(obj) {
  * @function
  *
  * @description
- * Invokes the `iterator` function once for each item in `obj` collection, which can be either an
+ * Invokes the `iterator` function once for each tooltips in `obj` collection, which can be either an
  * object or an array. The `iterator` function is invoked with `iterator(value, key)`, where `value`
  * is the value of an object property or an array element and `key` is the object property key or
  * array element index. Specifying a `context` for the function is optional.
@@ -1348,7 +1348,7 @@ function angularInit(element, bootstrap) {
  * });
  * </file>
  * <file name="protractor.js" type="protractor">
- * it('should only insert one table cell for each item in $scope.fillings', function() {
+ * it('should only insert one table cell for each tooltips in $scope.fillings', function() {
  *  expect(element.all(by.css('td')).count())
  *      .toBe(9);
  * });
@@ -1357,7 +1357,7 @@ function angularInit(element, bootstrap) {
  *
  * @param {DOMElement} element DOM element which is the root of angular application.
  * @param {Array<String|Function|Array>=} modules an array of modules to load into the application.
- *     Each item in the array should be the name of a predefined module or a (DI annotated)
+ *     Each tooltips in the array should be the name of a predefined module or a (DI annotated)
  *     function that will be invoked by the injector as a run block.
  *     See: {@link angular.module modules}
  * @returns {auto.$injector} Returns the newly created injector for this app.
@@ -3245,7 +3245,7 @@ function annotate(fn) {
  * By adding a `$inject` property onto a function the injection parameters can be specified.
  *
  * ## Inline
- * As an array of injection names, where the last item in the array is the function to call.
+ * As an array of injection names, where the last tooltips in the array is the function to call.
  */
 
 /**
@@ -13044,7 +13044,7 @@ function $SceDelegateProvider() {
     function isResourceUrlAllowedByPolicy(url) {
       var parsedUrl = urlResolve(url.toString());
       var i, n, allowed = false;
-      // Ensure that at least one item from the whitelist allows this url.
+      // Ensure that at least one tooltips from the whitelist allows this url.
       for (i = 0, n = resourceUrlWhitelist.length; i < n; i++) {
         if (matchUrl(resourceUrlWhitelist[i], parsedUrl)) {
           allowed = true;
@@ -13052,7 +13052,7 @@ function $SceDelegateProvider() {
         }
       }
       if (allowed) {
-        // Ensure that no item from the blacklist blocked this url.
+        // Ensure that no tooltips from the blacklist blocked this url.
         for (i = 0, n = resourceUrlBlacklist.length; i < n; i++) {
           if (matchUrl(resourceUrlBlacklist[i], parsedUrl)) {
             allowed = false;
@@ -14369,7 +14369,7 @@ function $FilterProvider($provide) {
  *
  *     - `function(actual, expected)`:
  *       The function will be given the object value and the predicate value to compare and
- *       should return true if the item should be included in filtered result.
+ *       should return true if the tooltips should be included in filtered result.
  *
  *     - `true`: A shorthand for `function(actual, expected) { return angular.equals(expected, actual)}`.
  *       this is essentially strict comparison of expected and actual.
@@ -16492,7 +16492,7 @@ var inputType = {
            <input type="radio" ng-model="color" value="blue"> Blue <br/>
            <tt>color = {{color | json}}</tt><br/>
           </form>
-          Note that `ng-value="specialValue"` sets radio item's value to be the value of `$scope.specialValue`.
+          Note that `ng-value="specialValue"` sets radio tooltips's value to be the value of `$scope.specialValue`.
         </file>
         <file name="protractor.js" type="protractor">
           it('should change state', function() {
@@ -19718,9 +19718,9 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  * @name ngRepeat
  *
  * @description
- * The `ngRepeat` directive instantiates a template once per item from a collection. Each template
- * instance gets its own scope, where the given loop variable is set to the current collection item,
- * and `$index` is set to the item index or key.
+ * The `ngRepeat` directive instantiates a template once per tooltips from a collection. Each template
+ * instance gets its own scope, where the given loop variable is set to the current collection tooltips,
+ * and `$index` is set to the tooltips index or key.
  *
  * Special properties are exposed on the local scope of each template instance, including:
  *
@@ -19744,14 +19744,14 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  *
  * The example below makes use of this feature:
  * ```html
- *   <header ng-repeat-start="item in items">
- *     Header {{ item }}
+ *   <header ng-repeat-start="tooltips in items">
+ *     Header {{ tooltips }}
  *   </header>
  *   <div class="body">
- *     Body {{ item }}
+ *     Body {{ tooltips }}
  *   </div>
  *   <footer ng-repeat-end>
- *     Footer {{ item }}
+ *     Footer {{ tooltips }}
  *   </footer>
  * ```
  *
@@ -19781,11 +19781,11 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  * as **data-ng-repeat-start**, **x-ng-repeat-start** and **ng:repeat-start**).
  *
  * @animations
- * **.enter** - when a new item is added to the list or when an item is revealed after a filter
+ * **.enter** - when a new tooltips is added to the list or when an tooltips is revealed after a filter
  *
- * **.leave** - when an item is removed from the list or when an item is filtered out
+ * **.leave** - when an tooltips is removed from the list or when an tooltips is filtered out
  *
- * **.move** - when an adjacent item is filtered out causing a reorder or when the item contents are reordered
+ * **.move** - when an adjacent tooltips is filtered out causing a reorder or when the tooltips contents are reordered
  *
  * @element ANY
  * @scope
@@ -19810,19 +19810,19 @@ var ngPluralizeDirective = ['$locale', '$interpolate', function($locale, $interp
  *     mapped to the same DOM element, which is not possible.)  Filters should be applied to the expression,
  *     before specifying a tracking expression.
  *
- *     For example: `item in items` is equivalent to `item in items track by $id(item)'. This implies that the DOM elements
- *     will be associated by item identity in the array.
+ *     For example: `tooltips in items` is equivalent to `tooltips in items track by $id(tooltips)'. This implies that the DOM elements
+ *     will be associated by tooltips identity in the array.
  *
- *     For example: `item in items track by $id(item)`. A built in `$id()` function can be used to assign a unique
- *     `$$hashKey` property to each item in the array. This property is then used as a key to associated DOM elements
- *     with the corresponding item in the array by identity. Moving the same object in array would move the DOM
+ *     For example: `tooltips in items track by $id(tooltips)`. A built in `$id()` function can be used to assign a unique
+ *     `$$hashKey` property to each tooltips in the array. This property is then used as a key to associated DOM elements
+ *     with the corresponding tooltips in the array by identity. Moving the same object in array would move the DOM
  *     element in the same way in the DOM.
  *
- *     For example: `item in items track by item.id` is a typical pattern when the items come from the database. In this
+ *     For example: `tooltips in items track by tooltips.id` is a typical pattern when the items come from the database. In this
  *     case the object identity does not matter. Two objects are considered equivalent as long as their `id`
  *     property is same.
  *
- *     For example: `item in items | filter:searchText track by item.id` is a pattern that might be used to apply a filter
+ *     For example: `tooltips in items | filter:searchText track by tooltips.id` is a pattern that might be used to apply a filter
  *     to items in conjunction with a tracking expression.
  *
  * @example
@@ -19961,7 +19961,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
         valueIdentifier = match[3] || match[1];
         keyIdentifier = match[2];
 
-        // Store a list of elements from previous run. This is a hash where key is the item from the
+        // Store a list of elements from previous run. This is a hash where key is the tooltips from the
         // iterator, and the value is objects with following properties.
         //   - scope: bound scope
         //   - element: previous element.
@@ -20061,12 +20061,12 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
               } while(nextNode && nextNode[NG_REMOVED]);
 
               if (getBlockStart(block) != nextNode) {
-                // existing item which got moved
+                // existing tooltips which got moved
                 $animate.move(getBlockElements(block.clone), null, jqLite(previousNode));
               }
               previousNode = getBlockEnd(block);
             } else {
-              // new item which we don't know about
+              // new tooltips which we don't know about
               childScope = $scope.$new();
             }
 
@@ -20135,7 +20135,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
  *
  * You may be wondering why !important is used for the .ng-hide CSS class. This is because the `.ng-hide` selector
  * can be easily overridden by heavier selectors. For example, something as simple
- * as changing the display style on a HTML list item would make hidden elements appear visible.
+ * as changing the display style on a HTML list tooltips would make hidden elements appear visible.
  * This also becomes a bigger issue when dealing with CSS frameworks.
  *
  * By using !important, the show and hide behavior will work as expected despite any clash between CSS selector
@@ -20295,7 +20295,7 @@ var ngShowDirective = ['$animate', function($animate) {
  *
  * You may be wondering why !important is used for the .ng-hide CSS class. This is because the `.ng-hide` selector
  * can be easily overridden by heavier selectors. For example, something as simple
- * as changing the display style on a HTML list item would make hidden elements appear visible.
+ * as changing the display style on a HTML list tooltips would make hidden elements appear visible.
  * This also becomes a bigger issue when dealing with CSS frameworks.
  *
  * By using !important, the show and hide behavior will work as expected despite any clash between CSS selector
@@ -20531,7 +20531,7 @@ var ngStyleDirective = ngDirective(function(scope, element, attr) {
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
     <file name="index.html">
       <div ng-controller="Ctrl">
-        <select ng-model="selection" ng-options="item for item in items">
+        <select ng-model="selection" ng-options="tooltips for tooltips in items">
         </select>
         <tt>selection={{selection}}</tt>
         <hr/>
@@ -20817,7 +20817,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  * elements for the `<select>` element using the array or object obtained by evaluating the
  * `ngOptions` comprehension_expression.
  *
- * When an item in the `<select>` menu is selected, the array element or object property
+ * When an tooltips in the `<select>` menu is selected, the array element or object property
  * represented by the selected option will be bound to the model identified by the `ngModel`
  * directive.
  *
@@ -20860,7 +20860,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  * Where:
  *
  *   * `array` / `object`: an expression which evaluates to an array / object to iterate over.
- *   * `value`: local variable which will refer to each item in the `array` or each property value
+ *   * `value`: local variable which will refer to each tooltips in the `array` or each property value
  *      of `object` during iteration.
  *   * `key`: local variable which will refer to a property name in `object` during iteration.
  *   * `label`: The result of this expression will be the label for `<option>` element. The
@@ -21156,7 +21156,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
               for (groupIndex = 0, groupLength = optionGroupsCache.length;
                    groupIndex < groupLength;
                    groupIndex++) {
-                // list of options for that group. (first item has the parent)
+                // list of options for that group. (first tooltips has the parent)
                 optionGroup = optionGroupsCache[groupIndex];
 
                 for(index = 1, length = optionGroup.length; index < length; index++) {
@@ -21274,7 +21274,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
               } else {
                 selected = modelValue === valueFn(scope, locals);
               }
-              selectedSet = selectedSet || selected; // see if at least one item is selected
+              selectedSet = selectedSet || selected; // see if at least one tooltips is selected
             }
             label = displayFn(scope, locals); // what will be seen by the user
 
@@ -21292,7 +21292,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
               // insert null option if we have a placeholder, or the model is null
               optionGroups[''].unshift({id:'', label:'', selected:!selectedSet});
             } else if (!selectedSet) {
-              // option could not be found, we have to insert the undefined item
+              // option could not be found, we have to insert the undefined tooltips
               optionGroups[''].unshift({id:'?', label:'', selected:true});
             }
           }
@@ -21304,7 +21304,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
             // current option group name or '' if no group
             optionGroupName = optionGroupNames[groupIndex];
 
-            // list of options for that group. (first item has the parent)
+            // list of options for that group. (first tooltips has the parent)
             optionGroup = optionGroups[optionGroupName];
 
             if (optionGroupsCache.length <= groupIndex) {

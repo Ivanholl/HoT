@@ -1,4 +1,3 @@
-app.controller('MainCtrl', function($scope, cachedCourses, identity) {
+app.controller('MainCtrl', function($scope, identity) {
     $scope.identity = identity;
-    $scope.courses = cachedCourses.query();
 });

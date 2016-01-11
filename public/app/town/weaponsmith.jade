@@ -25,11 +25,11 @@ div(ng-controller="weaponsmithCtrl")
             th.item Item
             th(style="float:right;") Price
          tbody
-            tr(ng-repeat="item in items")
+            tr(ng-repeat="tooltips in items")
                td.item {{item.title}}
                   .itemInfo
                      h4.text-primary {{item.title}}
                      p.text-warning {{item.type}}
-                     span(ng-repeat="bonus in item.bonus") {{bonus}} +
+                     span(ng-repeat="bonus in tooltips.bonus") {{bonus}} +
                td(style="float:right;") {{item.price}}
-               td.btn-info(ng-click="buy(item)") buy
+               td.btn-info(ng-click="buy(tooltips)") buy

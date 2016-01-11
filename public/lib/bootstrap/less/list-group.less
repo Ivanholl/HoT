@@ -8,7 +8,7 @@
 // Easily usable on <ul>, <ol>, or <div>.
 
 .list-group {
-  // No need to set list-style: none; since .list-group-item is block level
+  // No need to set list-style: none; since .list-group-tooltips is block level
   margin-bottom: 20px;
   padding-left: 0; // reset padding because ul and ol
 }
@@ -65,7 +65,7 @@ a.list-group-item {
     background-color: @list-group-hover-bg;
   }
 
-  // Active class on item itself, not parent
+  // Active class on tooltips itself, not parent
   &.active,
   &.active:hover,
   &.active:focus {
@@ -98,7 +98,7 @@ a.list-group-item {
 
 // Custom content options
 //
-// Extra classes for creating well-formatted content within `.list-group-item`s.
+// Extra classes for creating well-formatted content within `.list-group-tooltips`s.
 
 .list-group-item-heading {
   margin-top: 0;

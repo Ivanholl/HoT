@@ -80,6 +80,13 @@ footer p {
   width: 80px;
   height: 105px;
 }
+.toolTip {
+  position: absolute;
+  z-index: 3;
+}
+.equipBtn {
+  with: 30px;
+}
 .itemInfo {
   width: 200px;
   heigh: 100px;

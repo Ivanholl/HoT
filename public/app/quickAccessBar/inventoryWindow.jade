@@ -9,13 +9,10 @@
             th(style="float:right;") Weight
          tbody
             tr(ng-repeat="item in inventory")
-               td.item {{item.title}}
-                  .itemInfo
-                     h4.text-primary {{item.title}}
-                     p.text-warning {{item.type}}
-                     span(ng-repeat="bonus in item.bonus") {{bonus}} +
+               td.item(ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false") {{item.title}}
+                  .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
                td(style="float:right;") {{item.weight}}
-               td.btn-info(ng-click="equip(item)") equip
+               td.btn-info.equipBtn(ng-click="equip(item)") equip
 
    .equipped
       img(src="pictures/inventory.jpg" style="visibility: hidden")

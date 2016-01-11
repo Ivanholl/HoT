@@ -228,7 +228,7 @@ function shallowClearAndCopy(src, dst) {
        // server returns: [ {id:456, number:'1234', name:'Smith'} ];
 
        var card = cards[0];
-       // each item is an instance of CreditCard
+       // each tooltips is an instance of CreditCard
        expect(card instanceof CreditCard).toEqual(true);
        card.name = "J. Smith";
        // non GET methods are mapped onto the instances
