@@ -10,7 +10,7 @@ app.controller('weaponsmithCtrl', function($scope, identity, ItemResource, updat
 
     $scope.buy = function (item) {
         if ($scope.hero.gold >= item.price) {
-            $scope.weight += item.weight;
+            $scope.hero.weight += item.weight;
 
             if ($scope.hero.weight <= $scope.hero.str) {
                 $scope.hero.gold -= item.price;

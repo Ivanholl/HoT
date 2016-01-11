@@ -13,12 +13,17 @@ var itemSchema = mongoose.Schema({
 var Item = mongoose.model('Item', itemSchema);
 
 module.exports.seedInitialItems = function() {
+    //Item.remove({})
     Item.find({}).exec(function(err, collection) {
         if (err) {
             console.log('Cannot find items: ' + err);
             return;
         }
-
+        
+       /* if(collection.length !== 0){
+            Item.remove({}, function(){console.log("itemes removed")})
+        }*/
+        
         if (collection.length === 0) {
     //helms
             Item.create({title:"Simple Helm", type: 'helm', weight:'1', bonus:['df','1'],price:130, pic: "/pictures/items/item.jpg"});

@@ -73,6 +73,7 @@ footer p {
   float: left;
   display: inline-block;
   width: 200px;
+  text-align: center;
 }
 .item {
   position: absolute;

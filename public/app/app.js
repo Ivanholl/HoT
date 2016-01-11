@@ -42,13 +42,9 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'townCtrl',
             resolve: routeUserChecks.authenticated
         })
-        .when('/courses', {
-            templateUrl: '/partials/courses/courses-list',
-            controller: 'CoursesListCtrl'
-        })
-        .when('/courses/:id', {
-            templateUrl: '/partials/courses/course-details',
-            controller: 'CourseDetailsCtrl'
+        .when('/test', {
+            templateUrl: '/partials/test/test',
+            controller: 'testCtrl'
         })
         .when('/signup', {
             templateUrl: '/partials/account/signup',

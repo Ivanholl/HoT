@@ -35,7 +35,6 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
     function SetMovementOptions(){
         if (movementOptions.getMovementOptions().hasNextZone) {
             $("#next").removeClass('disabled');
-
         }
         if (movementOptions.getMovementOptions().hasPrevZone) {
             $("#prev").removeClass('disabled');

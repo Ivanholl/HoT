@@ -1,5 +1,8 @@
 .inventory(ng-controller="inventoryCtrl")
    .itemList
+      h2 Inventory
+      span inventory weight {{hero.weight}}/{{hero.str}}
+      span(ng-if="herp.str-hero.weight >= 3") 3 str left
       table.table.table-striped.table-hover
          thead
             th Item

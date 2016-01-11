@@ -14,7 +14,7 @@ var routeLoadingIndicator = function($rootScope) {
             });
             $rootScope.$on('$routeChangeSuccess', function() {
 
-                scope.isRouteLoading = false;
+               scope.isRouteLoading = false;
             });
         }
     };

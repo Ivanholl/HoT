@@ -12,6 +12,7 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
 
             $scope.hero.maxHp++;
             $scope.hero.hp++;
+            $scope.hero.ap++;
             $scope.hero.ss -= oneHpPrice;
 
             updateHero.update($scope.hero, identity.currentUser);
@@ -24,6 +25,7 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
         if ($scope.hero.ss >= oneDmMinPrice) {
             if ($scope.hero.dm[0] < $scope.hero.dm[1]) {
                 $scope.hero.dm[0]++;
+                $scope.hero.ap++;
                 $scope.hero.ss -= oneDmMinPrice;
 
                 updateHero.update($scope.hero, identity.currentUser);
@@ -40,6 +42,7 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
         if ($scope.hero.ss >= oneDmMaxPrice) {
 
             $scope.hero.dm[1]++;
+            $scope.hero.ap++;
             $scope.hero.ss -= oneDmMaxPrice;
 
             updateHero.update($scope.hero, identity.currentUser);
@@ -52,6 +55,7 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
         if ($scope.hero.ss >= oneDfPrice) {
 
             $scope.hero.df++;
+            $scope.hero.ap++;
             $scope.hero.ss -= oneDfPrice;
 
             updateHero.update($scope.hero, identity.currentUser);
@@ -64,6 +68,7 @@ app.controller('libraryCtrl', function($scope, identity, updateHero){
         if ($scope.hero.ss >= oneStrPrice) {
 
             $scope.hero.str++;
+            $scope.hero.ap++;
             $scope.hero.ss -= oneDfPrice;
 
             updateHero.update($scope.hero, identity.currentUser);
