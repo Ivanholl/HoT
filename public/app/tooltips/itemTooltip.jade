@@ -2,5 +2,7 @@
    img.itemPic(src="{{tooltipItem.pic}}")
    .itemTitle {{tooltipItem.title}}
    .itemType {{tooltipItem.type}}
-   div(ng-reapeat="bonus in tooltipItem")
-      span bonus
+   br
+   div(ng-repeat="bonus in tooltipItem.bonus")
+      span(ng-if="$index % 2 != 0") + {{bonus}}
+      span(ng-if="$index % 2 == 0") {{bonus}}
