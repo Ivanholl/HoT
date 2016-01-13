@@ -1,0 +1,14 @@
+div(ng-controller="armoryCtrl")
+   ul.nav.nav-tabs
+      li.active
+         .btn.btn-primary(ng-click="sortByClass('helm')") Helms
+      li
+         .btn.btn-primary(ng-click="sortByClass('chest')") Chest
+      li
+         .btn.btn-primary(ng-click="sortByClass('pants')") Leggings
+      li
+         .btn.btn-primary(ng-click="sortByClass('boots')") Boots
+      li
+         .btn.btn-primary(ng-click="sortByClass('gloves')") Gloves
+
+   div(ng-include="'partials/town/salesTable'")

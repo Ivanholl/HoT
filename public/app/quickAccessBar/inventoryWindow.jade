@@ -9,7 +9,7 @@
             th(style="float:right;") Weight
          tbody
             tr(ng-repeat="item in inventory")
-               td.item(ng-mouseover="tooltip=true; tooltipItem = item" ) {{item.title}}
+               td(ng-mouseover="tooltip=true; tooltipItem = item") {{item.title}}
                   .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
                td(style="float:right;") {{item.weight}}
                td.btn-info.equipBtn(ng-click="equip(item)") equip
@@ -18,69 +18,69 @@
       img(src="pictures/inventory.jpg" style="visibility: hidden")
       .item.helm
          img(src="{{hero.equipment[0].pic}}" ng-mouseover="showhelm=true; tooltipItem = hero.equipment[0]" ng-mouseleave="showhelm=false")
-         .toolTip(ng-if="showhelm, hero.equipment[0].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showhelm && hero.equipment[0].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[0])") unequip
          
       .item.chest
          img(src="{{hero.equipment[1].pic}}" ng-mouseover="showChest=true; tooltipItem = hero.equipment[1]" ng-mouseleave="showChest=false")
-         .toolTip(ng-if="showChest, hero.equipment[1].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showChest && hero.equipment[1].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[1])") unequip
             
       .item.belt
          img(src="{{hero.equipment[2].pic}}" ng-mouseover="showBelt=true; tooltipItem = hero.equipment[2]" ng-mouseleave="showBelt=false")
-         .toolTip(ng-if="showBelt, hero.equipment[2].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showBelt && hero.equipment[2].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[2])") unequip
          
       .item.pants
          img(src="{{hero.equipment[3].pic}}" ng-mouseover="showPants=true; tooltipItem = hero.equipment[3]" ng-mouseleave="showPants=false")
-         .toolTip(ng-if="showPants, hero.equipment[3].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showPants && hero.equipment[3].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.boots
          img(src="{{hero.equipment[4].pic}}" ng-mouseover="showBoots=true; tooltipItem = hero.equipment[4]" ng-mouseleave="showBoots=false")
-         .toolTip(ng-if="showBoots, hero.equipment[4].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showBoots && hero.equipment[4].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[4])") unequip
       .item.symbol
          img(src="{{hero.equipment[10].pic}}" ng-mouseover="showSumbol=true; tooltipItem = hero.equipment[10]" ng-mouseleave="showSumbol=false")
-         .toolTip(ng-if="showSumbol, hero.equipment[10].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showSumbol && hero.equipment[10].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.weapon
          img(src="{{hero.equipment[5].pic}}" ng-mouseover="showWep=true; tooltipItem = hero.equipment[5]" ng-mouseleave="showWep=false")
-         .toolTip(ng-if="showWep, hero.equipment[5].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showWep && hero.equipment[5].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.gloves
          img(src="{{hero.equipment[6].pic}}" ng-mouseover="showGloves=true; tooltipItem = hero.equipment[6]" ng-mouseleave="showGloves=false")
-         .toolTip(ng-if="showGloves, hero.equipment[6].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showGloves && hero.equipment[6].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.ring
          img(src="{{hero.equipment[11].pic}}" ng-mouseover="showRing=true; tooltipItem = hero.equipment[11]" ng-mouseleave="showRing=false")
-         .toolTip(ng-if="showRing, hero.equipment[11].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showRing && hero.equipment[11].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.mantle
          img(src="{{hero.equipment[7].pic}}" ng-mouseover="showMantle=true; tooltipItem = hero.equipment[2]" ng-mouseleave="showMantle=false")
-         .toolTip(ng-if="showMantle, hero.equipment[7].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showMantle && hero.equipment[7].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.shield
          img(src="{{hero.equipment[8].pic}}" ng-mouseover="showShield=true; tooltipItem = hero.equipment[8]" ng-mouseleave="showShield=false")
-         .toolTip(ng-if="showShield, hero.equipment[8].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showShield && hero.equipment[8].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.bracelet
          img(src="{{hero.equipment[9].pic}}" ng-mouseover="showBracelet=true; tooltipItem = hero.equipment[9]" ng-mouseleave="showBracelet=false")
-         .toolTip(ng-if="showBracelet, hero.equipment[9].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showBracelet && hero.equipment[9].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.secRing
          img(src="{{hero.equipment[12].pic}}" ng-mouseover="showsecRing=true; tooltipItem = hero.equipment[12]" ng-mouseleave="showsecRing=false")
-         .toolTip(ng-if="showsecRing, hero.equipment[12].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showsecRing && hero.equipment[12].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
          
       .item.neckless
          img(src="{{hero.equipment[13].pic}}" ng-mouseover="showNeckless=true; tooltipItem = hero.equipment[13]" ng-mouseleave="showNeckless=false")
-         .toolTip(ng-if="showNeckless, hero.equipment[13].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
+         .toolTip(ng-if="showNeckless && hero.equipment[13].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
          //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip

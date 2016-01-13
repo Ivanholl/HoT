@@ -1,0 +1,22 @@
+div(ng-controller="weaponsmithCtrl")
+   ul.nav.nav-tabs
+      li
+         .btn.btn-primary(ng-click="sortByClass('sword')") Swords
+      li
+         .btn.btn-primary(ng-click="sortByClass('axe')") Axes
+      li
+         .btn.btn-primary.disabled(ng-click="sortByClass('spear')") Spears
+      li
+         .btn.btn-primary.disabled(ng-click="sortByClass('dagger')") Daggers
+      li
+         .btn.btn-primary.disabled(ng-click="sortByClass('bow')") Bows
+      li
+         .btn.btn-primary.disabled(ng-click="sortByClass('staf')") Staves
+      li
+         .btn.btn-primary(ng-click="sortByClass('wand')") Wands
+      li
+         .btn.btn-primary(ng-click="sortByClass('shield')") Shields
+      li
+         .btn.btn-primary.disabled(ng-click="sortByClass('charm')") Charms
+
+   div(ng-include="'partials/town/salesTable'")

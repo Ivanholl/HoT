@@ -15,6 +15,10 @@ module.exports = function(app) {
     app.get('/partials/:partialArea/:partialName', function(req, res) {
         res.render('../../public/app/' + req.params.partialArea + '/' + req.params.partialName)
     });
+    app.get('/townPartials/:partialArea/:partialName', function (req, res) {
+        res.render('../../public/app/town/' + req.params.partialArea + '/' + req.params.partialName)
+    });
+
 
     app.post('/login', auth.login);
     app.post('/logout', auth.logout);

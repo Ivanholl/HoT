@@ -1,10 +1,12 @@
 .itemTooltip(ng-controller="ItemTooltipCtrl")
    .itemPic
       img(src="{{tooltipItem.pic}}")
-   .itemTitle
-      span {{tooltipItem.title}}
-   .itemType
-      span {{tooltipItem.type}}
+   .itemTitle {{tooltipItem.title}}
+   .itemType {{tooltipItem.type}}
+   .itemClass {{tooltipItem.class}}
+   hr
+   .itemWeight Weight: {{tooltipItem.weight}}
+   .itemSell Sell: {{tooltipItem.price / 2}}
    .bonusList
-      ul(ng-repeat="row in displayBonus")
-         li {{row}}
+      ul
+         li(ng-repeat="row in displayBonus") {{row}}

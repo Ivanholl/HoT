@@ -13,23 +13,23 @@ app.factory("ItemResource", function($resource) {
 
             return cachedItems;
         },
-        getItemsByType: function (type, one) {
-            var itemsByType = [],
+        getItemsByClass: function (type, one) {
+            var itemsByClass = [],
                 returnOne = one || false,
                 rand = getRandomInt(0, 5);
 
             $resource('api/items/:type').query(function (response) {
                 angular.forEach(response, function (item) {
-                    if (item.type == type) {
-                        itemsByType.push(item);
+                    if (item.class == type) {
+                        itemsByClass.push(item);
                     }
                 });
                 if (returnOne) {
-                    itemsByType.unshift(itemsByType[rand]); //pushes element in index 0
-                    itemsByType.length = 1;
+                    itemsByClass.unshift(itemsByClass[rand]); //pushes element in index 0
+                    itemsByClass.length = 1;
                 }
             });
-            return itemsByType;
+            return itemsByClass;
         }
     }
 })

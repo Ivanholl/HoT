@@ -1,11 +1,10 @@
 app.controller('weaponsmithCtrl', function($scope, identity, ItemResource, updateHero) {
     $scope.hero = identity.currentUser.heroList[0];
-    $scope.type = null;
+    $scope.class = null;
 
-    $scope.sortByType = function (type) {
-        $scope.type = type;
-        $scope.items = ItemResource.getItemsByType($scope.type);
-
+    $scope.sortByClass = function (type) {
+        $scope.class = type;
+        $scope.items = ItemResource.getItemsByClass($scope.class);
     };
 
     $scope.buy = function (item) {

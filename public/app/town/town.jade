@@ -1,11 +1,11 @@
 #container
    .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
    .jumbotron
-      div(ng-if="healer" ng-include="'partials/town/healer.jade'")
-      div(ng-if="library" ng-include="'partials/town/library.jade'")
-      div(ng-if="armory" ng-include="'partials/town/armory.jade'")
-      div(ng-if="weaponsmith" ng-include="'partials/town/weaponsmith.jade'")
-      div(ng-if="bar" ng-include="'partials/town/bar.jade'")
+      div(ng-if="healer" ng-include="'townPartials/healer/healer.jade'")
+      div(ng-if="library" ng-include="'townPartials/library/library.jade'")
+      div(ng-if="armory" ng-include="'townPartials/armory/armory.jade'")
+      div(ng-if="weaponsmith" ng-include="'townPartials/weaponsmith/weaponsmith.jade'")
+      div(ng-if="bar" ng-include="'townPartials/bar/bar.jade'")
       br
       div(ng-include="'partials/common/playerInfoWindow'")
 
