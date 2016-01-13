@@ -1,8 +1,10 @@
 .itemTooltip(ng-controller="ItemTooltipCtrl")
-   img.itemPic(src="{{tooltipItem.pic}}")
-   .itemTitle {{tooltipItem.title}}
-   .itemType {{tooltipItem.type}}
-   br
-   div(ng-repeat="bonus in tooltipItem.bonus")
-      span(ng-if="$index % 2 != 0") + {{bonus}}
-      span(ng-if="$index % 2 == 0") {{bonus}}
+   .itemPic
+      img(src="{{tooltipItem.pic}}")
+   .itemTitle
+      span {{tooltipItem.title}}
+   .itemType
+      span {{tooltipItem.type}}
+   .bonusList
+      ul(ng-repeat="row in displayBonus")
+         li {{row}}
