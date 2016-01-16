@@ -1,7 +1,7 @@
 body
-  padding-top 80px
+  //padding-top 80px
   maring 0px
-  padding 0px
+  //padding 0px
   background-image url("/pictures/background.png")
   //background-size cover
 
@@ -21,7 +21,7 @@ footer
   padding-left 120px
   padding-right 120px
   p
-    border-top 1px solid #808080
+    border-top 3px solid #808080
     padding-top 10px
 
 .news
@@ -41,18 +41,26 @@ footer
   height 40px
 
 #container
-  max-width 1000px
-  padding-left 5px
-  padding-right 5px
-  margin 0 auto
-  margin-top 40px
+  //margin-top 40px
+  width 1000px
+  //left -50%
+  margin-left calc(50% - 500px)
+  //margin 0 auto
+  //margin-top 40px
   box-shadow 0 0 17px 3px rgba(0,0,0,0.56)
+  background-color rgb(78,93,108)
+  border-left 3px solid #808080
+  border-right 3px solid #808080
+  display inline-block
 
 .hero-slot
   //box-shadow 0px 0px 17px 3px rgba(0,0,0,0.56)
 
 .quickAccessBar/**********************QUICK ACCESS***********************/
   float right
+  margin 5px
+  display inline-block
+  list-style none
 
 .quickAccessWindow
   padding 5px
@@ -165,7 +173,8 @@ footer
   position relative
   background-image url('/pictures/map.jpg')
   background-repeat no-repeat
-  display inline-block
+  //display inline-block
+  float left
   box-shadow 0 0 17px 3px rgba(0,0,0,0.56)
 
 .round-button
@@ -217,7 +226,7 @@ footer
   font-weight 600
   width 450px
   float right
-  display inline-block
+  //display inline-block
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56)
 
 .battle-info/********************************BATTLE************/
@@ -242,3 +251,11 @@ footer
 #buildingList /*******************************************TOWN*****/
   display inline-block
   list-style none
+  position absolute
+  bottom 0
+
+#town
+  width 990px
+  //margin-top 40px
+  height 800px
+  background-size 100% 100%

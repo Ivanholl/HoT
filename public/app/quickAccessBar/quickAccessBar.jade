@@ -1,3 +1,7 @@
-.quickAccessBar(ng-controller="QuickAccessCtrl")
-   a.btn.btn-warning(ng-click="inventory()") Inventory
-   .quickAccessWindow.jumbotron(ng-if="inventoryShow" ng-include="'partials/quickAccessBar/inventoryWindow.jade'")
+ul.nav.nav-tabs.quickAccessBar(ng-controller="QuickAccessCtrl")
+   li
+      a.btn.btn-warning(ng-click="inventory()") Inventory
+      .quickAccessWindow.jumbotron(ng-if="inventoryShow" ng-include="'partials/quickAccessBar/inventoryWindow.jade'")
+   li
+      a.btn.btn-warning(ng-click="charInfo = !charInfo") Character Info
+      .quickAccessWindow.jumbotron(ng-if="charInfo" ng-include="'partials/common/playerInfoWindow'")

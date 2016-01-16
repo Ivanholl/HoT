@@ -1,37 +1,35 @@
 #container
    .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
-   .jumbotron
+   #town(ng-style="{'background-image':'url(/pictures/{{hero.location}}.jpg)'}")
       div(ng-if="healer" ng-include="'townPartials/healer/healer.jade'")
       div(ng-if="library" ng-include="'townPartials/library/library.jade'")
       div(ng-if="armory" ng-include="'townPartials/armory/armory.jade'")
       div(ng-if="weaponsmith" ng-include="'townPartials/weaponsmith/weaponsmith.jade'")
       div(ng-if="bar" ng-include="'townPartials/bar/bar.jade'")
-      br
-      div(ng-include="'partials/common/playerInfoWindow'")
 
-      ul.nav.nav-tabs#buildingList
-         li
-            a.btn.btn-warning(ng-click="enterBuilding('library')") Library
-         li
-            a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
-         li
-            a.btn.btn-warning.disabled Mage
-         li
-            a.btn.btn-warning.disabled Bank
-         li
-            a.btn.btn-warning.disabled Merchant
-         li
-            a.btn.btn-warning(ng-click="enterBuilding('weaponsmith')") Weaponsmith
-         li
-            a.btn.btn-warning(ng-click="enterBuilding('armory')") Armory
-         li
-            a.btn.btn-warning.disabled Tailory
-         li
-            a.btn.btn-warning.disabled Jewery
-         li
-            a.btn.btn-warning.disabled Market Place
-         li
-            a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
-
-      .btn.btn-danger(ng-click="toMap()") Back to Map
+      #buildingList
+         ul.nav.nav-tabs
+            li
+               a.btn.btn-warning(ng-click="enterBuilding('library')") Library
+            li
+               a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
+            li
+               a.btn.btn-warning.disabled Mage
+            li
+               a.btn.btn-warning.disabled Bank
+            li
+               a.btn.btn-warning.disabled Merchant
+            li
+               a.btn.btn-warning(ng-click="enterBuilding('weaponsmith')") Weaponsmith
+            li
+               a.btn.btn-warning(ng-click="enterBuilding('armory')") Armory
+            li
+               a.btn.btn-warning.disabled Tailory
+            li
+               a.btn.btn-warning.disabled Jewery
+            li
+               a.btn.btn-warning.disabled Market Place
+            li
+               a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
+         .btn.btn-danger(ng-click="toMap()") Back to Map
 

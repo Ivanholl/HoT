@@ -1,7 +1,5 @@
 body {
-  padding-top: 80px;
   maring: 0px;
-  padding: 0px;
   background-image: url("/pictures/background.png");
 }
 section {
@@ -21,7 +19,7 @@ footer {
   padding-right: 120px;
 }
 footer p {
-  border-top: 1px solid #808080;
+  border-top: 3px solid #808080;
   padding-top: 10px;
 }
 .news {
@@ -42,15 +40,19 @@ footer p {
   height: 40px;
 }
 #container {
-  max-width: 1000px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 0 auto;
-  margin-top: 40px;
+  width: 1000px;
+  margin-left: calc(50% - 500px);
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+  background-color: #4e5d6c;
+  border-left: 3px solid #808080;
+  border-right: 3px solid #808080;
+  display: inline-block;
 }
 .quickAccessBar {
   float: right;
+  margin: 5px;
+  display: inline-block;
+  list-style: none;
 }
 .quickAccessWindow {
   padding: 5px;
@@ -163,7 +165,7 @@ footer p {
   position: relative;
   background-image: url("/pictures/map.jpg");
   background-repeat: no-repeat;
-  display: inline-block;
+  float: left;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
 .round-button {
@@ -215,7 +217,6 @@ footer p {
   font-weight: 600;
   width: 450px;
   float: right;
-  display: inline-block;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
 .battle-info {
@@ -240,4 +241,11 @@ footer p {
 #buildingList {
   display: inline-block;
   list-style: none;
+  position: absolute;
+  bottom: 0;
+}
+#town {
+  width: 990px;
+  height: 800px;
+  background-size: 100% 100%;
 }

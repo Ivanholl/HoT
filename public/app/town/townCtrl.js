@@ -6,6 +6,10 @@ app.controller('townCtrl', function($scope, identity) {
     $scope.weaponsmith = false;
     $scope.bar = false;
 
+    if($scope.hero.location == "etown"){
+        console.log("asd")
+    }
+
     $scope.toMap = function () {
         window.location.href  = '#/map';
     };

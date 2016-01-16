@@ -19,13 +19,16 @@ app.factory('equipment', function() {
     };
     function getBonus(hero, item) {
         for (var i = 0; i < item.bonus.length; i += 2) {
-            eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
+            debugger;
+            hero[item.bonus[i]] += (+item.bonus[i+1]);
+            //eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
         }
     }
 
     function removeBonus(hero, item) {
         for (var i = 0; i < item.bonus.length; i += 2) {
-            eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
+            hero[item.bonus[i]] -= +item.bonus[i+1];
+            //eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
         }
     }
 

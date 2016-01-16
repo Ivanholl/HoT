@@ -3,11 +3,13 @@ app.factory('battle', function(updateHero, identity){
         return {
             battle: function(hero, minion){  //Otherwise it is used once
                 var ///hero = identity.currentUser.heroList[0],
+
                     turnCount = 1,
                     ///minion =  MinionResource.getMinionsByZone(hero.location, true),
                     enemyMove = false,
                     winLoseCheck = false;
 
+                console.log(hero)
                 function getRandomInt(min, max) {
                     return Math.floor(Math.random() * (max - min + 1)) + min;
                 }

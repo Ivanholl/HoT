@@ -9,7 +9,7 @@
             th(style="float:right;") Weight
          tbody
             tr(ng-repeat="item in inventory")
-               td(ng-mouseover="tooltip=true; tooltipItem = item") {{item.title}}
+               td(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
                   .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
                td(style="float:right;") {{item.weight}}
                td.btn-info.equipBtn(ng-click="equip(item)") equip
@@ -68,7 +68,7 @@
       .item.shield
          img(src="{{hero.equipment[8].pic}}" ng-mouseover="showShield=true; tooltipItem = hero.equipment[8]" ng-mouseleave="showShield=false")
          .toolTip(ng-if="showShield && hero.equipment[8].pic" ng-include="'partials/tooltips/itemTooltip.jade'")
-         //.btn.btn-info(ng-click="unequip(hero.equipment[3])") unequip
+         .btn.btn-info(ng-click="unequip(hero.equipment[8])") unequip
          
       .item.bracelet
          img(src="{{hero.equipment[9].pic}}" ng-mouseover="showBracelet=true; tooltipItem = hero.equipment[9]" ng-mouseleave="showBracelet=false")
