@@ -1,8 +1,9 @@
 app.controller('healerCtrl', function($scope, identity, updateHero){
     $scope.hero = identity.currentUser.heroList[0];
     $scope.fullHealCost = getHealCost($scope.hero.maxHp - $scope.hero.hp);
-    var healAmount = angular.element('input').scope();
-    $scope.healingCost = getHealCost(healAmount);
+    $scope.healAmount = 0;
+    //var healAmount = angular.element('input').scope();
+    $scope.healingCost = getHealCost($scope.healAmount);
 
     if ($scope.hero.hp <= 0) {
         $scope.hero.hp = 1;

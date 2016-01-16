@@ -1,9 +1,11 @@
 div(ng-controller="healerCtrl")
-   h3 Healing costs 4gold
-   input(ng-model="healAmount")
-   .btn.btn-success(ng-click="heal(healAmount)") Heal
-   span Healing will cost: {{healingCost}}
    ul.nav.nav-pills
       li.active
          a.btn(ng-click="fullHeal()") Full Heal
             span.badge {{fullHealCost}} g
+   h4 Healing costs 4gold
+   input(ng-model="healAmount")
+   .btn.btn-success(ng-click="heal(healAmount)") Heal
+   span Healing will cost: {{healAmount * 4}}
+   img(src="pictures/symbols/gold.png")
+
