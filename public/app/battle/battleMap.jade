@@ -1,5 +1,6 @@
 #container
    .jumbotron
+   #battle(ng-style="{'background-image':'url(/pictures/{{hero.location}}.jpg)background-repeat: no-repeat'}")
       h3 {{zone}}
       .battle-info
          .minion-info.list-group(ng-repeat="minion in minions")
