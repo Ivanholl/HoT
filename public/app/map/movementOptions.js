@@ -76,7 +76,7 @@ app.factory('movementOptions', function(identity){
                 };
                     break;
                 case "dtown": return { //********************dwarf
-                    nextZone: "ozone1",
+                    nextZone: "dzone1",
                     hasPrevZone:false,
                     hasNextZone: true,
                     hasBranchZone:false,
