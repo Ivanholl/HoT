@@ -9,7 +9,7 @@ module.exports = {
     },
     production: {
         rootPath: rootPath,
-        db: process.env.OPENSHIFT_MONGODB_DB_URL + db_name,
+        db: process.env.OPENSHIFT_MONGODB_DB_URL + 'hot',
         port: process.env.OPENSHIFT_NODEJS_PORT || 3030
     }
 };
