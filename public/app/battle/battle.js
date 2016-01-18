@@ -9,7 +9,6 @@ app.factory('battle', function(updateHero, identity){
                     enemyMove = false,
                     winLoseCheck = false;
 
-                console.log(hero)
                 function getRandomInt(min, max) {
                     return Math.floor(Math.random() * (max - min + 1)) + min;
                 }
@@ -126,7 +125,7 @@ app.factory('battle', function(updateHero, identity){
                     $('#logger').append('===TURN ' + turnCount + '===').append('<br/>')
                     turnCount++;
                     $('#logger').append('You attack!').append('<br/>')
-                    Atack(hero, minion[0]);
+                    Atack(hero, minion);
                     getEnemyMove();
                 });
 
@@ -134,7 +133,7 @@ app.factory('battle', function(updateHero, identity){
                     $('#logger').append('===TURN ' + turnCount +'===').append('<br/>')
                     turnCount++;
                     $('#logger').append('You defend!').append('<br/>')
-                    Defend(minion[0], hero);
+                    Defend(minion, hero);
                     getEnemyMove();
                 });
 /*ESCAPE*/      $('#escape').click(function(){

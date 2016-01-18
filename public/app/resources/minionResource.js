@@ -1,35 +1,41 @@
-app.factory('MinionResource', function($resource) {
-	var cachedMinions;
+app.factory('MinionResource', function($resource, $routeParams) {
+	var lastZoneRequest,
+		minionsByZone,
+		cashedAllMinions;
 
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min)) + min;
 	}
 
 	return {
-		query: function() {
-			if (!cachedMinions) {
-				cachedMinions = $resource('api/minions/:location').query();
+		getAllMinions: function () {
+			if (!cashedAllMinions) {
+				cashedAllMinions = $resource('api/minions/:location').query();
 			}
 
-			return cachedMinions;
+			return cashedAllMinions;
 		},
-		getMinionsByZone: function(zone, one){
-			var minionsByZone = [],
-				returnOne = one || false,
+		getMinionsByZone: function (zone, one) {
+			var returnOne = one,
 				rand = getRandomInt(0, 5);
 
-			$resource('api/minions/:location').query(function (response) {
-				angular.forEach(response, function (item) {
-					if (item.location == zone) {
-						minionsByZone.push(item);
+			if (lastZoneRequest != zone | !minionsByZone) {
+				var Minion = $resource('api/minions/:location', {location: '@location'}, {
+					update: {
+						method: 'GET',
+						isArray: true
 					}
 				});
-				if(returnOne){
-					minionsByZone.unshift(minionsByZone[rand]); //pushes element in index 0
-					minionsByZone.length = 1;
-				}
-			});
-			return minionsByZone;
+				lastZoneRequest = zone;
+				minionsByZone = Minion.query({location: zone, isArray: true})
+			}
+			if (returnOne) {
+				var minionToReturn = minionsByZone[rand];//pushes element in index 0
+				//minionsByZone.length = 1;
+				return minionToReturn;
+			} else {
+				return minionsByZone;
+			}
 		}
 	}
 });

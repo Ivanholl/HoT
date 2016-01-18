@@ -1,0 +1,5 @@
+#container
+   ItemGiver
+      input(ng-model="sort")
+      .btn.btn-danger(ng-click="giveItem(sort)") sort
+      div(ng-include="'partials/town/salesTable'")

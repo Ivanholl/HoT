@@ -60,6 +60,11 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'UserListCtrl',
             resolve: routeUserChecks.adminRole
         })
+        .when('/admin/test', {
+            templateUrl: '/partials/admin/test',
+            controller: 'TestCtrl',
+            resolve: routeUserChecks.adminRole
+        })
 });
 
 app.run(function($rootScope, $location) {

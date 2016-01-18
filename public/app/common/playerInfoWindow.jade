@@ -4,6 +4,7 @@
     .list-group-item
         img(src="pictures/symbols/character icon.png")
         span {{hero.name}}
+        .text-primary Ap: {{hero.ap}}
     .list-group-item
         img(src="pictures/symbols/Hp2.png")
         span {{hero.hp}}/{{hero.maxHp}}
@@ -20,3 +21,6 @@
         span {{hero.gold}}
         img(src="pictures/symbols/soul stone2.png")
         span {{hero.ss}}
+    .list-group-item
+        img(src="pictures/symbols/location.png")
+        span.text-primary  {{hero.location}}

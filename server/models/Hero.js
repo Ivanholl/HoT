@@ -1,17 +1,38 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    equipment = [
+    helm = null,    //0
+    chest = null,
+    belt = null, /////2
+    pants = null,
+    boots = null,//////4
+    weapon = null,
+    gloves = null,///6
+    mantle = null,
+    shield = null,///8
+    bracelet = null,
+    symbol = null,////10
+    ring = null,
+    secRing = null,////12
+    neckless = null
+];
 
 var heroSchema = mongoose.Schema({
-    name: String,
+    avatar: String,
+    name: {type: String, require: '{PATH} is required', unique: true},
     ap: Number,
     hp: Number,
     maxHp: Number,
     mp: Number,
-    maxMp: Number,
-    dm: [Number],
+    maxMp:Number,
+    dm: [Number,Number],
     df: Number,
+    weight: Number,
+    str: Number,
     gold: Number,
     ss: Number,
     location: String,
+    inventory: [Object],
+    equipment: [Object],
     race: String
 });
 

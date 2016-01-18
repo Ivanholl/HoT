@@ -14,7 +14,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
         ring = null,
         secRing = null,////12
         neckless = null
-    ]
+    ];
 
     function getHeroStats(hero){
         switch(hero.race) {

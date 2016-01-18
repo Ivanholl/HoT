@@ -8,6 +8,7 @@ app.factory('equipment', function() {
                 getBonus(hero, item);
             }
         },
+
         unequip: function (hero, item) {
             var slot = GetSlotNumb(item);
 
@@ -19,7 +20,6 @@ app.factory('equipment', function() {
     };
     function getBonus(hero, item) {
         for (var i = 0; i < item.bonus.length; i += 2) {
-            debugger;
             hero[item.bonus[i]] += (+item.bonus[i+1]);
             //eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
         }
@@ -33,7 +33,7 @@ app.factory('equipment', function() {
     }
 
     function GetSlotNumb(item) {
-        switch (item.type) {
+        switch (item.class) {
             case "helm" : return 0;
             case "chest" : return 1;
             case "belt" : return 2;

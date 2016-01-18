@@ -10,6 +10,6 @@ div(ng-if="class")
             tr(ng-repeat="item in items")
                 td(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
                     .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
-                td.btn.btn-info(style="float:right;" ng-click="buy(tooltips)") buy
+                td.btn.btn-info(style="float:right;" ng-click="buy(item)") buy
                 td(style="float:right;")
                     .text-warning {{item.price}}

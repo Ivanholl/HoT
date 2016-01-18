@@ -1,0 +1,98 @@
+.inventory {
+  padding: 0;
+}
+.equipped {
+  background-image: url("/pictures/inventory.jpg");
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+.itemList {
+  float: left;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+.item {
+  position: absolute;
+  width: 80px;
+  height: 105px;
+  table-layout: fixed;
+}
+.toolTip {
+  position: absolute;
+  z-index: 3;
+}
+.equipBtn {
+  with: 30px;
+}
+.itemInfo {
+  width: 200px;
+  heigh: 100px;
+  visibility: hidden;
+  position: absolute;
+  z-index: 3;
+  background-color: rgba(43,62,80,0.9);
+  boder: 1px solid #000;
+  border-radius: 10px;
+  padding: 3px;
+}
+.item:hover .itemInfo {
+  visibility: visible;
+}
+.helm {
+  top: 25px;
+  left: 110px;
+}
+.chest {
+  top: 155px;
+  left: 110px;
+}
+.belt {
+  top: 290px;
+  left: 110px;
+}
+.pants {
+  top: 420px;
+  left: 110px;
+}
+.boots {
+  top: 550px;
+  left: 110px;
+}
+.symbol {
+  top: 550px;
+  left: 15px;
+}
+.bracelet {
+  top: 155px;
+  left: 15px;
+}
+.weapon {
+  top: 290px;
+  left: 15px;
+}
+.gloves {
+  top: 420px;
+  left: 15px;
+}
+.neckless {
+  top: 25px;
+  left: 205px;
+}
+.mantle {
+  top: 155px;
+  left: 205px;
+}
+.shield {
+  top: 290px;
+  left: 205px;
+}
+.secRing {
+  top: 420px;
+  left: 205px;
+}
+.ring {
+  top: 550px;
+  left: 205px;
+}

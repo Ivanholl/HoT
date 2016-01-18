@@ -37,8 +37,8 @@ module.exports.seedInitialUsers = function() {
             var hashedPwd;
 
             salt = encryption.generateSalt();
-            hashedPwd = encryption.generateHashedPassword(salt, 'Ivaylo');
-            User.create({username: 'ivaylo.kenov', firstName: 'Ivaylo', lastName: 'Kenov', salt: salt, hashPass: hashedPwd, roles: ['admin']});
+            hashedPwd = encryption.generateHashedPassword(salt, 'admin');
+            User.create({username: 'Admin', firstName: 'Admin', lastName: 'Admin', salt: salt, hashPass: hashedPwd, roles: ['admin']});
             console.log('Users added to database...');
         }
     });
