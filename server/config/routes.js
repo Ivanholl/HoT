@@ -7,16 +7,14 @@ module.exports = function(app) {
     app.put('/api/users', auth.isAuthenticated, controllers.users.updateUser);
 
     app.get('/api/minions', controllers.minions.getAllMinions);
-    /*app.param('location', function(req, res, next, location){
-        req.location = location;
-        next();
-    })*/
     app.get('/api/minions/:location', function(req, res){
         controllers.minions.getMinionsByLocation(req, res, req.params.location)
     });
 
     app.get('/api/items', controllers.items.getAllItems);
-    app.get('/api/items/:type', controllers.items.getItemsByType);
+    app.get('/api/items/:class', function(req, res){ 
+        controllers.items.getItemsByClass(req, res, req.params.class)
+    });
 
     app.get('/partials/:partialArea/:partialName', function(req, res) {
         res.render('../../public/app/' + req.params.partialArea + '/' + req.params.partialName)

@@ -18,8 +18,8 @@ app.factory('MinionResource', function($resource, $routeParams) {
 		getMinionsByZone: function (zone, one) {
 			var returnOne = one,
 				rand = getRandomInt(0, 5);
-
-			if (lastZoneRequest != zone | !minionsByZone) {
+			console.log(minionsByZone)
+			if (lastZoneRequest != zone || !minionsByZone) {
 				var Minion = $resource('api/minions/:location', {location: '@location'}, {
 					update: {
 						method: 'GET',
@@ -30,9 +30,8 @@ app.factory('MinionResource', function($resource, $routeParams) {
 				minionsByZone = Minion.query({location: zone, isArray: true})
 			}
 			if (returnOne) {
-				var minionToReturn = minionsByZone[rand];//pushes element in index 0
-				//minionsByZone.length = 1;
-				return minionToReturn;
+				var minionToReturn = minionsByZone[rand];
+				return minionsByZone[rand]
 			} else {
 				return minionsByZone;
 			}

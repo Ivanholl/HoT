@@ -13,8 +13,8 @@ require('./server/config/mongoose')(config);
 require('./server/config/passport')();
 require('./server/config/routes')(app);
 
-//app.listen(config.port);
-//console.log("Server running on port: " + config.port);
-app.listen(server_port, server_ip_address, function () {
-    console.log( "Listening on " + server_ip_address + ", server_port " + server_port )
-});
+app.listen(config.port);
+console.log("Server running on port: " + config.port);
+//app.listen(server_port, server_ip_address, function () {
+  //  console.log( "Listening on " + server_ip_address + ", server_port " + server_port )
+//});

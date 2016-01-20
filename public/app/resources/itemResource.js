@@ -1,6 +1,8 @@
 app.factory("ItemResource", function($resource) {
-    var cachedItems;
-
+    var itemsByClass,
+        lastClassRequest,
+        cachedItems;
+        
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }
@@ -13,23 +15,27 @@ app.factory("ItemResource", function($resource) {
 
             return cachedItems;
         },
-        getItemsByClass: function (type, one) {
-            var itemsByClass = [],
-                returnOne = one || false,
+        getItemsByClass: function (itemClass, one) {
+            var returnOne = one,
                 rand = getRandomInt(0, 5);
-
-            $resource('api/items/:type').query(function (response) {
-                angular.forEach(response, function (item) {
-                    if (item.class == type) {
-                        itemsByClass.push(item);
-                    }
-                });
-                if (returnOne) {
-                    itemsByClass.unshift(itemsByClass[rand]); //pushes element in index 0
-                    itemsByClass.length = 1;
-                }
-            });
-            return itemsByClass;
+            
+            console.log(itemsByClass)
+            if (lastClassRequest != itemClass | !itemsByClass) {
+				var Item = $resource('api/items/:class', {class: '@class'}, {
+					update: {
+						method: 'GET',
+						isArray: true
+					}
+				});
+				lastClassRequest = itemClass;
+				itemsByClass = Item.query({class: itemClass, isArray: true})
+				console.log(itemsByClass)
+			}
+			if (returnOne) {
+				return itemsByClass[rand];
+			} else {
+				return itemsByClass;
+			}
         }
     }
 })

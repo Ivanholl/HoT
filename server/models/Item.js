@@ -27,7 +27,7 @@ module.exports.seedInitialItems = function() {
         
         if (collection.length === 0) {
     //helms
-            Item.create({title:"Simple Helm", type: 'armor', weight:'1',class:'helm', bonus:['df','1'],price:130, pic: "/pictures/items/item.jpg"});
+            Item.create({title:"Simple Helm", type: 'armor', weight:'1',class:'helm', bonus:['df','1'],price:130, pic: "/pictures/items/Simple Helm.jpg"});
             Item.create({title:"Horn Helm", type: 'armor', weight:'3',class:'helm',  bonus:['df','3'],price:390, pic: "/pictures/items/item.jpg"});
             Item.create({title:"Nomad Helm", type: 'armor', weight:'5',class:'helm',  bonus:['df','5'],price:650, pic: "/pictures/items/item.jpg"});
     //chest
