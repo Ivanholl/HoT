@@ -77,11 +77,11 @@ app.factory('battle', function(updateHero, identity){
                         updateHero.update(hero, identity.currentUser)
                         window.location.href = '#/town';
                     }
-                    if (minion[0].hp <= 0 && winLoseCheck == false) {
+                    if (minion.hp <= 0 && winLoseCheck == false) {
                         winLoseCheck = true;
-                        alert("YOU WIN\n" + "you got " + minion[0].gold + "gold and " + minion[0].ss + "soul stones!");
-                        hero.gold += minion[0].gold;
-                        hero.ss += minion[0].ss;
+                        alert("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
+                        hero.gold += minion.gold;
+                        hero.ss += minion.ss;
                         window.location.href = '#/map';
                     }
                     updateHero.update(hero, identity.currentUser)
@@ -90,19 +90,19 @@ app.factory('battle', function(updateHero, identity){
                 function getEnemyMove() {
                     var playerAtack = getAttack(hero),
                         playerDefense = getDefense(hero),
-                        minionDefense = getDefense(minion[0]),
-                        minionAtack = getAttack(minion[0]);
+                        minionDefense = getDefense(minion),
+                        minionAtack = getAttack(minion);
 
                     if (playerDefense < minionAtack) {
                         $('#logger').append('Enemy desided to attack!').append('<br/>')
                         updateScroll()
-                        Atack(minion[0], hero);
+                        Atack(minion, hero);
                         enemyMove = false;
                     }
                     else if (playerAtack < minionDefense) {
                         $('#logger').append('Enemy desided to defend!').append('<br/>')
                         updateScroll()
-                        Defend(hero, minion[0]);
+                        Defend(hero, minion);
                         enemyMove = false;
                     }
                     else {

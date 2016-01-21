@@ -1,4 +1,4 @@
-app.factory('MinionResource', function($resource, $routeParams) {
+app.factory('MinionResource', function($resource) {
 	var lastZoneRequest,
 		minionsByZone,
 		cashedAllMinions;
@@ -18,7 +18,7 @@ app.factory('MinionResource', function($resource, $routeParams) {
 		getMinionsByZone: function (zone, one) {
 			var returnOne = one,
 				rand = getRandomInt(0, 5);
-			console.log(minionsByZone)
+
 			if (lastZoneRequest != zone || !minionsByZone) {
 				var Minion = $resource('api/minions/:location', {location: '@location'}, {
 					update: {

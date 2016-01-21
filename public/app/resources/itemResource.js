@@ -12,15 +12,13 @@ app.factory("ItemResource", function($resource) {
             if (!cachedItems) {
                 cachedItems = $resource('api/items/:type').query();
             }
-
             return cachedItems;
         },
         getItemsByClass: function (itemClass, one) {
             var returnOne = one,
                 rand = getRandomInt(0, 5);
-            
-            console.log(itemsByClass)
-            if (lastClassRequest != itemClass | !itemsByClass) {
+
+            if (lastClassRequest != itemClass || !itemsByClass) {
 				var Item = $resource('api/items/:class', {class: '@class'}, {
 					update: {
 						method: 'GET',
@@ -29,7 +27,6 @@ app.factory("ItemResource", function($resource) {
 				});
 				lastClassRequest = itemClass;
 				itemsByClass = Item.query({class: itemClass, isArray: true})
-				console.log(itemsByClass)
 			}
 			if (returnOne) {
 				return itemsByClass[rand];

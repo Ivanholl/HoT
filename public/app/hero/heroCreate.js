@@ -114,7 +114,6 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     maxMp:5,
                     dm: [2,3],
                     df: 3,
-
                     str: 10,
                     gold: 0,
                     ss: 0,
