@@ -10,6 +10,15 @@ app.controller('townCtrl', function($scope, identity) {
         window.location.href  = '#/map';
     };
 
+    if ($scope.hero.hp <= 0) {
+        $scope.hero.hp = 1;
+        updateHero.update($scope.hero, identity.currentUser);
+    }
+
+    $scope.makeHome = function() {
+        $scope.hero.home = $scope.hero.location
+    };
+
     $scope.enterBuilding = function(building) {
         switch (building){
             case "library":

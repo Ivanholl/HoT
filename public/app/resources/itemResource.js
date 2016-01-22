@@ -26,7 +26,7 @@ app.factory("ItemResource", function($resource) {
 					}
 				});
 				lastClassRequest = itemClass;
-				itemsByClass = Item.query({class: itemClass, isArray: true})
+				itemsByClass = Item.query({class: itemClass})
 			}
 			if (returnOne) {
 				return itemsByClass[rand];

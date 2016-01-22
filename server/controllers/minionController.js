@@ -1,5 +1,9 @@
 var Minion = require('mongoose').model('Minion');
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 module.exports = {
     getAllMinions: function(req, res, next) {
         console.log("all minion search")
@@ -13,10 +17,18 @@ module.exports = {
             res.send(collection);
         })
     },
-    getMinionsByLocation: function(req, res, location) {
+    getMinionsByLocation: function(req, res, location, returnOne) {
+
         Minion.find({location : location}).exec(function(err, collection) {
             if (err) console.log('Minions could not be loaded: ' + err);
-            res.send(collection);
+
+            if (returnOne){
+                var rand = getRandomInt(0, collection.length)
+                res.send(collection[rand])
+            } else {
+                res.send(collection);
+            }
+
         })
     }
 };

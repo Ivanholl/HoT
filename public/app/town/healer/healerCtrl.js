@@ -6,11 +6,6 @@ app.controller('healerCtrl', function($scope, identity, updateHero, ItemResource
     $scope.healingCost = getHealCost($scope.healAmount);
     $scope.class = null;
 
-    if ($scope.hero.hp <= 0) {
-        $scope.hero.hp = 1;
-        updateHero.update($scope.hero, identity.currentUser);
-    }
-
     $scope.fullHeal = function(){
         if ($scope.hero.gold >= $scope.fullHealCost) {
 

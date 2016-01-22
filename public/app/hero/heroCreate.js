@@ -34,6 +34,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     gold: 0,
                     ss: 0,
                     location: 'hzone1',
+                    home: "htown",
                     inventory: [],
                     equipment: [],
                     race: hero.race
@@ -55,6 +56,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     gold: 0,
                     ss: 0,
                     location: 'ezone1',
+                    home: "etown",
                     inventory: [],
                     equipment: [],
                     race: hero.race
@@ -76,6 +78,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     gold: 0,
                     ss: 0,
                     location: 'ozone1',
+                    home: "otown",
                     inventory: [],
                     equipment: [],
                     race: hero.race
@@ -98,6 +101,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                      gold: 0,
                      ss: 0,
                      location: 'dzone1',
+                     home: "dtown",
                      inventory: [],
                      equipment: [],
                      race: hero.race
@@ -118,6 +122,7 @@ app.factory('heroCreate', function($http, $q, identity, UsersResource){
                     gold: 0,
                     ss: 0,
                     location: 'uzone1',
+                    home: "utown",
                     inventory: [],
                     equipment: [],
                     race: hero.race

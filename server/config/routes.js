@@ -10,6 +10,9 @@ module.exports = function(app) {
     app.get('/api/minions/:location', function(req, res){
         controllers.minions.getMinionsByLocation(req, res, req.params.location)
     });
+    app.get('/api/minion/:location', function(req, res){
+        controllers.minions.getMinionsByLocation(req, res, req.params.location, true)
+    });
 
     app.get('/api/items', controllers.items.getAllItems);
     app.get('/api/items/:class', function(req, res){ 

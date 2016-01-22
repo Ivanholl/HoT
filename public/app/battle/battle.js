@@ -1,4 +1,4 @@
-app.factory('battle', function(updateHero, identity){
+app.factory('battle', function(updateHero, identity, notifier){
 
         return {
             battle: function(hero, minion){  //Otherwise it is used once
@@ -62,24 +62,29 @@ app.factory('battle', function(updateHero, identity){
                 function Escape() {
                     var chance = getRandomInt(0, 1);
                     if (chance === 0) {
-                        alert("ESCAPED");
+                        notifier.success("ESCAPED");
+                        //alert("ESCAPED");
                         window.location.href = '#/map';
                     }
                     else {
-                        alert("You couldn't Escape!");
+                        notifier.error("You couldn't Escape!")
+                        //alert("You couldn't Escape!");
                     }
                 }
 
                 function CheckWinLose() {
                     if (hero.hp <= 0 && winLoseCheck == false) {
                         winLoseCheck = true;
-                        alert("YOU LOST");
+                        notifier.error('YOU LOST');
+                        //alert("YOU LOST");
+                        hero.location = hero.home;
                         updateHero.update(hero, identity.currentUser)
                         window.location.href = '#/town';
                     }
                     if (minion.hp <= 0 && winLoseCheck == false) {
                         winLoseCheck = true;
-                        alert("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
+                        notifier.success("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
+                        //alert("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
                         hero.gold += minion.gold;
                         hero.ss += minion.ss;
                         window.location.href = '#/map';
