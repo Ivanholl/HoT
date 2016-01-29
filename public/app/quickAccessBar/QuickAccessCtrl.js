@@ -4,4 +4,6 @@ app.controller('QuickAccessCtrl', function($scope, identity){
     $scope.inventory = function(){
         $scope.inventoryShow = !$scope.inventoryShow;
     }
+
+    console.log($scope.hero)
 });

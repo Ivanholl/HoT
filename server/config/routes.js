@@ -25,7 +25,9 @@ module.exports = function(app) {
     app.get('/townPartials/:partialArea/:partialName', function (req, res) {
         res.render('../../public/app/town/' + req.params.partialArea + '/' + req.params.partialName)
     });
-    app.get('api/hero/:heroName', controllers.heroes.getHeroByName)
+
+    app.get('api/hero/:heroName', controllers.hero.getHeroByName)
+    app.post('api/hero', controllers.hero.createHero)
 
     app.post('/login', auth.login);
     app.post('/logout', auth.logout);

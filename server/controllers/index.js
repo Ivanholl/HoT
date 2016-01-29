@@ -4,7 +4,7 @@ var usersController = require('../controllers/usersController'),
     heroController = require('../controllers/heroController');
 
 module.exports = {
-    heroes: heroController,
+    hero: heroController,
     users: usersController,
     minions: minionController,
     items: itemController

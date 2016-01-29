@@ -26,6 +26,10 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'heroSelectCtrl',
             resolve: routeUserChecks.authenticated
         })
+        .when('/heroCreate', {
+            templateUrl: '/partials/hero/heroCreate',
+            controller: 'heroCreateCtrl'
+        })
         .when('/map', {
             templateUrl: '/partials/map/map',
             controller: 'mapController',
