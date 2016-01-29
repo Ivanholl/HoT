@@ -13,13 +13,15 @@ app.controller('heroCreateCtrl', function($scope, $q, HeroResource){
     function createHero(hero) {
         var deferred = $q.defer();
 
-        var hero = new HeroResource(hero);
+/*        var hero = new HeroResource(hero);
         hero.$save().then(function() {
             deferred.resolve();
         }, function(response) {
             deferred.reject(response);
-        });
-
-        return deferred.promise;
+        });*/
+        
+        HeroResource.createHero(hero)
+        
+       // return deferred.promise;
      }
 })

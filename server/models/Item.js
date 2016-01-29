@@ -22,9 +22,9 @@ module.exports.seedInitialItems = function() {
             return;
         }
         
-        /*if(collection.length !== 0){
+        if(collection.length !== 0){
             Item.remove({}, function(){console.log("itemes removed")})
-        }*/
+        }
         
         if (collection.length === 0) {
     //helms
