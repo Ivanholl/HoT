@@ -5,6 +5,7 @@ app.controller('townCtrl', function($scope, identity) {
     $scope.armory = false;
     $scope.weaponsmith = false;
     $scope.bar = false;
+    $scope.merchant = false;
     
     $scope.toMap = function () {
         window.location.href  = '#/map';
@@ -27,6 +28,7 @@ app.controller('townCtrl', function($scope, identity) {
                 $scope.armory = false;
                 $scope.weaponsmith = false;
                 $scope.bar = false;
+                $scope.merchant = false;
                 break;
             case "healer":
                 $scope.library = false;
@@ -34,6 +36,7 @@ app.controller('townCtrl', function($scope, identity) {
                 $scope.armory = false;
                 $scope.weaponsmith = false;
                 $scope.bar = false;
+                $scope.merchant = false;
                 break;
             case "armory":
                 $scope.armory = true;
@@ -41,6 +44,7 @@ app.controller('townCtrl', function($scope, identity) {
                 $scope.healer = false;
                 $scope.weaponsmith = false;
                 $scope.bar = false;
+                $scope.merchant = false;
                 break;
             case "weaponsmith":
                 $scope.armory = false;
@@ -48,6 +52,7 @@ app.controller('townCtrl', function($scope, identity) {
                 $scope.healer = false;
                 $scope.weaponsmith = true;
                 $scope.bar = false;
+                $scope.merchant = false;
                 break;
             case "bar":
                 $scope.armory = false;
@@ -55,6 +60,16 @@ app.controller('townCtrl', function($scope, identity) {
                 $scope.healer = false;
                 $scope.weaponsmith = false;
                 $scope.bar = true;
+                $scope.merchant = false;
+                break;
+            case "merchant":
+                $scope.armory = false;
+                $scope.library = false;
+                $scope.healer = false;
+                $scope.weaponsmith = false;
+                $scope.bar = false;
+                $scope.merchant = true;
+                break;
             default: break;
         }
     }

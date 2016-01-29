@@ -6,8 +6,9 @@
       div(ng-if="armory" ng-include="'townPartials/armory/armory.jade'")
       div(ng-if="weaponsmith" ng-include="'townPartials/weaponsmith/weaponsmith.jade'")
       div(ng-if="bar" ng-include="'townPartials/bar/bar.jade'")
+      div(ng-if="merchant" ng-include="'townPartials/merchant/merchant.jade'")
 
-      #buildingList
+   #buildingList
          ul.nav.nav-tabs
             li
                a.btn.btn-warning(ng-click="enterBuilding('library')") Library
@@ -18,7 +19,7 @@
             li
                a.btn.btn-warning.disabled Bank
             li
-               a.btn.btn-warning.disabled Merchant
+               a.btn.btn-warning(ng-click="enterBuilding('merchant')") Merchant
             li
                a.btn.btn-warning(ng-click="enterBuilding('weaponsmith')") Weaponsmith
             li
