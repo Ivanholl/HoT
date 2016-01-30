@@ -18,7 +18,7 @@ var mongoose = require('mongoose'),
 
 var heroSchema = mongoose.Schema({
     avatar: String,
-    name: {type: String, require: '{PATH} is required', unique: true},
+    name: { type: String, require: '{PATH} is required', unique: true },
     ap: Number,
     hp: Number,
     maxHp: Number,
@@ -38,7 +38,7 @@ var heroSchema = mongoose.Schema({
 
 var Hero = mongoose.model('Hero', heroSchema);
 
-/*module.exports.seedTestHero = function() {
+module.exports.seedTestHero = function() {
     Hero.find({}).exec(function(err, collection) {
         if (err) {
             console.log('Cannot find users: ' + err);
@@ -58,4 +58,4 @@ var Hero = mongoose.model('Hero', heroSchema);
             console.log('Test Hero added to databse...')
         }
     });
-};*/
+};

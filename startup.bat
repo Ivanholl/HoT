@@ -1,2 +1,2 @@
-start F:\MongoDB\bin\mongod --dbpath F:\MongoDB\data\db
+start mongod --dbpath database\db
 start nodemon server.js

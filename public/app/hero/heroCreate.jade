@@ -1,7 +1,63 @@
 #container
     .raceOption.human(ng-click="select($event)")
-        .btn(ng-click="create()") create
+        blockquote
+            p Human
+        .raceInfo.hidden
+            .stats
+                p.text-danger HP: 15
+                p.text-info MP: 5
+                p.text-primary DM: 3-4
+                p.text-success DF: 2
+            p.text-warning {{humanInfo}}
+            .btn.btn-info(ng-click="choose('human')") choose
     .raceOption.orc(ng-click="select($event)")
+        blockquote
+            p Orc
+        .raceInfo.hidden
+            .stats
+                p.text-danger HP: 10
+                p.text-info MP: 3
+                p.text-primary DM: 4-5
+                p.text-success DF: 3
+            p.text-warning {{orcInfo}}
+            .btn.btn-info(ng-click="choose('orc')") choose
     .raceOption.elf(ng-click="select($event)")
-    .raceOption.dwarf(ng-click="select($event)")
+        blockquote
+            p Elf
+        .raceInfo.hidden
+            .stats
+                p.text-danger HP: 13
+                p.text-info MP: 6
+                p.text-primary DM: 2-3
+                p.text-success DF: 2
+            p.text-warning {{elfInfo}}
+            .btn.btn-info(ng-click="choose('elf')") choose
+    .raceOption.dwarf.selectedRace(ng-click="select($event)")
+        blockquote
+            p Dwarf
+        .raceInfo.hidden
+            .stats
+                p.text-danger HP: 15
+                p.text-info MP: 3
+                p.text-primary DM: 2-3
+                p.text-success DF: 4
+            p.text-warning {{dwarfInfo}}
+            .btn.btn-info(ng-click="choose('dwarf')") choose
     .raceOption.undead(ng-click="select($event)")
+        blockquote
+            p undead
+        .raceInfo.hidden
+            .stats
+                p.text-danger HP: 16
+                p.text-info MP: 4
+                p.text-primary DM: 2-3
+                p.text-success DF: 2
+            p.text-warning {{undeadInfo}}
+            .btn.btn-info(ng-click="choose('undead')") choose
+
+    .chooseName.hidden
+        center
+            span {{createdHero.name}}
+            h3 Choose your name
+            input(type="text", placeholder="Name",ng-model="hero.name", required)
+            .btn.btn-info(ng-click="create(hero.name)") Create

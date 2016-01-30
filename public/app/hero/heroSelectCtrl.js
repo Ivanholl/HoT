@@ -1,4 +1,4 @@
-app.controller('heroSelectCtrl', function($scope,identity, heroCreate, notifier, updateHero){
+app.controller('heroSelectCtrl', function($scope, identity, heroCreate, notifier, updateHero, HeroResource){
     $scope.user = identity.currentUser;
     $scope.create = true;
     $scope.chooseDelete = false;

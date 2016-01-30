@@ -32,7 +32,7 @@ module.exports = function(config) {
     });
 
     user.seedInitialUsers();
-    //hero.seedTestHero();
+    hero.seedTestHero();
     minion.seedTestMinion();
     item.seedInitialItems();
 };

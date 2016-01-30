@@ -14,6 +14,5 @@ module.exports = {
             if (err) console.log('Items could not be loaded: ' + err);
             res.send(collection);
         })
-        
     }
 };

@@ -53,9 +53,6 @@ footer
   border-right 3px solid #808080
   display inline-block
 
-.hero-slot
-  //box-shadow 0px 0px 17px 3px rgba(0,0,0,0.56)
-
 .quickAccessBar/**********************QUICK ACCESS***********************/
   float right
   margin 5px
@@ -168,11 +165,10 @@ footer
     height 700px
     display inline-block
     float left
-    margin 0 auto
     box-shadow: 0 0 17px 13px rgba(0,0,0,0.80) inset
     background-repeat no-repeat
     background-position 50% 0%
-
+    position relative
 
 .orc
     background-image url('/pictures/heroCreate/orc.jpg')
@@ -185,6 +181,21 @@ footer
 .undead
     background-image url('/pictures/heroCreate/undead.jpg')
 
+.raceInfo
+  width 100%
+  position absolute
+  bottom 2px
+  font-weight 800
+
+.chooseName
+  height 700px
+  background-repeat no-repeat
+  background-position 50% 0%
+
 .selectedRace
     width 550px
     background-position initial
+
+.stats
+  margin 10px
+  float left
