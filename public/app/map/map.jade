@@ -93,7 +93,7 @@
             span.legendText selected zone
     .zone-info
         .list-group
-            .list-group-item.active {{selectedZone}}
+            .list-group-item.active {{zone.name}}
             .list-group-item(ng-repeat="minion in minions") {{minion.name}}
         a#prev.btn.btn-success.disabled(ng-click="prev()") Prev Zone
         a#branch.btn.btn-success.disabled(ng-click="branch()") Branch Zone

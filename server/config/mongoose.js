@@ -2,6 +2,7 @@ var mongoose = require('mongoose'),
     user = require('../models/User'),
     hero = require('../models/Hero'),
     minion = require('../models/Minion'),
+    zone = require("../models/Zone"),
     item = require('../models/Item');
 
 module.exports = function(config) {
@@ -35,4 +36,6 @@ module.exports = function(config) {
     hero.seedTestHero();
     minion.seedTestMinion();
     item.seedInitialItems();
+    zone.seedZones();
+
 };

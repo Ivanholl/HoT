@@ -6,8 +6,6 @@ function getRandomInt(min, max) {
 
 module.exports = {
     getAllMinions: function(req, res, next) {
-        console.log("all minion search")
-
         Minion.find({}).exec(function(err, collection) {
 
             if (err) {

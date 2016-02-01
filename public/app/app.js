@@ -13,6 +13,13 @@ app.config(function($routeProvider, $locationProvider) {
             authenticate: function(auth) {
                 return auth.isAuthenticated();
             }
+        },
+        isHeroChosen:{
+            chooseHero: function(Hero){
+                if(Hero.isHeroChosen()){
+                    return true
+                }
+            }
         }
     };
 
@@ -24,11 +31,15 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/hero', {
             templateUrl: '/partials/hero/hero-select',
             controller: 'heroSelectCtrl',
-            resolve: routeUserChecks.authenticated
+            resolve: function(){
+                routeUserChecks.authenticated
+                routeUserChecks.isHeroChosen
+            }
         })
         .when('/heroCreate', {
             templateUrl: '/partials/hero/heroCreate',
-            controller: 'heroCreateCtrl'
+            controller: 'heroCreateCtrl',
+            resolve: routeUserChecks.authenticated
         })
         .when('/map', {
             templateUrl: '/partials/map/map',
@@ -37,7 +48,6 @@ app.config(function($routeProvider, $locationProvider) {
         })
         .when('/battle', {
             templateUrl: '/partials/battle/battleMap',
-
             controller: 'batlleCtrl',
             resolve: routeUserChecks.authenticated
         })

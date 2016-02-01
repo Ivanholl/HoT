@@ -1,5 +1,5 @@
 app.controller('libraryCtrl', function($scope, identity, updateHero){
-    var oneHpPrice = 50,
+    var oneHpPrice = Math.floor(50 + ($scope.hero.ap/100)),
         oneDmMinPrice = 75,
         oneDmMaxPrice = 75,
         oneDfPrice = 110,

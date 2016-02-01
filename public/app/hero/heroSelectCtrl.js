@@ -1,13 +1,17 @@
-app.controller('heroSelectCtrl', function($scope, identity, heroCreate, notifier, updateHero, HeroResource){
+app.controller('heroSelectCtrl', function($scope, identity, Hero, heroCreate, notifier, updateHero, HeroResource){
+    var slotOne = identity.currentUser.heroList[0];
+
     $scope.user = identity.currentUser;
     $scope.create = true;
     $scope.chooseDelete = false;
     $scope.show = true;
-    $scope.heroOne = identity.currentUser.heroList[0];
+    $scope.heroOne = HeroResource.getHeroByName(slotOne);
 
     $scope.createHero = function(){
         $scope.show = !$scope.show
+        window.location.href = '#/heroCreate';
     };
+
     $scope.createNewHero = function(hero){
         heroCreate.createNewHero(hero, identity.currentUser).then(function() {
             notifier.success('Hero Created!');
@@ -15,12 +19,23 @@ app.controller('heroSelectCtrl', function($scope, identity, heroCreate, notifier
         window.location.href = '#/map';
     };
 
-    $scope.delete = function(){
-        updateHero.update({}, $scope.user);
-        $scope.show = !$scope.show;
+    $scope.del = function(name){
+        var r = confirm("Are you sure you want to delete your hero?");
+        if (r == true) {
+            HeroResource.deleteHeroByName(name)
+            location.reload()
+        }
     };
 
-    if (!$scope.heroOne) {
+    $scope.chooseHero = function(){
+
+        var tempHero = HeroResource.getHeroByName(slotOne)
+        angular.extend(tempHero, HeroResource.getHeroByName(slotOne));
+        Hero.currentHero = tempHero;
+
+        window.location.href = '#/map'
+    }
+    if (!slotOne) {
         $scope.create = !$scope.create;
         $scope.chooseDelete = !$scope.chooseDelete;
     }
