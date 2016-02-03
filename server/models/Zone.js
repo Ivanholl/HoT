@@ -9,7 +9,7 @@ var zoneSchema = mongoose.Schema({
 var Zone = mongoose.model('Zone', zoneSchema);
 
 module.exports.seedZones = function() {
-    Zone.find({index:"dzone1"}).exec(function(err, collection) {
+    Zone.find({}).exec(function(err, collection) {
         if (err) {
             console.log('Cannot find users: ' + err);
             return;
@@ -19,6 +19,13 @@ module.exports.seedZones = function() {
          console.log('collection removed')
          });*/
         if (collection.length === 0) {
+/*HUMAN*/   Zone.create({name: "Kymeria", index: "htown", info: "The old capital of Humans",movementOptions: {
+                nextZone: "hzone1",
+                hasBranchZone: false,
+                hasPrevZone: false,
+                hasNextZone: true,
+                hasBattle: false
+            }});
             Zone.create({name: "gates", index: "dzone1", info: "front of the Drawrf Town Gates",movementOptions: {
                 nextZone: "dzone2",
                 prevZone: 'dtown',
