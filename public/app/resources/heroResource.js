@@ -1,11 +1,10 @@
 app.factory('HeroResource', function($resource, identity) {
     var updatedUser = identity.currentUser,
-        SearchHeroResource = $resource('api/hero/:name', {name: '@name'}, { get: {method: 'Get', isArray: false}}),
+        SearchHeroResource = $resource('api/hero/:name', {name: '@name'}),
         CreateHeroResource = $resource('api/createhero', { update: {method: 'Post', isArray: false}}),
         DeleteHeroResource = $resource('api/delhero/:name', {name: '@name'}, { update: {method: 'Get', isArray: false}});
 
     return {
-        heroResource: SearchHeroResource,
         createHero : function(hero){
             var newHero = hero;
 
@@ -27,7 +26,6 @@ app.factory('HeroResource', function($resource, identity) {
         },
         getHeroLocation : function(name){
             return SearchHeroResource.get({name: name}).location
-
         }
     }
 });

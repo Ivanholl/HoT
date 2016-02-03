@@ -1,20 +1,17 @@
-app.factory('Hero', function($window, identity, HeroResource) {
+app.factory('Hero', function( $window, identity, HeroResource) {
     var hero,
         chosenHero = identity.currentUser.heroList[0];
 
-    console.log($window.bootstrappedHeroObject)
 
-    if ($window.bootstrappedHeroObject) {
-        hero = HeroResource.heroResource;
-        angular.extend(hero, $window.bootstrappedHeroObject);
-    }
-
-    console.log(hero)
+    //if ($window.bootstrappedHeroObject) {
+    hero = HeroResource.getHeroByName(chosenHero);
+    angular.extend(hero, $window.bootstrappedHeroObject);
+    //}
 
     return {
         currentHero: hero,
         isHeroChosen: function() {
-            return !!this.currentUser;
+            return !!this.currentHero;
         }
     }
 });

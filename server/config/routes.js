@@ -35,6 +35,7 @@ module.exports = function(app) {
     app.get('/api/delhero/:name', function (req, res) {
         controllers.hero.deleteHero(req, res)
     });
+    app.get('/hero', controllers.hero.getHeroByName)
 
     app.get('/api/zone/:index', function (req, res) {
         controllers.zones.getZoneByIndex(req, res)
@@ -49,7 +50,7 @@ module.exports = function(app) {
     });
 
     app.get('*', function (req, res) {
-        res.render('index', {currentUser: req.user});
-        res.render('index', {currentHero: req.hero});
+        res.render('index', {currentUser: req.user, currentHero: req.hero});
     });
+
 };

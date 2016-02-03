@@ -16,9 +16,7 @@ app.config(function($routeProvider, $locationProvider) {
         },
         isHeroChosen:{
             chooseHero: function(Hero){
-                if(Hero.isHeroChosen()){
-                    return true
-                }
+                return Hero.isHeroChosen()
             }
         }
     };
@@ -31,10 +29,7 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/hero', {
             templateUrl: '/partials/hero/hero-select',
             controller: 'heroSelectCtrl',
-            resolve: function(){
-                routeUserChecks.authenticated
-                routeUserChecks.isHeroChosen
-            }
+            resolve: routeUserChecks.isHeroChosen
         })
         .when('/heroCreate', {
             templateUrl: '/partials/hero/heroCreate',

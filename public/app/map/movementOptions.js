@@ -1,13 +1,10 @@
-app.factory('movementOptions', function(identity, HeroResource) {
+app.factory('movementOptions', function(identity, HeroResource, Hero) {
 
 
     return {
         getMovementOptions: function () {
-            var hero = HeroResource.getHeroByName(identity.currentUser.heroList[0])
+            var hero = Hero.currentHero
             var currentLocation = hero.location;
-
-            var location = HeroResource.getHeroLocation(identity.currentUser.heroList[0])
-            console.log(location)
 
             switch (currentLocation) {
                 case 'htown':

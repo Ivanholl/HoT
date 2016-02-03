@@ -36,8 +36,8 @@
                             span.text-primary {{heroOne.location}}
                         div(ng-hide="show" ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical
-                            .btn.btn-success(ng-click="chooseHero()" ng-hide="chooseDelete") Choose Hero
-                            .btn.btn-info(ng-click="createHero()" ng-hide="create") Create Hero
+                            .btn.btn-success(ng-click="chooseHero(heroOne)" ng-hide="chooseDelete") Choose Hero
+                            .btn.btn-info(ng-click="createHero()"  ng-hide="create") Create Hero
                             .btn.btn-danger(ng-click="del(heroOne.name)" ng-hide="chooseDelete") Delete Hero
 
             .col-md-4.hero-slot

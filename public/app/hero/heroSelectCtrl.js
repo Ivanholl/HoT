@@ -1,4 +1,4 @@
-app.controller('heroSelectCtrl', function($scope, identity, Hero, heroCreate, notifier, updateHero, HeroResource){
+app.controller('heroSelectCtrl', function($scope, identity, Hero, heroCreate, notifier, HeroResource){
     var slotOne = identity.currentUser.heroList[0];
 
     $scope.user = identity.currentUser;
@@ -27,14 +27,11 @@ app.controller('heroSelectCtrl', function($scope, identity, Hero, heroCreate, no
         }
     };
 
-    $scope.chooseHero = function(){
-
-        var tempHero = HeroResource.getHeroByName(slotOne)
-        angular.extend(tempHero, HeroResource.getHeroByName(slotOne));
-        Hero.currentHero = tempHero;
+    $scope.chooseHero = function(hero){
 
         window.location.href = '#/map'
     }
+
     if (!slotOne) {
         $scope.create = !$scope.create;
         $scope.chooseDelete = !$scope.chooseDelete;

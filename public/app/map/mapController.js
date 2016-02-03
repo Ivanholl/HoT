@@ -1,11 +1,11 @@
-app.controller('mapController', function($scope, identity, movementOptions, MinionResource, updateLocation, HeroResource, ZoneResource){
+app.controller('mapController', function($scope, identity, movementOptions,Hero, MinionResource, updateLocation, HeroResource, ZoneResource){
     $scope.user = identity.currentUser;
 
-    var hero = HeroResource.currentHero,
-        curZoneID = hero.location,
+    var //hero = HeroResource.getHeroByName($scope.user.heroList[0]),
+        hero = Hero.currentHero,
+        curZoneID = hero.location
         lastSelectedZone = curZoneID;
 
-    console.log(hero)
     $scope.selectedZone = curZoneID;
     $scope.minions = MinionResource.getMinionsByZone(curZoneID);
 
@@ -36,8 +36,10 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
 
     function SetMovementOptions(){
         var option = movementOptions.getMovementOptions()
+
         console.log(option)
-        /*if (movementOptions.getMovementOptions().hasNextZone) {
+
+        if (movementOptions.getMovementOptions().hasNextZone) {
             $("#next").removeClass('disabled');
         }
         if (movementOptions.getMovementOptions().hasPrevZone) {
@@ -53,11 +55,11 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
             $("#battle").removeClass('disabled');
             $("#battle").html('Enter');
             $("#battle").addClass('btn-info');
-        }*/
+        }
     }
 
     SetMovementOptions();
-/*
+
     $scope.prev = function(){
         updateLocation.updateLocation(movementOptions.getMovementOptions().prevZone);
         checkIfBattle()
@@ -82,6 +84,7 @@ app.controller('mapController', function($scope, identity, movementOptions, Mini
         } else {
             window.location.href = '#/town';
         }
-    }*/
-    $scope.zone = ZoneResource.getZoneByIndex('dzone1');
+    }
+
+    //$scope.zone = ZoneResource.getZoneByIndex('dzone1');
 });
