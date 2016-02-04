@@ -2,19 +2,19 @@ div(ng-controller="libraryCtrl")
    ul.nav.nav-pills
       li.active
          a.btn(ng-click="buyOneHp()") buy 1 HP
-            .badge 50ss
+            .badge {{oneHpPrice}}ss
       li.active
          a.btn.disabled buy 1MP
             .badge 100ss
       li.active
          a.btn(ng-click="buyOneDmMin()") buy 1 DM-min
-            .badge 75ss
+            .badge {{oneDmMinPrice}}ss
       li.active
          a.btn(ng-click="buyOneDmMax()") buy 1DM-max
-            .badge 75ss
+            .badge {{oneDmMaxPrice}}ss
       li.active
          a.btn(ng-click="buyOneDf()")  buy 1 DF
-            .badge 100ss
+            .badge {{oneDfPrice}}ss
       li.active
          a.btn(ng-click="buyOneStr()") buy 1 Str
-            .badge 120ss
+            .badge {{oneStrPrice}}ss

@@ -154,10 +154,10 @@ module.exports = {
         })
     },
     updateHero: function(req,res){
-        console.log("update hero")
         var updatedUserData = req.body;
 
-        Hero.update({name: req.params.name}, updatedUserData, function() {
+        Hero.update({name: req.params.name}, updatedUserData).exec(function(err, hero) {
+            console.log(hero)
             res.end();
         })
     }

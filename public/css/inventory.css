@@ -3,8 +3,8 @@
 }
 .equipped {
   background-image: url("/pictures/inventory.jpg");
-  float: right;
   display: inline-block;
+  float: left;
   position: relative;
 }
 .itemList {

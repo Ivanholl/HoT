@@ -1,5 +1,5 @@
-app.controller('healerCtrl', function($scope, identity, updateHero, ItemResource){
-    $scope.hero = identity.currentUser.heroList[0];
+app.controller('healerCtrl', function($scope, Hero, ItemResource){
+    $scope.hero = Hero.currentHero;
     $scope.fullHealCost = getHealCost($scope.hero.maxHp - $scope.hero.hp);
     $scope.healAmount = 0;
     //var healAmount = angular.element('input').scope();
@@ -12,7 +12,7 @@ app.controller('healerCtrl', function($scope, identity, updateHero, ItemResource
             $scope.hero.gold -= $scope.fullHealCost;
             $scope.hero.hp = $scope.hero.maxHp;
 
-            updateHero.update($scope.hero, identity.currentUser);
+            Hero.updateHero($scope.hero)
         }
         else{
             alert('Not enough gold!!!')
@@ -23,11 +23,9 @@ app.controller('healerCtrl', function($scope, identity, updateHero, ItemResource
         var healCost = getHealCost(healAmount);
 
         if ($scope.hero.gold >= healCost) {
-
             $scope.hero.hp += healAmount * 1;
             $scope.hero.gold -= healCost;
-
-            updateHero.update($scope.hero, identity.currentUser);
+            Hero.updateHero($scope.hero)
         }
         else{
             alert('Not enough gold!!!')
@@ -45,7 +43,7 @@ app.controller('healerCtrl', function($scope, identity, updateHero, ItemResource
             if ($scope.hero.weight <= $scope.hero.str) {
                 $scope.hero.gold -= item.price;
                 $scope.hero.inventory.push(item);
-                updateHero.update($scope.hero, identity.currentUser);
+                Hero.updateHero($scope.hero)
             } else {
                 $scope.weight -= item.weight;
                 alert('Inventory too heavy increase your Strength!')

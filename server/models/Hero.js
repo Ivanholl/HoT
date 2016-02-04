@@ -31,9 +31,10 @@ var heroSchema = mongoose.Schema({
     gold: Number,
     ss: Number,
     location: String,
-    inventory: [Object],
-    equipment: [Object],
-    race: String
+    inventory: [],
+    equipment: [],
+    race: String,
+    home: String
 });
 
 var Hero = mongoose.model('Hero', heroSchema);

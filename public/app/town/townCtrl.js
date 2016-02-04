@@ -1,5 +1,5 @@
-app.controller('townCtrl', function($scope, identity) {
-    $scope.hero = identity.currentUser.heroList[0];
+app.controller('townCtrl', function($scope, Hero) {
+    $scope.hero = Hero.currentHero;
     $scope.healer = false;
     $scope.library = false;
     $scope.armory = false;

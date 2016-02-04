@@ -48,7 +48,6 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
         window.location.href = '#/battle';
     };
     $scope.enter = function(event){
-        setNewLocation(event)
         window.location.href = '#/town';
     }
 
@@ -57,4 +56,7 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
         hero.location = newLocation;
         Hero.updateHero(hero)
     }
+
+
+    $('.town').tooltip();
 });

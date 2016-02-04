@@ -1,11 +1,8 @@
-app.factory('battle', function(updateHero, identity, notifier){
+app.factory('battle', function(Hero, notifier){
 
         return {
             battle: function(hero, minion){  //Otherwise it is used once
-                var ///hero = identity.currentUser.heroList[0],
-
-                    turnCount = 1,
-                    ///minion =  MinionResource.getMinionsByZone(hero.location, true),
+                var turnCount = 1,
                     enemyMove = false,
                     winLoseCheck = false;
 
@@ -78,7 +75,7 @@ app.factory('battle', function(updateHero, identity, notifier){
                         notifier.error('YOU LOST');
                         //alert("YOU LOST");
                         hero.location = hero.home;
-                        updateHero.update(hero, identity.currentUser)
+                        Hero.updateHero(hero)
                         window.location.href = '#/town';
                     }
                     if (minion.hp <= 0 && winLoseCheck == false) {
@@ -89,7 +86,7 @@ app.factory('battle', function(updateHero, identity, notifier){
                         hero.ss += minion.ss;
                         window.location.href = '#/map';
                     }
-                    updateHero.update(hero, identity.currentUser)
+                    Hero.updateHero(hero)
                 }
 
                 function getEnemyMove() {
@@ -99,20 +96,20 @@ app.factory('battle', function(updateHero, identity, notifier){
                         minionAtack = getAttack(minion);
 
                     if (playerDefense < minionAtack) {
-                        $('#logger').append('Enemy desided to attack!').append('<br/>')
-                        updateScroll()
+                        $('#logger').append('Enemy desided to attack!').append('<br/>');
+                        updateScroll();
                         Atack(minion, hero);
                         enemyMove = false;
                     }
                     else if (playerAtack < minionDefense) {
-                        $('#logger').append('Enemy desided to defend!').append('<br/>')
-                        updateScroll()
+                        $('#logger').append('Enemy desided to defend!').append('<br/>');
+                        updateScroll();
                         Defend(hero, minion);
                         enemyMove = false;
                     }
                     else {
-                        $('#logger').append('Enemy desided to pass!').append('<br/>')
-                        updateScroll()
+                        $('#logger').append('Enemy desided to pass!').append('<br/>');
+                        updateScroll();
                         //PASS
                     }
                 }
@@ -122,12 +119,12 @@ app.factory('battle', function(updateHero, identity, notifier){
                 }
 
                 function updateLogger(deler, dm, receiver) {
-                    $('#logger').append(deler.name + ' dealt ' + dm + ' damage to ' + receiver.name).append('<br/>')
+                    $('#logger').append(deler.name + ' dealt ' + dm + ' damage to ' + receiver.name).append('<br/>');
                     updateScroll()
                 }
 
  /*ATTACK*/     $('#attack').click(function () {
-                    $('#logger').append('===TURN ' + turnCount + '===').append('<br/>')
+                    $('#logger').append('===TURN ' + turnCount + '===').append('<br/>');
                     turnCount++;
                     $('#logger').append('You attack!').append('<br/>')
                     Atack(hero, minion);
@@ -135,16 +132,16 @@ app.factory('battle', function(updateHero, identity, notifier){
                 });
 
 /*DEFEND*/      $('#defend').click(function(){
-                    $('#logger').append('===TURN ' + turnCount +'===').append('<br/>')
+                    $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
                     turnCount++;
                     $('#logger').append('You defend!').append('<br/>')
                     Defend(minion, hero);
                     getEnemyMove();
                 });
 /*ESCAPE*/      $('#escape').click(function(){
-                    $('#logger').append('===TURN ' + turnCount +'===').append('<br/>')
+                    $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
                     turnCount++;
-                    $('#logger').append('You try to escape!').append('<br/>')
+                    $('#logger').append('You try to escape!').append('<br/>');
                     Escape();
                     getEnemyMove()
                 });

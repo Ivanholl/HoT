@@ -1,14 +1,14 @@
-app.controller('inventoryCtrl', function($scope, identity, updateHero, equipment, Hero) {
+app.controller('inventoryCtrl', function($scope, equipment, Hero) {
     $scope.hero = Hero.currentHero;
     $scope.inventory = $scope.hero.inventory;
 
     $scope.equip = function (item) {
         equipment.equip($scope.hero, item);
-        updateHero.update($scope.hero, Hero.currentHero)
+        Hero.updateHero($scope.hero)
     };
 
     $scope.unequip = function(item){
         equipment.unequip($scope.hero, item);
-        updateHero.update($scope.hero, Hero.currentHero)
+        Hero.updateHero($scope.hero)
     }
 });

@@ -13,11 +13,6 @@ app.config(function($routeProvider, $locationProvider) {
             authenticate: function(auth) {
                 return auth.isAuthenticated();
             }
-        },
-        isHeroChosen:{
-            chooseHero: function(Hero){
-                return Hero.isHeroChosen()
-            }
         }
     };
 
