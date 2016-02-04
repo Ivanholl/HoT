@@ -152,5 +152,13 @@ module.exports = {
             if (err) console.log('Hero could not be loaded: ' + err);
             res.send(hero);
         })
+    },
+    updateHero: function(req,res){
+        console.log("update hero")
+        var updatedUserData = req.body;
+
+        Hero.update({name: req.params.name}, updatedUserData, function() {
+            res.end();
+        })
     }
 };

@@ -1,4 +1,4 @@
-app.controller('TestCtrl', function($scope,identity, ItemResource, updateHero, $resource) {
+app.controller('TestCtrl', function($scope,identity, ItemResource, updateHero) {
     $scope.hero = identity.currentUser.heroList[0];
 
     $scope.giveItem = function (sort) {

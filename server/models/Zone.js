@@ -24,7 +24,8 @@ module.exports.seedZones = function() {
                 hasBranchZone: false,
                 hasPrevZone: false,
                 hasNextZone: true,
-                hasBattle: false
+                hasBattle: false,
+                isTown: true
             }});
             Zone.create({name: "gates", index: "dzone1", info: "front of the Drawrf Town Gates",movementOptions: {
                 nextZone: "dzone2",
@@ -32,7 +33,8 @@ module.exports.seedZones = function() {
                 hasNextZone: true,
                 hasPrevZone: true,
                 hasBranchZone: false,
-                hasBattle: true
+                hasBattle: true,
+                isTown: false
             }});
             Zone.create({name: "gates", index: "dzone2", info: "front of the Drawrf Town Gates",movementOptions: {
                 nextZone: "dzone2",
@@ -40,7 +42,8 @@ module.exports.seedZones = function() {
                 hasNextZone: true,
                 hasPrevZone: true,
                 hasBranchZone: false,
-                hasBattle: true
+                hasBattle: true,
+                isTown: false
             }});
             console.log('Zones added to databse...')
         }

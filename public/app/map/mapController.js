@@ -1,21 +1,20 @@
-app.controller('mapController', function($scope, identity, movementOptions,Hero, MinionResource, updateLocation, HeroResource, ZoneResource){
-    $scope.user = identity.currentUser;
-
-    var //hero = HeroResource.getHeroByName($scope.user.heroList[0]),
-        hero = Hero.currentHero,
-        curZoneID = hero.location
+app.controller('mapController', function($scope, identity, Hero, MinionResource, ZoneResource){
+    var hero = Hero.currentHero,
+        curZoneID = hero.location,
         lastSelectedZone = curZoneID;
 
-    $scope.selectedZone = curZoneID;
+    $scope.user = identity.currentUser;
     $scope.minions = MinionResource.getMinionsByZone(curZoneID);
+    $scope.zone = ZoneResource.getZoneByIndex(curZoneID);
+
 
     $('#' + curZoneID).addClass('curZone');
 
-    $scope.zone = function(event){
+    $scope.zoneSelect = function(event){
         var selectedZone = event.target.id;
-        $scope.selectedZone = selectedZone;
 
         $scope.minions = MinionResource.getMinionsByZone(selectedZone);
+        $scope.zone = ZoneResource.getZoneByIndex(selectedZone);
 
         $("#" + selectedZone).addClass('selectedZone');
 
@@ -25,66 +24,37 @@ app.controller('mapController', function($scope, identity, movementOptions,Hero,
         }
 
         if(curZoneID == selectedZone){
-            SetMovementOptions()
+            $scope.class = "";
         } else {
-            $("#battle").addClass('disabled');
-            $("#prev").addClass('disabled');
-            $("#branch").addClass('disabled');
-            $("#next").addClass('disabled');
+            $scope.class = "disabled";
         }
     };
 
-    function SetMovementOptions(){
-        var option = movementOptions.getMovementOptions()
-
-        console.log(option)
-
-        if (movementOptions.getMovementOptions().hasNextZone) {
-            $("#next").removeClass('disabled');
-        }
-        if (movementOptions.getMovementOptions().hasPrevZone) {
-            $("#prev").removeClass('disabled');
-        }
-        if (movementOptions.getMovementOptions().hasBranchZone) {
-            $("#branch").removeClass('disabled');
-        }
-        if (movementOptions.getMovementOptions().hasBattle) {
-            $("#battle").removeClass('disabled');
-            $("#battle").addClass('btn-danger');
-        } else {
-            $("#battle").removeClass('disabled');
-            $("#battle").html('Enter');
-            $("#battle").addClass('btn-info');
-        }
-    }
-
-    SetMovementOptions();
-
-    $scope.prev = function(){
-        updateLocation.updateLocation(movementOptions.getMovementOptions().prevZone);
-        checkIfBattle()
+    $scope.prev = function(event){
+        setNewLocation(event)
+        window.location.href = '#/battle';
     };
 
-    $scope.next = function(){
-        updateLocation.updateLocation(movementOptions.getMovementOptions().nextZone);
-        checkIfBattle()
+    $scope.next = function(event){
+        setNewLocation(event)
+        window.location.href = '#/battle';
     };
-    $scope.branch = function(){
-        updateLocation.updateLocation(movementOptions.getMovementOptions().branchZone);
-        checkIfBattle()
+    $scope.branch = function(event){
+        setNewLocation(event)
+        window.location.href = '#/battle';
     };
 
     $scope.battle = function(){
-        checkIfBattle()
+        window.location.href = '#/battle';
     };
-
-    function checkIfBattle(){
-        if(movementOptions.getMovementOptions().hasBattle){
-            window.location.href = '#/battle';
-        } else {
-            window.location.href = '#/town';
-        }
+    $scope.enter = function(event){
+        setNewLocation(event)
+        window.location.href = '#/town';
     }
 
-    //$scope.zone = ZoneResource.getZoneByIndex('dzone1');
+    function setNewLocation(event){
+        var newLocation = event.target.text.slice(6)
+        hero.location = newLocation;
+        Hero.updateHero(hero)
+    }
 });

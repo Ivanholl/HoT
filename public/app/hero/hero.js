@@ -1,4 +1,4 @@
-app.factory('Hero', function( $window, identity, HeroResource) {
+app.factory('Hero', function($q, $http, $window, identity, HeroResource) {
     var hero,
         chosenHero = identity.currentUser.heroList[0];
 
@@ -12,6 +12,18 @@ app.factory('Hero', function( $window, identity, HeroResource) {
         currentHero: hero,
         isHeroChosen: function() {
             return !!this.currentHero;
+        },
+        updateHero: function(newHero){
+            var deferred = $q.defer();
+
+            hero.$save().then(function() {
+                hero = newHero;
+                deferred.resolve();
+            }, function(response) {
+                deferred.reject(response);
+            });
+
+            return deferred.promise;
         }
     }
 });

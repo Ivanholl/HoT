@@ -23,9 +23,6 @@ app.factory('HeroResource', function($resource, identity) {
             updatedUser.$update().then(function() {
                 identity.currentUser.heroList[0] = "";
             })
-        },
-        getHeroLocation : function(name){
-            return SearchHeroResource.get({name: name}).location
         }
     }
 });

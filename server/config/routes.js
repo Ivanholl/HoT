@@ -29,6 +29,9 @@ module.exports = function(app) {
     app.get('/api/hero/:name', function (req, res) {
         controllers.hero.getHeroByName(req, res)
     });
+    app.post('/api/hero/:name', function (req, res) {
+        controllers.hero.updateHero(req, res)
+    });
     app.post('/api/createhero', function (req, res) {
         controllers.hero.createHero(req, res)
     });

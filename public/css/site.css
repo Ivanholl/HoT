@@ -67,7 +67,7 @@ footer p {
   position: relative;
   background-image: url("/pictures/map.jpg");
   background-repeat: no-repeat;
-  box-shadow: 0 0 17px 13px rgba(0,0,0,0.8) inset;
+  box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
   float: left;
 }
 .round-button {
