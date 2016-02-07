@@ -7,17 +7,14 @@ function getRandomInt(min, max) {
 module.exports = {
     getAllMinions: function(req, res, next) {
         Minion.find({}).exec(function(err, collection) {
-
             if (err) {
                 console.log('Minions could not be loaded: ' + err);
             }
-
             res.send(collection);
         })
     },
-    getMinionsByLocation: function(req, res, location, returnOne) {
-
-        Minion.find({location : location}).exec(function(err, collection) {
+    getMinionsByLocation: function(req, res, returnOne) {
+        Minion.find({location : req.params.location}).exec(function(err, collection) {
             if (err) console.log('Minions could not be loaded: ' + err);
 
             if (returnOne){

@@ -111,3 +111,5 @@
         a#battle.btn.btn-danger(ng-if="zone.movementOptions.hasBattle" ng-class="class" ng-click="battle($event)") Battle
         a#battle.btn.btn-info(ng-if="zone.movementOptions.isTown" ng-class="class" ng-click="enter($event)") Enter
 
+
+    div(ng-include="'partials/chat/chat.jade'")

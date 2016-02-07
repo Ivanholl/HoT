@@ -1,4 +1,4 @@
-app.controller('heroSelectCtrl', function($scope, identity, Hero, heroCreate, notifier, HeroResource){
+app.controller('heroSelectCtrl', function($scope, identity, Hero, notifier, HeroResource){
     var slotOne = identity.currentUser.heroList[0];
 
     $scope.user = identity.currentUser;

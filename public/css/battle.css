@@ -1,0 +1,19 @@
+.battle-info {
+  height: 250px;
+}
+.minion-info {
+  text-align: right;
+  display: inline-block;
+  float: right;
+}
+.player-info {
+  text-align: left;
+  display: inline-block;
+  float: left;
+}
+#battleLog {
+  margin: 50px;
+  height: 200px;
+  overflow-y: auto;
+  text-align: center;
+}

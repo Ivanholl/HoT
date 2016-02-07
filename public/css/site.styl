@@ -1,9 +1,6 @@
 body
-  //padding-top 80px
   maring 0px
-  //padding 0px
   background-image url("/pictures/background.png")
-  //background-size cover
 
 section
   margin-top 40px
@@ -25,6 +22,9 @@ footer
     padding-top 10px
 
 .news
+  height 350px
+  overflow-x scroll
+  overflow-y none
   background-color rgb(72,85,99)
   padding-left 70px
   padding-right 70px
@@ -41,12 +41,8 @@ footer
   height 40px
 
 #container
-  //margin-top 40px
   width 1000px
-  //left -50%
   margin-left calc(50% - 500px)
-  //margin 0 auto
-  //margin-top 40px
   box-shadow 0 0 17px 3px rgba(0,0,0,0.56)
   background-color rgb(78,93,108)
   border-left 3px solid #808080
@@ -124,39 +120,7 @@ footer
   font-weight 600
   width 450px
   float right
-  //display inline-block
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56)
-
-.battle-info/********************************BATTLE************/
-  height 250px
-
-.minion-info
-  text-align right
-  display inline-block
-  float right
-
-.player-info
-  text-align left
-  display inline-block
-  float left
-
-#battleLog
-  margin 50px
-  height 200px
-  overflow-y auto
-  text-align center
-
-#buildingList /*******************************************TOWN*****/
-  display inline-block
-  list-style none
-  position absolute
-  bottom 0
-
-#town
-  width 990px
-  //margin-top 40px
-  height 800px
-  background-size 100% 100%
 
 /**********************************************HERO CREATE*********/
 .raceOption
@@ -185,6 +149,7 @@ footer
   position absolute
   bottom 2px
   font-weight 800
+  background-color rgba(10,0,5,0.6)
 
 .chooseName
   height 700px

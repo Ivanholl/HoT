@@ -6,11 +6,23 @@
         .alert.alert-danger(ng-hide="identity.isAuthenticated()")
             strong Please Log In.
 
-        a.btn.btn-success(href="#/hero" ng-show="identity.isAuthenticated()")
-            |Play
+        .alert.alert-warning(ng-if="identity.isAuthenticated()")
+            strong Do not refresh browser! Otherwise Hero data might be lost!
+        a.btn.btn-success(ng-audio-hover="sounds/mouseHover.mp3" volume-hover="1.0" href="#/hero" ng-show="identity.isAuthenticated()")
+            |Play Now
 
         .news
             h2 NEWS
+
+            blockquote.blockquote-reverse
+                p We've got chat now!
+                small information by
+                    cite(title="Source Title") HoT&trade;
+
+            blockquote
+                p Sounds have been added.
+                small information by
+                    cite(title="Source Title") HoT&trade;
 
             blockquote.blockquote-reverse
                 p Pictures! Lot's of item pictures have been added.

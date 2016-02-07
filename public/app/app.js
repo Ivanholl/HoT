@@ -1,4 +1,9 @@
-var app = angular.module('app', ['ngResource', 'ngRoute'/*, 'ngAudio'*/]).value('toastr', toastr);
+var app = angular.module('app', ['ngResource', 'ngRoute',
+    /*'ngCookies',
+    'ngResource',
+    'ngSanitize',*/
+    'btford.socket-io',
+    'ngAudio']).value('toastr', toastr);
 
 app.config(function($routeProvider, $locationProvider) {
     // $locationProvider.html5Mode(true);
@@ -70,6 +75,12 @@ app.config(function($routeProvider, $locationProvider) {
             controller: 'TestCtrl',
             resolve: routeUserChecks.adminRole
         })
+});
+
+app.value('messageFormatter', function(date, nick, message) {
+    return date.toLocaleTimeString() + ' - ' +
+        nick + ' - ' +
+        message + '\n';
 });
 
 app.run(function($rootScope, $location) {

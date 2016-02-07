@@ -1,1 +1,14 @@
-<div ng-controller="merchantCtrl"><table style="max-width: 500px;" class="table table-hover"><thead><th>Item</th><th style="float:right;">Sell</th><th style="float:right;"><span>Sell Price</span><img src="pictures/symbols/gold.png"/></th></thead><tbody><tr ng-repeat="item in inventory"><td ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false">{{item.title}}<div ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'" class="toolTip"></div></td><td style="float:right;" ng-click="sell(item)" class="btn btn-info">sell</td><td style="float:right;"><div class="text-warning">{{item.price / 2}}</div></td></tr></tbody></table></div>
+<div ng-controller="merchantCtrl"><!--table.table.table-hover(style="max-width: 500px;")thead
+   th Item
+   th(style="float:right;") Sell
+   th(style="float:right;")
+      span Sell Price
+      img(src="pictures/symbols/gold.png")
+tbody
+   tr(ng-repeat="item in inventory")
+      td(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
+         .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
+      td.btn.btn-info(style="float:right;" ng-click="sell(item)") sell
+      td(style="float:right;")
+         .text-warning {{item.price / 2}}
+--><div ng-include="'partials/town/itemTable'"></div></div>

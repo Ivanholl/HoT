@@ -1,12 +1,21 @@
 app.controller('townCtrl', function($scope, Hero) {
     $scope.hero = Hero.currentHero;
-    $scope.healer = false;
-    $scope.library = false;
-    $scope.armory = false;
-    $scope.weaponsmith = false;
-    $scope.bar = false;
-    $scope.merchant = false;
-    
+    $scope.buildingList = {
+        healer: false,
+        library: false,
+        armory: false,
+        weaponsmith: false,
+        bar: false,
+        merchant: false,
+        market: false
+    };
+
+    function falcify(array){
+        for (key in array){
+            array[key] = false;
+        }
+    }
+
     $scope.toMap = function () {
         window.location.href  = '#/map';
     };
@@ -23,52 +32,32 @@ app.controller('townCtrl', function($scope, Hero) {
     $scope.enterBuilding = function(building) {
         switch (building){
             case "library":
-                $scope.library = true;
-                $scope.healer = false;
-                $scope.armory = false;
-                $scope.weaponsmith = false;
-                $scope.bar = false;
-                $scope.merchant = false;
+                falcify($scope.buildingList);
+                $scope.buildingList.library = true;
                 break;
             case "healer":
-                $scope.library = false;
-                $scope.healer = true;
-                $scope.armory = false;
-                $scope.weaponsmith = false;
-                $scope.bar = false;
-                $scope.merchant = false;
+                falcify($scope.buildingList);
+                $scope.buildingList.healer = true;
                 break;
             case "armory":
-                $scope.armory = true;
-                $scope.library = false;
-                $scope.healer = false;
-                $scope.weaponsmith = false;
-                $scope.bar = false;
-                $scope.merchant = false;
+                falcify($scope.buildingList);
+                $scope.buildingList.armory = true;
                 break;
             case "weaponsmith":
-                $scope.armory = false;
-                $scope.library = false;
-                $scope.healer = false;
-                $scope.weaponsmith = true;
-                $scope.bar = false;
-                $scope.merchant = false;
+                falcify($scope.buildingList);
+                $scope.buildingList.weaponsmith = true;
                 break;
             case "bar":
-                $scope.armory = false;
-                $scope.library = false;
-                $scope.healer = false;
-                $scope.weaponsmith = false;
-                $scope.bar = true;
-                $scope.merchant = false;
+                falcify($scope.buildingList);
+                $scope.buildingList.bar = true;
                 break;
             case "merchant":
-                $scope.armory = false;
-                $scope.library = false;
-                $scope.healer = false;
-                $scope.weaponsmith = false;
-                $scope.bar = false;
-                $scope.merchant = true;
+                falcify($scope.buildingList);
+                $scope.buildingList.merchant = true;
+                break;
+            case "market":
+                falcify($scope.buildingList);
+                $scope.buildingList.market = true;
                 break;
             default: break;
         }

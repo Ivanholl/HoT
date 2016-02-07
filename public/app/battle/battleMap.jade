@@ -1,5 +1,4 @@
 #container
-   .jumbotron
    #battle(ng-style="{'background-image':'url(/pictures/{{hero.location}}.jpg)background-repeat: no-repeat'}")
       h3 {{zone}}
       .battle-info
@@ -39,3 +38,5 @@
 
       #battleLog
          #logger
+
+      div(ng-include="'partials/chat/chat.jade'")

@@ -1,6 +1,8 @@
 app.controller("merchantCtrl", function($scope, Hero){
     $scope.hero = Hero.currentHero;
-    $scope.inventory = $scope.hero.inventory;
+    $scope.class = true;
+    $scope.items = $scope.hero.inventory;
+    $scope.sell = true;
 
     $scope.sell = function(item){
         console.log($scope.inventory)
@@ -9,7 +11,7 @@ app.controller("merchantCtrl", function($scope, Hero){
         if (index > -1) {
             $scope.inventory.splice(index, 1);
             $scope.hero.weight -= item.weight
-            $scope.hero.gold += item.price / 2
+            $scope.hero.gold += Math.floor(item.price / 2)
 
             Hero.updateHero($scope.hero)
         }

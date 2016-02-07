@@ -1,0 +1,8 @@
+#chatContainer(ng-controller="chatCtrl")
+   .btn.btn-info.hideChat(ng-click="show = !show")
+      p show/hide chat
+      img(src="pictures/arrow_right.png")
+   .chat(ng-hide="show")
+      textarea.chatText(ng-disable='true' ng-model='messageLog')
+      input.chatInput(type='text' ng-max='50' ng-model='message')
+      .btn.btn-sm.btn-primary(ng-enable='form.$valid' ng-click="sendMessage(message)") Send

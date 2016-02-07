@@ -9,6 +9,8 @@ block main-content
                 ul.nav.navbar-nav
                     li
                         a(href="#/") Home
+                    li
+                        a(href='') News
                 div(ng-include="'partials/account/login'")
 
     section
@@ -16,7 +18,12 @@ block main-content
         div(ng-if="!isRouteLoading" ng-view)
 
     footer
-        p.text-center
-            | &copy; Heroes of Trebichenburg 2015
+        center
+            .text-primary &copy; Heroes of Trebichenburg 2015
             br
-            | special thanks to Lorc for providing all those Icons
+            | special thanks to:
+            br
+            | Lorc for providing all those Icons
+            br
+            | freesfx.co.uk for providing sounds
+

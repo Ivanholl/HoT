@@ -1,5 +1,5 @@
 div(ng-controller="merchantCtrl")
-   table.table.table-hover(style="max-width: 500px;")
+   //table.table.table-hover(style="max-width: 500px;")
       thead
          th Item
          th(style="float:right;") Sell
@@ -13,3 +13,5 @@ div(ng-controller="merchantCtrl")
             td.btn.btn-info(style="float:right;" ng-click="sell(item)") sell
             td(style="float:right;")
                .text-warning {{item.price / 2}}
+
+   div(ng-include="'partials/town/itemTable'")

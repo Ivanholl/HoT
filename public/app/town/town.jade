@@ -1,12 +1,13 @@
 #container
    .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
    #town(ng-style="{'background-image':'url(/pictures/{{hero.location}}.jpg)'}")
-      div(ng-if="healer" ng-include="'townPartials/healer/healer.jade'")
-      div(ng-if="library" ng-include="'townPartials/library/library.jade'")
-      div(ng-if="armory" ng-include="'townPartials/armory/armory.jade'")
-      div(ng-if="weaponsmith" ng-include="'townPartials/weaponsmith/weaponsmith.jade'")
-      div(ng-if="bar" ng-include="'townPartials/bar/bar.jade'")
-      div(ng-if="merchant" ng-include="'townPartials/merchant/merchant.jade'")
+      .building(ng-if="buildingList.healer" ng-include="'townPartials/healer/healer.jade'")
+      .building(ng-if="buildingList.library" ng-include="'townPartials/library/library.jade'")
+      .building(ng-if="buildingList.armory" ng-include="'townPartials/armory/armory.jade'")
+      .building(ng-if="buildingList.weaponsmith" ng-include="'townPartials/weaponsmith/weaponsmith.jade'")
+      .building(ng-if="buildingList.bar" ng-include="'townPartials/bar/bar.jade'")
+      .building(ng-if="buildingList.merchant" ng-include="'townPartials/merchant/merchant.jade'")
+      .building(ng-if="buildingList.market" ng-include="'townPartials/market/market.jade'")
 
    #buildingList
          ul.nav.nav-tabs
@@ -29,9 +30,10 @@
             li
                a.btn.btn-warning.disabled Jewery
             li
-               a.btn.btn-warning.disabled Market Place
+               a.btn.btn-warning(ng-click="enterBuilding('market')") Market Place
             li
                a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
          .btn.btn-danger(ng-click="toMap()") Back to Map
          .btn.btn-success(ng-click="makeHome()") Make this city my Home
 
+   div(ng-include="'partials/chat/chat.jade'")

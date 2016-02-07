@@ -34,7 +34,6 @@
                             br
                             img(src="pictures/symbols/location.png")
                             span.text-primary {{heroOne.location}}
-                        div(ng-hide="show" ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical
                             .btn.btn-success(ng-click="chooseHero(heroOne)" ng-hide="chooseDelete") Choose Hero
                             .btn.btn-info(ng-click="createHero()"  ng-hide="create") Create Hero
@@ -45,8 +44,6 @@
                     .panel-heading
                         .panel-title
                     .panel-body
-                        p
-                        div(ng-hide='true' ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical
                             .btn.btn-success.disabled Choose Hero
                             .btn.btn-info.disabled Choose Hero
@@ -57,8 +54,6 @@
                     .panel-heading
                         .panel-title
                     .panel-body
-                        p
-                        div(ng-hide="true" ng-include="'/partials/hero/hero-create'")
                         .btn-group-vertical
                             .btn.btn-success.disabled Choose Hero
                             .btn.btn-info.disabled Choose Hero
