@@ -21,6 +21,7 @@ div(ng-if="class")
                     .text-warning {{item.price / 2}}
                 td(style="float:right;")
                     .text-warning {{item.weight}}
+
             tr(ng-if="auction" ng-repeat="auction in auctions")
                 td(ng-mouseover="tooltip=true; tooltipItem = auction.item" ng-mouseleave="tooltip=false") {{auction.item.title}}
                     .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")

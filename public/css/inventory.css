@@ -37,6 +37,7 @@
   border-radius: 10px;
   padding: 3px;
 }
+.uncommon,
 .item:hover .itemInfo {
   visibility: visible;
 }

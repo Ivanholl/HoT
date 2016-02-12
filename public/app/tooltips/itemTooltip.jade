@@ -1,8 +1,7 @@
 .itemTooltip(ng-controller="ItemTooltipCtrl")
-   .itemPic
-      img(src="{{tooltipItem.pic}}")
-   .itemTitle {{tooltipItem.title}}
-   .itemType {{tooltipItem.type}}
+   .itemPic(ng-class="tooltipItem.rarity" ng-style="{'background-image':'url({{tooltipItem.pic}})'}")
+   #itemTitle(ng-class="tooltipItem.rarity") {{tooltipItem.title}}
+   .itemType {{tooltipItem.rarity}} {{tooltipItem.type}}
    .itemClass {{tooltipItem.class}}
    hr
    .itemWeight Weight: {{tooltipItem.weight}}

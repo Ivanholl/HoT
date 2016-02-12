@@ -11,13 +11,14 @@
   font-size: 15px;
   font-weight: normal;
 }
-.itemTitle {
+#itemTitle {
   position: relative;
   font-weight: 700;
   font-size: 18px;
   float: right;
   display: inline-block;
   width: 155px;
+  box-shadow: none;
 }
 .itemType {
   font-weight: normal;
@@ -43,10 +44,39 @@
   float: left;
   display: inline-block;
   margin: 1px;
-}
-.itemPic img {
+  width: 80px;
+  height: 105px;
   border-radius: 10px;
+  background-size: 100% 100%;
 }
 .bonusList {
   margin-top: 22px;
+}
+.common {
+  color: #d3d3d3;
+  box-shadow: 0 0 14px 7px rgba(211,211,211,0.8) inset;
+}
+.rare {
+  color: #1e90ff;
+  box-shadow: 0 0 14px 7px rgba(30,140,255,0.8) inset;
+}
+.epic {
+  color: #800080;
+  box-shadow: 0 0 14px 7px rgba(128,0,128,0.8) inset;
+}
+.legendary {
+  color: #ff8c00;
+  box-shadow: 0 0 14px 7px rgba(255,140,0,0.8) inset;
+}
+.set {
+  color: #006400;
+  box-shadow: 0 0 14px 7px rgba(0,100,0,0.8) inset;
+}
+.unique {
+  color: #8b0000;
+  box-shadow: 0 0 14px 7px rgba(139,0,0,0.8) inset;
+}
+.quest {
+  color: #ff0;
+  box-shadow: 0 0 14px 7px rgba(255,255,0,0.8) inset;
 }

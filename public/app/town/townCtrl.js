@@ -22,7 +22,7 @@ app.controller('townCtrl', function($scope, Hero) {
 
     if ($scope.hero.hp <= 0) {
         $scope.hero.hp = 1;
-        updateHero.update($scope.hero, identity.currentUser);
+        Hero.updateHero($scope.hero);
     }
 
     $scope.makeHome = function() {

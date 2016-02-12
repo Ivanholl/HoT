@@ -1,34 +1,42 @@
-.player-info.list-group
-    .list-group-item
-        img(src="{{hero.avatar}}")
-    .list-group-item
+ul.statList
+    li
+        img.avatar(src="{{hero.avatar}}")
+        ul.heroBarList(ng-if="!fullInfo")
+            li
+                .progress.statBar
+                    .progress-bar.progress-bar-danger(style="width: {{hero.hp / (hero.maxHp / 100)}}%;") {{hero.hp}}/{{hero.maxHp}}
+            li
+                .progress.statBar.mpBar
+                    .progress-bar.progress-bar-info(style="width: {{hero.mp / (hero.maxMp / 100)}}%;") {{hero.mp}}/{{hero.maxMp}}
+    li
         img(src="pictures/symbols/character icon.png")
         span {{hero.name}}
+    li(ng-if="fullInfo")
         .text-primary Ap: {{hero.ap}}
-    .list-group-item
+    li(ng-if="fullInfo")
         img(src="pictures/symbols/Hp2.png")
         span {{hero.hp}}/{{hero.maxHp}}
-    .list-group-item
+    li(ng-if="fullInfo")
         img(src="pictures/symbols/Mana.png")
         span {{hero.mp}}/{{hero.maxMp}}
-    .list-group-item
+    li
         img(src="pictures/symbols/sword.png")
         span {{hero.dm}}
         img(src="pictures/symbols/deffence.png")
         span {{hero.df}}
-    .list-group-item
+    li
         img(src="pictures/symbols/gold.png")
         span {{hero.gold}}
         img(src="pictures/symbols/soul stone2.png")
         span {{hero.ss}}
-    .list-group-item
+    li(ng-if="fullInfo")
         img(src="pictures/symbols/weight.png")
         span.text-warning  {{hero.weight}} /
         img(src="pictures/symbols/strength.png")
         span.text-warning {{hero.str}}
-    .list-group-item
+    li(ng-if="fullInfo")
         img(src="pictures/symbols/location.png")
         span.text-primary  {{hero.location}}
-    .list-group-item
+    li(ng-if="fullInfo")
         img(src="pictures/symbols/home.png")
         span.text-primary {{hero.home}}

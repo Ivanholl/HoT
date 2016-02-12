@@ -1,19 +1,72 @@
+#battle {
+  background-size: 100% 100%;
+  position: relative;
+}
 .battle-info {
   height: 250px;
+  width: 100%;
 }
 .minion-info {
-  text-align: right;
   display: inline-block;
   float: right;
+  text-align: right;
+  position: absolute;
+  top: 15px;
+  right: 55px;
 }
 .player-info {
   text-align: left;
-  display: inline-block;
-  float: left;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.statList {
+  margin-left: 0;
+  list-style: none;
+}
+.backgroundColor {
+  background-color: rgba(10,0,5,0.6);
 }
 #battleLog {
   margin: 50px;
+  width: 600px;
   height: 200px;
   overflow-y: auto;
   text-align: center;
+}
+.avatar {
+  height: 75px;
+  width: 75px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.vs {
+  height: 100px;
+  width: 100px;
+  background-image: url("/pictures/vs.png");
+  background-size: 100% 100%;
+}
+.enemyBarList {
+  position: absolute;
+  list-style: none;
+  top: 15px;
+  right: 75px;
+}
+.enemyBarList .mpBar {
+  float: right;
+}
+.heroBarList {
+  position: absolute;
+  list-style: none;
+  top: 15px;
+  left: 75px;
+}
+.statBar {
+  border: 1px solid #000;
+  border-radius: 7px;
+  width: 200px;
+  margin: 0;
+}
+.mpBar {
+  width: 150px;
 }

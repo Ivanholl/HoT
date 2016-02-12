@@ -1,33 +1,46 @@
 #container
-   #battle(ng-style="{'background-image':'url(/pictures/{{hero.location}}.jpg)background-repeat: no-repeat'}")
-      h3 {{zone}}
-      .battle-info
-         .minion-info.list-group
-            .list-group-item
-               img(src="{{minion.avatar}}")
-            .list-group-item
-               img(src="pictures/symbols/character icon.png")
-               span {{minion.name}}
-            .list-group-item
-               img(src="pictures/symbols/Hp2.png")
-               span {{minion.hp}}/{{minion.maxHp}}
-               //.p-bar
-                  .inner(style="max-width:{{hp}}%;")
-            .list-group-item
-               img(src="pictures/symbols/Mana.png")
-               span {{minion.mp}}/{{minion.maxMp}}
-            .list-group-item
-               img(src="pictures/symbols/sword.png")
-               span {{minion.dm}}
-               img(src="pictures/symbols/deffence.png")
-               span {{minion.df}}
-            .list-group-item
-               img(src="pictures/symbols/gold.png")
-               span {{minion.gold}}
-               img(src="pictures/symbols/soul stone2.png")
-               span {{minion.ss}}
+   #battle(ng-style="{'background-image':'url(/pictures/backgrounds/{{zone}}.jpg)'}")
 
-         div(ng-include="'partials/common/playerInfoWindow'")
+      .battle-info
+         div.minion-info
+            ul.statList
+               li
+                  img.avatar(src='{{minion.avatar}}')
+                  ul.enemyBarList
+                     li
+                        .progress.statBar
+                           .progress-bar.progress-bar-danger(style="width: {{minion.hp / (minion.maxHp / 100)}}%;") {{minion.hp}}/{{minion.maxHp}}
+                     li
+                        .progress.statBar.mpBar
+                           .progress-bar.progress-bar-info(style="width: {{minion.mp / (minion.maxMp / 100)}}%;") {{minion.mp}}/{{minion.maxMp}}
+               li
+                  img(src="pictures/symbols/character icon.png")
+                  span {{minion.name}}
+               //li
+                   img(src="pictures/symbols/Hp2.png")
+                   span {{minion.hp}}/{{minion.maxHp}}
+               //li
+                  img(src="pictures/symbols/Mana.png")
+                  span {{minion.mp}}/{{minion.maxMp}}
+               li
+                  img(src="pictures/symbols/sword.png")
+                  span {{minion.dm}}
+                  img(src="pictures/symbols/deffence.png")
+                  span {{minion.df}}
+               li
+                  img(src="pictures/symbols/gold.png")
+                  span {{minion.gold}}
+                  img(src="pictures/symbols/soul stone2.png")
+                  span {{minion.ss}}
+               li
+
+         center
+            .vs
+            .enemy
+               img(src="{{minion.avatar}}")
+
+         div.player-info(ng-include="'partials/common/playerInfoWindow'")
+
 
       .btn-group
          #attack.btn.btn-danger(ng-click) Attack
@@ -39,4 +52,4 @@
       #battleLog
          #logger
 
-      div(ng-include="'partials/chat/chat.jade'")
+   div(ng-include="'partials/chat/chat.jade'")
