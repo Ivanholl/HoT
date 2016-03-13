@@ -1,4 +1,7 @@
-var Hero = require('mongoose').model('Hero');
+var Hero = require('mongoose').model('Hero'),
+    Mail = require('mongoose').model('Mail'),
+    Auction = require('mongoose').model('Auction');
+
 var equipment = [
     helm = null,    //0
     chest = null,
@@ -115,6 +118,7 @@ function getHeroStats(hero){
                 maxHp: 16,
                 mp: 4,
                 maxMp:4,
+                weight: 0,
                 dm: [2,3],
                 df: 2,
                 str: 10,
@@ -131,7 +135,7 @@ function getHeroStats(hero){
             break;
     }
 }
-
+var newHeroMail = {title: "Welcome", from: "HoT Team", to:"", items:[], message:"Welcome to Heroes Of Trebichnenburg", read:false, date: new Date().toJSON().slice(0,10)};
 module.exports = {
     getHeroByName : function(req, res){
         Hero.findOne({name : req.params.name}).exec(function(err, hero) {
@@ -145,12 +149,25 @@ module.exports = {
         Hero.create(newHeroData, function(err, hero) {
             if (err) console.log('Failed to create new hero: ' + err);
             res.send(hero);
+        });
+
+        newHeroMail.to = req.body.name;
+        Mail.create(newHeroMail, function(err, mail){
+            if(err) console.log('Failed to send welcome Mail: ' + err)
         })
     },
     deleteHero: function(req, res){
         Hero.remove({name : req.params.name}).exec(function(err, hero) {
             if (err) console.log('Hero could not be loaded: ' + err);
             res.send(hero);
+        });
+        Mail.remove({to: req.params.name}, function(err, mail){
+            if (err) console.log("Failed to delete Hero Mail: " + err)
+        });
+        Auction.remove({owner: req.params.name}).exec(function (err, colection) {
+            if (err) {
+                console.log('Failed to delete Hero Auctions: ' + err);
+            }
         })
     },
     updateHero: function(req,res){

@@ -1,0 +1,23 @@
+div(ng-controller="mailCtrl")
+   table.table-striped.table-hover(style="width:200px")
+      thead
+         tr
+            th icon
+            th title
+            th(style="float: right") date
+      tbody
+         tr(ng-repeat="mail in mailList")
+            td icon
+            td(ng-click="displayMail(mail)") {{mail.title}}
+            td(style="float: right") {{mail.date}}
+
+   .modal-content(style="width:500px")
+      .modal-header
+         span from: {{mailToDisplay.from}}
+         h4.modal-title {{mailToDisplay.title}}
+         span(style="float:right") {{mailToDisplay.date}}
+      .modal-body
+         p {{mailToDisplay.message}}
+      .modal-footer
+         .btn.btn-default Cancel
+         .btn.btn-primary Send

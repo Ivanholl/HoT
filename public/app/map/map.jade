@@ -1,6 +1,7 @@
 #container
     .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
     //.jumbotron
+
     #map
         img(src="/pictures/map.jpg" style="visibility: hidden")
 
@@ -96,14 +97,16 @@
         .list-group
             .list-group-item.active {{zone.name}}
             .list-group-item.text-warning {{zone.info}}
-            .list-group-item(ng-if="zone.movementOptions.hasBattle")
-                table.table-striped.table-hover
+            .list-group-item
+                table.table-striped.table-hover.zone-info-table(ng-if="zone.movementOptions.hasBattle")
                     thead
                         tr
                             th.text-primary Minions in this zone
                     tbody
                          tr(ng-repeat="minion in minions")
                             td {{minion.name}}
+                img.zone-pic(src="/pictures/backgrounds/{{zone.index}}.jpg")
+
 
         a#prev.btn.btn-success(ng-if="zone.movementOptions.hasPrevZone" ng-class="class" ng-click="prev($event)") Go to {{zone.movementOptions.prevZone}}
         a#branch.btn.btn-success(ng-if="zone.movementOptions.hasBranchZone" ng-class="class" ng-click="branch($event)") Go to {{zone.movementOptions.branchZone}}

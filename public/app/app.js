@@ -1,9 +1,5 @@
-var app = angular.module('app', ['ngResource', 'ngRoute',
-    /*'ngCookies',
-    'ngResource',
-    'ngSanitize',*/
-    'btford.socket-io',
-    'ngAudio']).value('toastr', toastr);
+var app = angular.module('app', ['ngResource', 'ngRoute','btford.socket-io','ngAudio'])
+    .value('toastr', toastr);
 
 app.config(function($routeProvider, $locationProvider) {
     // $locationProvider.html5Mode(true);

@@ -25,7 +25,7 @@ div(ng-controller="marketCtrl")
 
    .btn-group(ng-if="create")
       p Auctions cost 1% of the price for a day
-      a.btn.btn-primary MyItems
+      a.btn.btn-primary.col-md-2 MyItems
       a.btn.btn-primary.dropdown-toggle(aria-expanded="false" data-toggle="dropdown")
          span.caret
       ul.dropdown-menu
@@ -40,9 +40,9 @@ div(ng-controller="marketCtrl")
                         .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
                      td
                         .btn-info(style="float:right;" ng-click="chooseItem(item)") Choose
-
-      input(type="text", placeholder="Days", ng-model="days", required)
-      input(type="text", placeholder="Price", ng-model="price", required)
+      span.col-md-2 {{auctionItem.title}}
+      input.col-md-2(type="text", placeholder="Days", ng-model="days", required)
+      input.col-md-2(type="text", placeholder="Price", ng-model="price", required)
       .btn.btn-success(ng-click="createAuction(price, days)") Create
 
    div(ng-include="'partials/town/itemTable'")

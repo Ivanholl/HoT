@@ -67,11 +67,11 @@ module.exports.seedTestMinion = function() {
             Minion.create({hp:25,maxHp:25,mp:0,maxMp:0,dm:[4,6],df:4,gold:15,ss:15,location:'ozone3',name:'Baby Stone Spider',avatar:"pictures/avatar/minion/tba.jpg"});
 
             //dwarf
-            Minion.create({hp:20,maxHp:20,mp:0,maxMp:0,dm:[1,2],df:1,gold:5,ss:5,location:'dzone1',name:'Evolved Slug',avatar:"pictures/avatar/minion/tba.jpg"});
+            Minion.create({hp:20,maxHp:20,mp:0,maxMp:0,dm:[1,2],df:1,gold:5,ss:5,location:'dzone1',name:'Evolved Slug',avatar:"pictures/avatar/minion/evolved slug.png"});
             Minion.create({hp:15,maxHp:15,mp:0,maxMp:0,dm:[2,3],df:5,gold:10,ss:5,location:'dzone1',name:'Stone Golem',avatar:"pictures/avatar/minion/tba.jpg"});
             Minion.create({hp:13,maxHp:13,mp:0,maxMp:0,dm:[4,5],df:2,gold:5,ss:10,location:'dzone1',name:'Giant Worm',avatar:"pictures/avatar/minion/tba.jpg"});
             Minion.create({hp:10,maxHp:10,mp:0,maxMp:0,dm:[6,7],df:1,gold:10,ss:10,location:'dzone1',name:'Bloodsucking Bat',avatar:"pictures/avatar/minion/tba.jpg"});
-            Minion.create({hp:20,maxHp:20,mp:0,maxMp:0,dm:[6,7],df:3,gold:0,ss:15,location:'dzone1',name:'Evolved Slug',avatar:"pictures/avatar/minion/tba.jpg"});
+            Minion.create({hp:20,maxHp:20,mp:0,maxMp:0,dm:[6,7],df:3,gold:0,ss:15,location:'dzone1',name:'Evolved Slug',avatar:"pictures/avatar/minion/evolved slug.png"});
 
             Minion.create({hp:17,maxHp:17,mp:0,maxMp:0,dm:[3,4],df:5,gold:15,ss:10,location:'dzone2',name:'Stone Bat',avatar:"pictures/avatar/minion/tba.jpg"});
             Minion.create({hp:13,maxHp:13,mp:0,maxMp:0,dm:[4,6],df:2,gold:15,ss:15,location:'dzone2',name:'Mystic Spider',avatar:"pictures/avatar/minion/tba.jpg"});

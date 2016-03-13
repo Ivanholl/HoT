@@ -3,7 +3,8 @@ var usersController = require('../controllers/usersController'),
     itemController = require('../controllers/itemsController'),
     heroController = require('../controllers/heroController'),
     auctionController = require('../controllers/auctionController'),
-    zoneController = require('../controllers/zoneController');
+    zoneController = require('../controllers/zoneController'),
+    mailController = require('../controllers/mailController');
 
 module.exports = {
     hero: heroController,
@@ -11,5 +12,6 @@ module.exports = {
     minions: minionController,
     items: itemController,
     zones: zoneController,
-    auction: auctionController
+    auction: auctionController,
+    mail: mailController
 };

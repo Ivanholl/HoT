@@ -1,32 +1,33 @@
 div(ng-if="class")
     table.table.table-hover(style="max-width: 500px;")
         thead
-            th Item
-            th(style="float:right;") Buy
-            th(style="float:right;")
+            th.col-md-6 Item
+            th.col-md-2(style="float:right;") Buy
+            th.col-md-2(style="float:right;")
                 span Price
                 img(src="pictures/symbols/gold.png")
-            th(style="float:right;")
+            th.col-md-2(style="float:right;")
                 span weight
                 img(src="pictures/symbols/weight.png")
         tbody
             tr(ng-if="!auction" ng-repeat="item in items")
-                td(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
+                td.col-md-2(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
                     .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
-                td.btn.btn-info(style="float:right;" ng-if="!sell" ng-click="buy(item)") buy
-                td.btn.btn-info(style="float:right;" ng-if="sell" ng-click="sell(item)") sell
-                td(style="float:right;" ng-if="!sell")
+                td.col-md-2.btn.btn-info(style="float:right;" ng-if="!sell" ng-click="buy(item)") buy
+                td.col-md-2.btn.btn-info(style="float:right;" ng-if="sell" ng-click="sell(item)") sell
+                td.col-md-2(style="float:right;" ng-if="!sell")
                     .text-warning {{item.price}}
-                td(style="float:right;" ng-if="sell")
+                td.col-md-2(style="float:right;" ng-if="sell")
                     .text-warning {{item.price / 2}}
-                td(style="float:right;")
+                td.col-md-2(style="float:right;")
                     .text-warning {{item.weight}}
 
             tr(ng-if="auction" ng-repeat="auction in auctions")
-                td(ng-mouseover="tooltip=true; tooltipItem = auction.item" ng-mouseleave="tooltip=false") {{auction.item.title}}
+                td.col-md-6(ng-mouseover="tooltip=true; tooltipItem = auction.item" ng-mouseleave="tooltip=false") {{auction.item.title}}
                     .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
-                td.btn.btn-info(style="float:right;" ng-if="!sell" ng-click="buy(item)") buy
-                    td(style="float:right;" ng-if="!sell")
-                        .text-warning {{auction.price}}
-                    td(style="float:right;")
-                        .text-warning {{auction.item.weight}}
+                td.col-md-2.btn.btn-info(style="float:right;" ng-if="!stop" ng-click="buyAuction(auction)") buy
+                td.col-md-2.btn.btn-info(style="float:right;" ng-if="stop" ng-click="stopAuction(auction)") stop
+                td.col-md-2(style="float:right;" ng-if="!sell")
+                    .text-warning {{auction.price}}
+                td.col-md-2(style="float:right;")
+                    .text-warning {{auction.item.weight}}

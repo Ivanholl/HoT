@@ -16,6 +16,12 @@ module.exports = {
 
         auth(req, res, next);
     },
+    facebook: function(req, res, next) {
+        passport.authenticate('facebook-token', function(error, user, info) {
+            // do stuff with user
+            res.send({success: true, user: user});
+        })(req, res, next);
+    },
     logout: function(req, res, next) {
         req.logout();
         res.end();

@@ -34,27 +34,37 @@ var heroSchema = mongoose.Schema({
     inventory: [],
     equipment: [],
     race: String,
-    home: String
+    home: String,
+    newMail: Boolean
 });
 
 var Hero = mongoose.model('Hero', heroSchema);
 
 module.exports.seedTestHero = function() {
-    Hero.find({}).exec(function(err, collection) {
+    Hero.find({}).exec(function (err, collection) {
         if (err) {
             console.log('Cannot find users: ' + err);
             return;
         }
+
+       /*for (var i = 0; i < collection.length; i++) {
+            if(!collection[i].newMail){
+                collection[i].newMail = false;
+                console.log('hero Update')
+                collection[i].save()
+            }
+        }*/
+
         if (collection.length === 0) {
             Hero.create({
                 name: "test",
                 ap: 9001,
-                hp:1,maxHp:1,
-                mp:1,maxMp:1,
-                dm:null,df:1,
-                gold:0,ss:0,
-                location:'secret',
-                race:'admin'
+                hp: 1, maxHp: 1,
+                mp: 1, maxMp: 1,
+                dm: null, df: 1,
+                gold: 0, ss: 0,
+                location: 'secret',
+                race: 'admin'
             });
             console.log('Test Hero added to databse...')
         }

@@ -1,4 +1,4 @@
-app.controller('townCtrl', function($scope, Hero) {
+app.controller('townCtrl', function($scope, Hero, ngAudio) {
     $scope.hero = Hero.currentHero;
     $scope.buildingList = {
         healer: false,
@@ -9,6 +9,7 @@ app.controller('townCtrl', function($scope, Hero) {
         merchant: false,
         market: false
     };
+    $scope.townSound = ngAudio.load("sounds/townAmbient.mp3");
 
     function falcify(array){
         for (key in array){

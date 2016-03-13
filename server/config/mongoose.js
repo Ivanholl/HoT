@@ -4,7 +4,8 @@ var mongoose = require('mongoose'),
     minion = require('../models/Minion'),
     zone = require("../models/Zone"),
     item = require('../models/Item'),
-    auction = require("../models/Auction");
+    auction = require("../models/Auction"),
+    mail = require('../models/Mail');
 
 module.exports = function(config) {
 
@@ -39,5 +40,5 @@ module.exports = function(config) {
     item.seedInitialItems();
     zone.seedZones();
     auction.seedAuctions();
-
+    mail.seedMail();
 };

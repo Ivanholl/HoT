@@ -5,11 +5,9 @@ app.controller("merchantCtrl", function($scope, Hero){
     $scope.sell = true;
 
     $scope.sell = function(item){
-        console.log($scope.inventory)
-
-        var index = $scope.inventory.indexOf(item);
+        var index = $scope.hero.inventory.indexOf(item);
         if (index > -1) {
-            $scope.inventory.splice(index, 1);
+            $scope.hero.inventory.splice(index, 1);
             $scope.hero.weight -= item.weight
             $scope.hero.gold += Math.floor(item.price / 2)
 

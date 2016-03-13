@@ -166,7 +166,7 @@ app.factory('movementOptions', function(identity, HeroResource, Hero) {
                     };
                     break;
                 case "utown":
-                    return { //*********************ELF
+                    return { //*********************Undead
                         nextZone: "uzone1",
                         //prevZone: 'uzone6',
                         hasNextZone: true,

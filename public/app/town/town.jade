@@ -1,6 +1,6 @@
 #container
    .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
-   #town(ng-style="{'background-image':'url(/pictures/{{hero.location}}.jpg)'}")
+   #town(ng-style="{'background-image':'url(/pictures/backgrounds/{{hero.location}}.jpg)'}")
       .building(ng-if="buildingList.healer" ng-include="'townPartials/healer/healer.jade'")
       .building(ng-if="buildingList.library" ng-include="'townPartials/library/library.jade'")
       .building(ng-if="buildingList.armory" ng-include="'townPartials/armory/armory.jade'")
