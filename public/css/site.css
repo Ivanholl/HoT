@@ -1,6 +1,7 @@
 body {
-  maring: 0px;
+  margin: 0px;
   background-image: url("/pictures/background.png");
+  font-family: 'Architects Daughter', cursive;
 }
 section {
   margin-top: 40px;
