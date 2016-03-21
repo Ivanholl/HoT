@@ -10,14 +10,16 @@ div(ng-controller="mailCtrl")
             td icon
             td(ng-click="displayMail(mail)") {{mail.title}}
             td(style="float: right") {{mail.date}}
-
-   .modal-content(style="width:500px")
-      .modal-header
-         span from: {{mailToDisplay.from}}
-         h4.modal-title {{mailToDisplay.title}}
-         span(style="float:right") {{mailToDisplay.date}}
-      .modal-body
-         p {{mailToDisplay.message}}
-      .modal-footer
-         .btn.btn-default Cancel
-         .btn.btn-primary Send
+    
+    
+   .modal-content(style="width:500px" ng-if="read")
+        .modal-header
+            span from: {{mailToDisplay.from}}
+            h4.modal-title {{mailToDisplay.title}}
+            span(style="float:right") {{mailToDisplay.date}}
+        .modal-body
+            p {{mailToDisplay.message}}
+        .modal-footer
+            .btn.btn-default(ng-click="read = false") Close
+            .btn.btn-primary Answer
+         

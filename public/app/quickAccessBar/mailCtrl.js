@@ -3,6 +3,7 @@ app.controller('mailCtrl', function($scope, MailResource, Hero){
     $scope.mailToDisplay = {};
 
     $scope.displayMail = function(mail){
-        $scope.mailToDisplay = mail
+        $scope.mailToDisplay = mail;
+        $scope.read = true;
     }
 });
