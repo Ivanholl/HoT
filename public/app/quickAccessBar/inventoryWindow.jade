@@ -14,7 +14,7 @@
                td(style="float:right;") {{item.weight}}
                td.btn-info.equipBtn(ng-click="equip(item)") equip
 
-   .equipped
+    .equipped
       img(src="pictures/inventory.jpg" style="visibility: hidden")
       .item.helm
          img(src="{{hero.equipment[0].pic}}" ng-mouseover="showhelm=true; tooltipItem = hero.equipment[0]" ng-mouseleave="showhelm=false")

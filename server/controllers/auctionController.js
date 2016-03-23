@@ -12,7 +12,7 @@ module.exports = {
                 console.log('Auctions could not be found: ' + err);
             }
             res.send(colection);
-        })
+        });
     },
     getAuctionsByOwner: function (req, res) {
         Auction.find({owner: req.params.owner}).exec(function (err, colection) {
@@ -20,13 +20,13 @@ module.exports = {
                 console.log('Auctions could not be found: ' + err);
             }
             res.send(colection);
-        })
+        });
     },
     stopAuction: function (req, res) {
         Auction.remove({_id: req.params._id}).exec(function (err, auction) {
             if (err) console.log('Hero could not be loaded: ' + err);
             res.send(auction);
-        })
+        });
     },
     createAuction: function (req, res) {
         var newAuction = req.body;

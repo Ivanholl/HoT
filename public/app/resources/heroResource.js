@@ -12,17 +12,17 @@ app.factory('HeroResource', function($resource, identity) {
             updatedUser.heroList[0] = newHero.name;
             updatedUser.$update().then(function() {
                 identity.currentUser.heroList[0] = newHero.name;
-            })
+            });
         },
         getHeroByName : function(name){
-            return SearchHeroResource.get({name: name})
+            return SearchHeroResource.get({name: name});
         },
         deleteHeroByName: function(name){
             DeleteHeroResource.get({name: name});
             updatedUser.heroList[0] = "";
             updatedUser.$update().then(function() {
                 identity.currentUser.heroList[0] = "";
-            })
+            });
         }
-    }
+    };
 });

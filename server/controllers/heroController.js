@@ -135,13 +135,15 @@ function getHeroStats(hero){
             break;
     }
 }
-var newHeroMail = {title: "Welcome", from: "HoT Team", to:"", items:[], message:"Welcome to Heroes Of Trebichnenburg", read:false, date: new Date().toJSON().slice(0,10)};
+var item = {title:"Test", rarity:'common', type: 'test', weight:'1',class:'helm', bonus:['df','0'],price:130, pic: "/pictures/items/item.jpg"};
+var newHeroMail = {title: "Welcome", from: "HoT Team", to:"", items:[item], message:"Welcome to Heroes Of Trebichnenburg", read:false, date: new Date().toJSON().slice(0,10)};
+
 module.exports = {
     getHeroByName : function(req, res){
         Hero.findOne({name : req.params.name}).exec(function(err, hero) {
             if (err) console.log('Hero could not be loaded: ' + err);
             res.send(hero);
-        })
+        });
     },
     createHero : function(req, res){
         var newHeroData = getHeroStats(req.body);
@@ -153,8 +155,8 @@ module.exports = {
 
         newHeroMail.to = req.body.name;
         Mail.create(newHeroMail, function(err, mail){
-            if(err) console.log('Failed to send welcome Mail: ' + err)
-        })
+            if(err) console.log('Failed to send welcome Mail: ' + err);
+        });
     },
     deleteHero: function(req, res){
         Hero.remove({name : req.params.name}).exec(function(err, hero) {
@@ -162,20 +164,20 @@ module.exports = {
             res.send(hero);
         });
         Mail.remove({to: req.params.name}, function(err, mail){
-            if (err) console.log("Failed to delete Hero Mail: " + err)
+            if (err) console.log("Failed to delete Hero Mail: " + err);
         });
         Auction.remove({owner: req.params.name}).exec(function (err, colection) {
             if (err) {
                 console.log('Failed to delete Hero Auctions: ' + err);
             }
-        })
+        });
     },
     updateHero: function(req,res){
         var updatedUserData = req.body;
 
         Hero.update({name: req.params.name}, updatedUserData).exec(function(err, hero) {
-            console.log(hero)
+            console.log(hero);
             res.end();
-        })
+        });
     }
 };

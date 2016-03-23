@@ -1,25 +1,50 @@
 div(ng-controller="mailCtrl")
-   table.table-striped.table-hover(style="width:200px")
-      thead
-         tr
-            th icon
-            th title
-            th(style="float: right") date
-      tbody
-         tr(ng-repeat="mail in mailList")
-            td icon
-            td(ng-click="displayMail(mail)") {{mail.title}}
-            td(style="float: right") {{mail.date}}
+    table.table-striped.table-hover(style="width:200px")
+        thead
+            tr
+                th icon
+                th title
+                th(style="float: right") date
+        tbody
+            tr(ng-repeat="mail in mailList")
+                td icon
+                td(ng-click="write = false; displayMail(mail);") {{mail.title}}
+                td(style="float: right") {{mail.date}}
+            
+    .btn.btn-info(ng-click="write = true; read = false;") Write New
     
-    
-   .modal-content(style="width:500px" ng-if="read")
+    .modal-content(style="width:500px" ng-if="read")
         .modal-header
+            .close-btn.glyphicon.glyphicon-remove(ng-click="close()")        
             span from: {{mailToDisplay.from}}
             h4.modal-title {{mailToDisplay.title}}
             span(style="float:right") {{mailToDisplay.date}}
         .modal-body
             p {{mailToDisplay.message}}
+            .mailItemHolder(ng-repeat="item in mailToDisplay.items")
+                img(src="{{item.pic}}" ng-mouseover="showItem=true; tooltipItem = item" ng-mouseleave="showItem=false")
+                .toolTip(ng-if="showItem" ng-include="'partials/tooltips/itemTooltip.jade'")
+                .btn.btn-info(ng-click="takeItem(item, mailToDisplay)") take
         .modal-footer
-            .btn.btn-default(ng-click="read = false") Close
-            .btn.btn-primary Answer
+            .btn.btn-default(ng-click="close()") Close
+            .btn.btn-primary(ng-click="write = true; read = false;") Answer
          
+    .modal-content(style="width:500px" ng-if="write")
+        .modal-header
+            .close-btn.glyphicon.glyphicon-remove(ng-click="close()")        
+            span to:
+            input.sendMail(ng-model="newMail.to")
+            span.modal-title about:
+            input.sendMail(ng-model="newMail.title")
+        .modal-body
+            textarea.sendMail.sendText(ng-model="newMail.message")        
+            .mailItemHolder(ng-click="pickItem()") pick
+            .mailItemHolder pick
+            .mailItemHolder pick
+            .mailItemHolder pick
+            .mailItemHolder pick
+        .modal-footer
+            .btn.btn-default(ng-click="close()") Close
+            .btn.btn-success(ng-click="send()") Send
+            
+            

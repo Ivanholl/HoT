@@ -1,0 +1,29 @@
+.unreadTitle {
+  color: #f00;
+}
+.close-btn {
+  float: right;
+  color: #8b0000;
+}
+.sendMail {
+  color: #fff;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+.sendText {
+  height: 150px;
+  width: 450px;
+}
+.mailItemHolder {
+  display: inline;
+  float: left;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  margin: 5px;
+  height: 105px;
+  width: 80px;
+  background-color: rgba(10,0,5,0.6);
+}
+.mailItemHolder img {
+  border-radius: 9px;
+}

@@ -1,4 +1,5 @@
-var Mail = require('mongoose').model('Mail');
+var Mail = require('mongoose').model('Mail'),
+    Hero = require('mongoose').model('Hero');
 
 module.exports = {
     getMailByOwner: function (req, res) {
@@ -7,6 +8,27 @@ module.exports = {
                 console.log('Mails could not be found: ' + err);
             }
             res.send(colection);
-        })
+        });
+    },
+    sendMail: function (req, res) {
+        var newMail = req.body,
+            reciever;
+
+        Hero.findOne({name: newMail.to}).exec(function (err, hero) {
+            if (err) {
+                console.log('Hero could not be found to send him mail: ' + err);
+            }
+            if (hero) {
+                Mail.create(newMail, function (err, mail) {
+                    if (err) console.log('Failed to create new auction: ' + err);
+                    res.send(mail);
+                });
+            }
+        });
+    },
+    updateMail: function (req, res) {
+        Mail.update({id: req.body.id}, req.body).exec(function(err, mail) {
+            res.end();
+        });
     }
 };
