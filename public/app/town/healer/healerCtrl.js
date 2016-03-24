@@ -12,10 +12,10 @@ app.controller('healerCtrl', function($scope, Hero, ItemResource){
             $scope.hero.gold -= $scope.fullHealCost;
             $scope.hero.hp = $scope.hero.maxHp;
 
-            Hero.updateHero($scope.hero)
+            Hero.updateHero($scope.hero);
         }
         else{
-            alert('Not enough gold!!!')
+            alert('Not enough gold!!!');
         }
     };
 
@@ -25,13 +25,13 @@ app.controller('healerCtrl', function($scope, Hero, ItemResource){
         if ($scope.hero.gold >= healCost) {
             $scope.hero.hp += healAmount * 1;
             $scope.hero.gold -= healCost;
-            Hero.updateHero($scope.hero)
+            Hero.updateHero($scope.hero);
         }
         else{
-            alert('Not enough gold!!!')
+            alert('Not enough gold!!!');
         }
     };
-    
+
     function getHealCost(amount){
         return amount * 3;
     }
@@ -42,14 +42,22 @@ app.controller('healerCtrl', function($scope, Hero, ItemResource){
 
             if ($scope.hero.weight <= $scope.hero.str) {
                 $scope.hero.gold -= item.price;
-                $scope.hero.inventory.push(item);
-                Hero.updateHero($scope.hero)
+
+                var newItem = item;  //bugs otherwise
+                var indexOfItem = $scope.hero.inventory.indexOf(newItem);
+
+                if (indexOfItem >= 0) {
+                    $scope.hero.inventory[indexOfItem].quantity++;
+                } else {
+                    $scope.hero.inventory.push(newItem);
+                }
+                Hero.updateHero($scope.hero);
             } else {
-                $scope.weight -= item.weight;
-                alert('Inventory too heavy increase your Strength!')
+                $scope.hero.weight -= item.weight;
+                alert('Inventory too heavy increase your Strength!');
             }
         } else {
-            alert('Not enough gold!!!')
+            alert('Not enough gold!!!');
         }
     };
 

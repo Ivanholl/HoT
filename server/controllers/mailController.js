@@ -19,6 +19,8 @@ module.exports = {
                 console.log('Hero could not be found to send him mail: ' + err);
             }
             if (hero) {
+                hero.newMail = true;
+                Hero.update({name: hero.name}, hero).exec(function(err, hero){});
                 Mail.create(newMail, function (err, mail) {
                     if (err) console.log('Failed to create new auction: ' + err);
                     res.send(mail);

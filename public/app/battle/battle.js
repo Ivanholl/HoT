@@ -138,6 +138,12 @@ app.factory('battle', function(Hero, notifier){
                     Defend(minion, hero);
                     getEnemyMove();
                 });
+/*ITEM*/        $('#item').click(function(){
+                    $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
+                    turnCount++;
+                    $('#logger').append('You defend!').append('<br/>')
+                    getEnemyMove();
+                });
 /*ESCAPE*/      $('#escape').click(function(){
                     $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
                     turnCount++;

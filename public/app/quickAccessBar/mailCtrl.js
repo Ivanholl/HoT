@@ -21,7 +21,7 @@ app.controller('mailCtrl', function($scope, MailResource, Hero){
         MailResource.sendMail($scope.newMail);
     };
     $scope.pickItem = function (){
-
+        alert("to be implemented");
     };
     $scope.takeItem = function (item, mail){
         if($scope.hero.weight <= $scope.hero.str) {

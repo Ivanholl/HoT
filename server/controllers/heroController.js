@@ -176,7 +176,6 @@ module.exports = {
         var updatedUserData = req.body;
 
         Hero.update({name: req.params.name}, updatedUserData).exec(function(err, hero) {
-            console.log(hero);
             res.end();
         });
     }

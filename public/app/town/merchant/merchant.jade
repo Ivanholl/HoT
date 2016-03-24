@@ -12,6 +12,7 @@ div(ng-controller="merchantCtrl")
                .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
             td.btn.btn-info(style="float:right;" ng-click="sell(item)") sell
             td(style="float:right;")
-               .text-warning {{item.price / 2}}
+                .text-warning(ng-if="item.stackable") {{(item.price / 2) * item.quantity}}
+                .text-warning(ng-if="!item.stackable") {{item.price / 2}}
 
    div(ng-include="'partials/town/itemTable'")

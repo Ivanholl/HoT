@@ -8,7 +8,6 @@ app.factory('MailResource', function($resource) {
             return MailResource.query({to: resiever});
         },
         sendMail: function (mail){
-            console.log(mail);
             return SendMail.save(mail);
         },
         updateMail: function (mail) {

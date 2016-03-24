@@ -40,5 +40,7 @@ ul.statList
     li(ng-if="fullInfo")
         img(src="pictures/symbols/home.png")
         span.text-primary {{hero.home}}
-    li
-        psan {{hero.newMail}}
+    li(ng-if="fullInfo")
+        span.text-primary {{hero.newMail}}
+    li(ng-if="fullInfo")
+        
