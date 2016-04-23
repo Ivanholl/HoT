@@ -70,4 +70,5 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
     }
 
     $('.town').tooltip();
+    $('.round-button').tooltip();
 });

@@ -9,6 +9,8 @@
       .building(ng-if="buildingList.merchant" ng-include="'townPartials/merchant/merchant.jade'")
       .building(ng-if="buildingList.market" ng-include="'townPartials/market/market.jade'")
 
+      //#merchant.buildingSelect(ng-click="enterBuilding('merchant')")
+
    #buildingList
          ul.nav.nav-tabs
             li
@@ -35,5 +37,6 @@
                a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
          .btn.btn-danger(ng-click="toMap()") Back to Map
          .btn.btn-success(ng-click="makeHome()") Make this city my Home
+
 
    div(ng-include="'partials/chat/chat.jade'")

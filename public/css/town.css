@@ -17,3 +17,25 @@
 .table {
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.8) inset;
 }
+#merchant {
+  background-image: url("/pictures/backgrounds/buildingSelect/dmerchant.jpg");
+  height: 62px;
+  width: 118px;
+  position: relative;
+  top: 529px;
+  left: 278px;
+}
+#merchant:hover {
+  box-shadow: 0 0 14px 7px rgba(255,255,0,0.8) inset;
+}
+.merchantBuilding {
+  background-image: url("/pictures/backgrounds/buildings/merchant.jpg");
+}
+.armoryBuilding {
+  background-image: url("/pictures/backgrounds/buildings/armory.png");
+}
+.building {
+  background-size: cover;
+  width: 990px;
+  height: 800px;
+}
