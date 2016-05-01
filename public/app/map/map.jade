@@ -3,6 +3,15 @@
     //.jumbotron
 
     #map
+        .btn.btn-default.dropdown.closed
+            .dropdown-toggle(data-toggle="dropdown" role="button" aria-expanded="false") Choose Map
+                .caret
+            .dropdown-menu(role="menu")
+                li
+                    span Whole Map
+                li
+                    span Kymeria
+
         img(src="/pictures/map.jpg" style="visibility: hidden")
 
         #hzone1.round-button(ng-click="zoneSelect($event)")
@@ -111,8 +120,8 @@
         a#prev.btn.btn-success(ng-if="zone.movementOptions.hasPrevZone" ng-class="class" ng-click="prev($event)") Go to {{zone.movementOptions.prevZone}}
         a#branch.btn.btn-success(ng-if="zone.movementOptions.hasBranchZone" ng-class="class" ng-click="branch($event)") Go to {{zone.movementOptions.branchZone}}
         a#next.btn.btn-success(ng-if="zone.movementOptions.hasNextZone" ng-class="class" ng-click="next($event)") Go to {{zone.movementOptions.nextZone}}
-        a#battle.btn.btn-danger(ng-if="zone.movementOptions.hasBattle" ng-class="class" ng-click="battle($event)") Battle
-        a#battle.btn.btn-info(ng-if="zone.movementOptions.isTown" ng-class="class" ng-click="enter($event)") Enter
+        .btn.btn-danger(ng-if="zone.movementOptions.hasBattle" ng-class="class" ng-click="battle($event)") Battle
+        .btn.btn-info(ng-if="zone.movementOptions.isTown" ng-class="class" ng-click="enter($event)") Enter
 
 
     div(ng-include="'partials/chat/chat.jade'")

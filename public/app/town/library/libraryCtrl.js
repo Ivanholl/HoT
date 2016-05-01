@@ -32,8 +32,8 @@ app.controller('libraryCtrl', function($scope, Hero){
 
     $scope.buyOneDmMin = function(){
         if ($scope.hero.ss >= $scope.oneDmMinPrice) {
-            if ($scope.hero.dm[0] < $scope.hero.dm[1]) {
-                $scope.hero.dm[0]++;
+            if ($scope.hero.minDm < $scope.hero.maxDm) {
+                $scope.hero.minDm++;
                 $scope.hero.ap++;
                 $scope.hero.ss -= $scope.oneDmMinPrice;
                 Hero.updateHero($scope.hero)
@@ -49,10 +49,10 @@ app.controller('libraryCtrl', function($scope, Hero){
 
     $scope.buyOneDmMax = function(){
         if ($scope.hero.ss >= $scope.oneDmMaxPrice) {
-            $scope.hero.dm[1]++;
+            $scope.hero.maxDm++;
             $scope.hero.ap++;
             $scope.hero.ss -= $scope.oneDmMaxPrice;
-            Hero.updateHero($scope.hero)
+            Hero.updateHero($scope.hero);
             getPrices()
         } else {
             alert('Not Enough Soul Stones!')
@@ -64,7 +64,7 @@ app.controller('libraryCtrl', function($scope, Hero){
             $scope.hero.df++;
             $scope.hero.ap++;
             $scope.hero.ss -= $scope.oneDfPrice;
-            Hero.updateHero($scope.hero)
+            Hero.updateHero($scope.hero);
             getPrices()
         } else {
             alert('Not Enough Soul Stones!')
@@ -76,7 +76,7 @@ app.controller('libraryCtrl', function($scope, Hero){
             $scope.hero.str++;
             $scope.hero.ap++;
             $scope.hero.ss -= $scope.oneDfPrice;
-            Hero.updateHero($scope.hero)
+            Hero.updateHero($scope.hero);
             getPrices()
         } else {
             alert('Not Enough Soul Stones!')

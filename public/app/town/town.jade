@@ -12,31 +12,31 @@
       //#merchant.buildingSelect(ng-click="enterBuilding('merchant')")
 
    #buildingList
-         ul.nav.nav-tabs
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('library')") Library
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
-            li
-               a.btn.btn-warning.disabled Mage
-            li
-               a.btn.btn-warning.disabled Bank
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('merchant')") Merchant
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('weaponsmith')") Weaponsmith
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('armory')") Armory
-            li
-               a.btn.btn-warning.disabled Tailory
-            li
-               a.btn.btn-warning.disabled Jewery
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('market')") Market Place
-            li
-               a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
-         .btn.btn-danger(ng-click="toMap()") Back to Map
-         .btn.btn-success(ng-click="makeHome()") Make this city my Home
-
+      ul.nav.nav-tabs(ng-if="!inBuilding")
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('library')") Library
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('healer')") Healer
+         li
+            a.btn.btn-warning.disabled Mage
+         li
+            a.btn.btn-warning.disabled Bank
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('merchant')") Merchant
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('weaponsmith')") Weaponsmith
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('armory')") Armory
+         li
+            a.btn.btn-warning.disabled Tailory
+         li
+            a.btn.btn-warning.disabled Jewery
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('market')") Market Place
+         li
+            a.btn.btn-warning(ng-click="enterBuilding('bar')") Bar
+      .btn.btn-danger(ng-if="!inBuilding" ng-click="toMap()") Back to Map
+      .btn.btn-success(ng-click="makeHome()") Make this city my Home
+      .btn.btn-danger(ng-if="inBuilding" ng-click="leaveBuilding()") Back to City
 
    div(ng-include="'partials/chat/chat.jade'")

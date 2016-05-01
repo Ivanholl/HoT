@@ -30,7 +30,8 @@ function getHeroStats(hero){
                 maxHp: 15,
                 mp: 5,
                 maxMp:5,
-                dm: [3,4],
+                minDm: 3,
+                maxDm: 4,
                 df: 2,
                 weight: 0,
                 str: 10,
@@ -52,7 +53,8 @@ function getHeroStats(hero){
                 maxHp: 13,
                 mp: 6,
                 maxMp:6,
-                dm: [2,3],
+                minDm: 2,
+                maxDm: 3,
                 df: 2,
                 weight: 0,
                 str: 10,
@@ -74,7 +76,8 @@ function getHeroStats(hero){
                 maxHp: 10,
                 mp: 3,
                 maxMp:3,
-                dm: [4,5],
+                minDm: 4,
+                maxDm: 5,
                 df: 3,
                 weight: 0,
                 str: 10,
@@ -97,7 +100,8 @@ function getHeroStats(hero){
                 mp: 3,
                 maxMp:3,
                 weight: 0,
-                dm: [2,3],
+                minDm: 2,
+                maxDm: 3,
                 df: 4,
                 str: 10,
                 gold: 0,
@@ -119,7 +123,8 @@ function getHeroStats(hero){
                 mp: 4,
                 maxMp:4,
                 weight: 0,
-                dm: [2,3],
+                minDm: 2,
+                maxDm: 3,
                 df: 2,
                 str: 10,
                 gold: 0,
@@ -164,6 +169,7 @@ module.exports = {
             res.send(hero);
         });
         Mail.remove({to: req.params.name}, function(err, mail){
+            console.log(typeof(req.params.name));
             if (err) console.log("Failed to delete Hero Mail: " + err);
         });
         Auction.remove({owner: req.params.name}).exec(function (err, colection) {

@@ -55,7 +55,6 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
     $scope.enter = function(event){
         window.location.href = '#/town';
     };
-
     function setNewLocation(newLocation){
         hero.location = newLocation;
         Hero.updateHero(hero)

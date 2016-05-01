@@ -9,7 +9,9 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
         merchant: false,
         market: false
     };
+
     $scope.townSound = ngAudio.load("sounds/townAmbient.mp3");
+    $scope.inBuilding = false;
 
     function falcify(array){
         for (key in array){
@@ -17,7 +19,7 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
         }
     }
 
-    $scope.toMap = function () {
+    $scope.toMap = function() {
         window.location.href  = '#/map';
     };
 
@@ -30,7 +32,13 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
         $scope.hero.home = $scope.hero.location
     };
 
+    $scope.leaveBuilding = function() {
+        $scope.inBuilding = false;
+        falcify($scope.buildingList);
+    };
     $scope.enterBuilding = function(building) {
+        $scope.inBuilding = true;
+
         switch (building){
             case "library":
                 falcify($scope.buildingList);

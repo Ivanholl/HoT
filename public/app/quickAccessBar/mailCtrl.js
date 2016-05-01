@@ -26,6 +26,7 @@ app.controller('mailCtrl', function($scope, MailResource, Hero){
     $scope.takeItem = function (item, mail){
         if($scope.hero.weight <= $scope.hero.str) {
             $scope.hero.inventory.push(item);
+            $scope.hero.weight += item.weight;
             Hero.updateHero($scope.hero);
 
             var index = mail.items.indexOf(item);

@@ -14,33 +14,38 @@ ul.statList
     li(ng-if="fullInfo")
         .text-primary Ap: {{hero.ap}}
     li(ng-if="fullInfo")
-        img(src="pictures/symbols/Hp2.png")
-        span {{hero.hp}}/{{hero.maxHp}}
+        //img(src="pictures/symbols/Hp2.png" title="Health")
+        //span  {{hero.hp}}/{{hero.maxHp}}
+        .progress.statBar
+            .progress-bar.progress-bar-danger(style="width: {{hero.hp / (hero.maxHp / 100)}}%;") {{hero.hp}}/{{hero.maxHp}}
     li(ng-if="fullInfo")
-        img(src="pictures/symbols/Mana.png")
-        span {{hero.mp}}/{{hero.maxMp}}
+        //img(src="pictures/symbols/Mana.png" title="Mana")
+        //span  {{hero.mp}}/{{hero.maxMp}}
+        .progress.statBar
+            .progress-bar.progress-bar-info(style="width: {{hero.mp / (hero.maxMp / 100)}}%;") {{hero.mp}}/{{hero.maxMp}}
     li
-        img(src="pictures/symbols/sword.png")
-        span {{hero.dm}}
-        img(src="pictures/symbols/deffence.png")
-        span {{hero.df}}
+        img(src="pictures/symbols/sword.png" title="Demage")
+        span {{hero.minDm}}-{{hero.maxDm}}
     li
-        img(src="pictures/symbols/gold.png")
-        span {{hero.gold}}
-        img(src="pictures/symbols/soul stone2.png")
-        span {{hero.ss}}
+        img(src="pictures/symbols/deffence.png" title="Defense")
+        span  {{hero.df}}
+    li
+        img(src="pictures/symbols/gold.png" title="Gold")
+        span  {{hero.gold}}
+    li
+        img(src="pictures/symbols/soul stone2.png" title="Soul Stones")
+        span  {{hero.ss}}
     li(ng-if="fullInfo")
-        img(src="pictures/symbols/weight.png")
-        span.text-warning  {{hero.weight}} /
-        img(src="pictures/symbols/strength.png")
+        img(src="pictures/symbols/weight.png" title="Weight")
+        span.text-warning  {{hero.weight}}/
         span.text-warning {{hero.str}}
+        img(src="pictures/symbols/strength.png" title="Strenght")
     li(ng-if="fullInfo")
-        img(src="pictures/symbols/location.png")
+        img(src="pictures/symbols/location.png" title="Current Location")
         span.text-primary  {{hero.location}}
     li(ng-if="fullInfo")
-        img(src="pictures/symbols/home.png")
-        span.text-primary {{hero.home}}
+        img(src="pictures/symbols/home.png" title="Home")
+        span.text-primary  {{hero.home}}
     li(ng-if="fullInfo")
-        span.text-primary {{hero.newMail}}
-    li(ng-if="fullInfo")
+        span.text-primary  {{hero.newMail}}
         

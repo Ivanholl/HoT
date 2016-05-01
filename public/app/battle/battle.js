@@ -1,5 +1,4 @@
 app.factory('battle', function(Hero, notifier){
-
     return {
         battle: function(hero, minion){  //Otherwise it is used once
             var turnCount = 1,
@@ -11,7 +10,7 @@ app.factory('battle', function(Hero, notifier){
             }
 
             function getAttack(attacker) {
-                return getRandomInt(attacker.dm[0], attacker.dm[1]);
+                return getRandomInt(attacker.minDm, attacker.maxDm);
             }
 
             function getDefense(defender) {
@@ -119,13 +118,13 @@ app.factory('battle', function(Hero, notifier){
             }
 
             function updateLogger(deler, dm, receiver) {
-                $('#logger').append(deler.name + ' dealt ' + dm + ' damage to ' + receiver.name).append('<br/>');
+                $('#logger').append('<b>'+deler.name+'</b>' + ' dealt ' + '<b class="logDmg">'+dm+'</b>' + ' damage to ' + receiver.name).append('<br/>');
                 updateScroll()
             }
 
 
 /*ATTACK*/     $('#attack').click(function () {
-                $('#logger').append('===TURN ' + turnCount + '===').append('<br/>');
+                $('#logger').append('<b class="turnCount">' + '===TURN ' + turnCount + '===' + '</b>').append('<br/>');
                 turnCount++;
                 $('#logger').append('You attack!').append('<br/>')
                 Atack(hero, minion);
@@ -133,20 +132,20 @@ app.factory('battle', function(Hero, notifier){
             });
 
 /*DEFEND*/      $('#defend').click(function(){
-                $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
+                $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
                 turnCount++;
                 $('#logger').append('You defend!').append('<br/>')
                 Defend(minion, hero);
                 getEnemyMove();
             });
 /*ITEM*/        $('#item').click(function(){
-                $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
+                $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
                 turnCount++;
                 $('#logger').append('You defend!').append('<br/>')
                 getEnemyMove();
             });
 /*ESCAPE*/      $('#escape').click(function(){
-                $('#logger').append('===TURN ' + turnCount +'===').append('<br/>');
+                $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
                 turnCount++;
                 $('#logger').append('You try to escape!').append('<br/>');
                 Escape();

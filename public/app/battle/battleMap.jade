@@ -1,6 +1,5 @@
 #container
    #battle(ng-style="{'background-image':'url(/pictures/backgrounds/{{zone}}.jpg)'}")
-
       .battle-info
          div.minion-info
             ul.statList
@@ -24,7 +23,7 @@
                   span {{minion.mp}}/{{minion.maxMp}}
                li
                   img(src="pictures/symbols/sword.png")
-                  span {{minion.dm}}
+                  span {{minion.minDm}}-{{minion.maxDm}}
                   img(src="pictures/symbols/deffence.png")
                   span {{minion.df}}
                li
@@ -36,18 +35,23 @@
 
          center
             .vs
-            .enemy
+            //.enemy
                img.enemyPic(src="{{minion.avatar}}")
 
          div.player-info(ng-include="'partials/common/playerInfoWindow'")
 
 
       .btn-group
-            #attack.btn.btn-danger(ng-click) Attack
-            #defend.btn.btn-success(ng-click) Defend
+            #attack.btn.btn-danger Attack
+            #defend.btn.btn-success Defend
             .btn.btn-info.disabled Magic
-            #item.btn.btn-warning(ng-click) Item
-            #escape.btn.btn-primary(ng-click) Escape
+            .btn.btn-warning.dropdown.closed
+                  .dropdown-toggle(data-toggle="dropdown" role="button" aria-expanded="false") Choose Map
+                     .caret
+                  .dropdown-menu(role="menu" ng-repeat="item in hero.battleItems")
+                     li
+                        span {{item.title}}
+            #escape.btn.btn-primary Escape
 
       #battleLog
          #logger
