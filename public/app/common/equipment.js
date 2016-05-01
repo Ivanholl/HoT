@@ -24,6 +24,21 @@ app.factory('equipment', function() {
             } else {
                 var index = hero.inventory.indexOf(item);
                 hero.inventory.splice(index, 1);
+                var btlIndex = hero.battleItems.indexOf(item);
+                hero.battleItems.splice(btlIndex, 1);
+                hero.weight -= item.weight;
+            }
+        },
+        useBattleItem: function (hero, item) {
+            getBonus(hero, item);
+            if (item.quantity > 1) {
+                item.quantity--;
+                hero.weight -= item.weight;
+            } else {
+                var invIndex = hero.inventory.indexOf(item);
+                hero.inventory.splice(invIndex, 1);
+                var btlIndex = hero.battleItems.indexOf(item);
+                hero.battleItems.splice(btlIndex, 1);
                 hero.weight -= item.weight;
             }
         }

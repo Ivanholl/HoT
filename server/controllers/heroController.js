@@ -39,6 +39,7 @@ function getHeroStats(hero){
                 ss: 0,
                 location: 'hzone1',
                 home: "htown",
+                battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
                 race: hero.race
@@ -62,6 +63,7 @@ function getHeroStats(hero){
                 ss: 0,
                 location: 'ezone1',
                 home: "etown",
+                battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
                 race: hero.race
@@ -85,6 +87,7 @@ function getHeroStats(hero){
                 ss: 0,
                 location: 'ozone1',
                 home: "otown",
+                battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
                 race: hero.race
@@ -108,6 +111,7 @@ function getHeroStats(hero){
                 ss: 0,
                 location: 'dzone1',
                 home: "dtown",
+                battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
                 race: hero.race
@@ -131,6 +135,7 @@ function getHeroStats(hero){
                 ss: 0,
                 location: 'uzone1',
                 home: "utown",
+                battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
                 race: hero.race

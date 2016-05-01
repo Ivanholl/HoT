@@ -29,6 +29,7 @@ var heroSchema = mongoose.Schema({
     location: String,
     inventory: [],
     equipment: [],
+    battleItemsLenght: Number,
     battleItems: [],
     race: String,
     home: String,

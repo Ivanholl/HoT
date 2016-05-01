@@ -1,4 +1,4 @@
-app.factory('battle', function(Hero, notifier){
+app.factory('battle', function(Hero, notifier, equipment){
     return {
         battle: function(hero, minion){  //Otherwise it is used once
             var turnCount = 1,
@@ -138,13 +138,19 @@ app.factory('battle', function(Hero, notifier){
                 Defend(minion, hero);
                 getEnemyMove();
             });
-/*ITEM*/        $('#item').click(function(){
+/*ITEM*/    $(document).on("click", ".battleItem", function(e){
                 $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
                 turnCount++;
-                $('#logger').append('You defend!').append('<br/>')
+
+                var temp = e.target.id;
+                var itemNo = temp.charAt(temp.length - 1);
+                var item = hero.battleItems[itemNo];
+                equipment.use(hero, item);
+
+                $('#logger').append('You used '+'<b>'+ item.title+'</b>').append('<br/>')
                 getEnemyMove();
             });
-/*ESCAPE*/      $('#escape').click(function(){
+/*ESCAPE*/  $('#escape').click(function(){
                 $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
                 turnCount++;
                 $('#logger').append('You try to escape!').append('<br/>');

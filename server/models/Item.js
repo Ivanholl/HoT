@@ -10,6 +10,7 @@ var itemSchema = mongoose.Schema({
     pic: String,
     rarity: String,  //common<rare<epic<legendary,setItem,unique,quest
     stackable: String, //"yes" / "no"
+    battleItem: Boolean,
     quantity: Number
 });
 
@@ -60,7 +61,7 @@ module.exports.seedInitialItems = function() {
             Item.create({title:"Piece of Wood", rarity: 'common' ,type: 'shield', weight:'2', class:'shield',  bonus:['df','1'],price:70, pic: "/pictures/items/itemDark.jpg"});
             Item.create({title:"Wooden Shield", rarity: 'common',type: 'shield', weight:'5', class:'shield',  bonus:['df','1','maxHp','5'],price:180, pic: "/pictures/items/WoodenShield.png"});
     //potions
-            Item.create({title:"Small Health Potion",rarity: 'common', type: "consumable", quantity: 1, stackable:"yes", weight:0.5, class:"health potion", bonus:['hp','5'], price:25, pic:"/pictures/items/SmallHpPotion.jpg"});
+            Item.create({title:"Small Health Potion",rarity:'common', type:"consumable", battleItem:true, quantity:1, stackable:"yes", weight:0.5, class:"health potion", bonus:['hp','5'], price:25, pic:"/pictures/items/SmallHpPotion.jpg"});
             //Item.create({title:"Small Health Potion", type: 'potion', weight:'2', class:'shield',  bonus:['df','1'],price:70, pic: "/pictures/items/item.jpg"});
 
             console.log('Seed Items Added...');
