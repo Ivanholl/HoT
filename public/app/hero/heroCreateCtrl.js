@@ -1,4 +1,4 @@
-app.controller('heroCreateCtrl', function($scope, $q, HeroResource){
+app.controller('heroCreateCtrl', function($scope, $q, Hero, HeroResource){
     var hero = {};
 
     $scope.select = function(event){
@@ -18,9 +18,8 @@ app.controller('heroCreateCtrl', function($scope, $q, HeroResource){
     };
 
     $scope.create = function(name){
-        hero.name = name
-        HeroResource.createHero(hero)
-        HeroResource.getHeroByName('arelam')
+        hero.name = name;
+        HeroResource.createHero(hero);
         window.location.href = '#/hero';
     }
 

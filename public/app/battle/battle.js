@@ -59,12 +59,11 @@ app.factory('battle', function(Hero, notifier, equipment){
                 var chance = getRandomInt(0, 1);
                 if (chance === 0) {
                     notifier.success("ESCAPED");
-                    //alert("ESCAPED");
+                    turnCount = 0;
                     window.location.href = '#/map';
                 }
                 else {
-                    notifier.error("You couldn't Escape!")
-                    //alert("You couldn't Escape!");
+                    notifier.error("You couldn't Escape!");
                 }
             }
 
@@ -72,7 +71,6 @@ app.factory('battle', function(Hero, notifier, equipment){
                 if (hero.hp <= 0 && winLoseCheck == false) {
                     winLoseCheck = true;
                     notifier.error('YOU LOST');
-                    //alert("YOU LOST");
                     hero.location = hero.home;
                     Hero.updateHero(hero);
                     window.location.href = '#/town';
@@ -80,7 +78,6 @@ app.factory('battle', function(Hero, notifier, equipment){
                 if (minion.hp <= 0 && winLoseCheck == false) {
                     winLoseCheck = true;
                     notifier.success("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
-                    //alert("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
                     hero.gold += minion.gold;
                     hero.ss += minion.ss;
                     window.location.href = '#/map';
@@ -109,7 +106,6 @@ app.factory('battle', function(Hero, notifier, equipment){
                 else {
                     $('#logger').append('Enemy desided to pass!').append('<br/>');
                     updateScroll();
-                    //PASS
                 }
             }
 
@@ -123,7 +119,7 @@ app.factory('battle', function(Hero, notifier, equipment){
             }
 
 
-/*ATTACK*/     $('#attack').click(function () {
+/*ATTACK*/  $('#attack').click(function () {
                 $('#logger').append('<b class="turnCount">' + '===TURN ' + turnCount + '===' + '</b>').append('<br/>');
                 turnCount++;
                 $('#logger').append('You attack!').append('<br/>')
@@ -138,18 +134,20 @@ app.factory('battle', function(Hero, notifier, equipment){
                 Defend(minion, hero);
                 getEnemyMove();
             });
-/*ITEM*/    $(document).on("click", ".battleItem", function(e){
-                $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
-                turnCount++;
-
+/*ITEM*/    $("body").on("click", ".battleItem", function (e){
+                e.stopImmediatePropagation();
                 var temp = e.target.id;
                 var itemNo = temp.charAt(temp.length - 1);
                 var item = hero.battleItems[itemNo];
-                equipment.use(hero, item);
-
-                $('#logger').append('You used '+'<b>'+ item.title+'</b>').append('<br/>')
-                getEnemyMove();
+                useBattleItem(item)
             });
+            function useBattleItem(item){
+                $('#logger').append('<b class="turnCount">' + '===TURN ' + turnCount + '===' + '</b>').append('<br/>');
+                turnCount++;
+                equipment.useBattleItem(hero, item);
+                $('#logger').append('You used ' + '<b>' + item.title + '</b>').append('<br/>')
+                getEnemyMove();
+            }
 /*ESCAPE*/  $('#escape').click(function(){
                 $('#logger').append('<b class="turnCount">'+'===TURN ' + turnCount +'==='+'</b>').append('<br/>');
                 turnCount++;
@@ -160,3 +158,4 @@ app.factory('battle', function(Hero, notifier, equipment){
         }
     }
 });
+

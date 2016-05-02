@@ -46,12 +46,13 @@
             #defend.btn.btn-success Defend
             .btn.btn-info.disabled Magic
             .btn.btn-warning.dropdown.closed
-                  .dropdown-toggle(data-toggle="dropdown" role="button" aria-expanded="false") Use Item
+                  #item.dropdown-toggle(data-toggle="dropdown" role="button" aria-expanded="false") Use Item
                      .caret
                   .dropdown-menu(role="menu" ng-repeat="item in hero.battleItems track by $index")
                      li
-                        span.battleItem(id="battleItem{{$index}}") {{item.title}}
+                        span.battleItem(id="battleItem{{$index}}" ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
                         span(ng-if="item.quantity")  ({{item.quantity}})
+                        .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
             #escape.btn.btn-primary Escape
 
       #battleLog

@@ -16,8 +16,24 @@ app.controller('inventoryCtrl', function($scope, equipment, Hero) {
             Hero.currentHero.hp = Hero.currentHero.maxHp
         }
         Hero.updateHero($scope.hero);
-    }
+    };
+    $scope.pickForBattle = function (item) {
+        var newItem = item;
 
+        var indexInBattleItems = $scope.hero.battleItems.indexOf(newItem);
+        if (indexInBattleItems >= 0) {
+            var index = $scope.hero.inventory.indexOf(newItem);
+            $scope.hero.inventory.splice(index, 1);
+            $scope.hero.battleItems[indexInBattleItems].quantity++;
+        } else if($scope.hero.battleItems.length >= $scope.hero.battleItemsLenght){
+            alert("not enough space update battleItemsLenght")
+        } else {
+            var index = $scope.hero.inventory.indexOf(newItem);
+            $scope.hero.inventory.splice(index, 1);
+            $scope.hero.battleItems.push(newItem);
+        }
+        Hero.updateHero($scope.hero);
+    };
     /*(function stackStackable(){
         $scope.inventory.forEach(function (element){
             if (element.stackable == "yes") {

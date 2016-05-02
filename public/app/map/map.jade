@@ -1,7 +1,9 @@
 #container
     .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
     //.jumbotron
-
+    #error(ng-if="erHeroInfoLost")
+        h1 ERROR HERO INFORMATION LOST
+        h2 plese refresh page
     #map
         .btn.btn-default.dropdown.closed
             .dropdown-toggle(data-toggle="dropdown" role="button" aria-expanded="false") Choose Map
