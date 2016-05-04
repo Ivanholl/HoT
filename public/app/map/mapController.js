@@ -7,9 +7,9 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
     $scope.minions = MinionResource.getMinionsByZone(curZoneID);
     $scope.zone = ZoneResource.getZoneByIndex(curZoneID);
     $scope.erHeroInfoLost = false;
-    if (hero.name = "") {
+    /*if (hero.name = "") {
         $scope.erHeroInfoLost = true;
-    }
+    }*/
 
     $('#' + curZoneID).addClass('curZone');
 

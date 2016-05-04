@@ -37,6 +37,11 @@ app.factory('equipment', function() {
                 hero.battleItems.splice(btlIndex, 1);
                 hero.weight -= item.weight;
             }
+        },
+        getBonus: function (hero, bonus) {
+            for (var i = 0; i < bonus.length; i += 2) {
+                hero[bonus[i]] += (+bonus[i+1]);
+            }
         }
     };
     function getBonus(hero, item) {

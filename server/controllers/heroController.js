@@ -42,7 +42,8 @@ function getHeroStats(hero){
                 battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
-                race: hero.race
+                race: hero.race,
+                quests: []
             };
             break;
         case "elf":
@@ -66,7 +67,8 @@ function getHeroStats(hero){
                 battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
-                race: hero.race
+                race: hero.race,
+                quests: []
             };
             break;
         case "orc":
@@ -90,7 +92,8 @@ function getHeroStats(hero){
                 battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
-                race: hero.race
+                race: hero.race,
+                quests: []
             };
             break;
         case "dwarf":
@@ -114,7 +117,8 @@ function getHeroStats(hero){
                 battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
-                race: hero.race
+                race: hero.race,
+                quests: []
             };
             break;
         case "undead":
@@ -138,7 +142,8 @@ function getHeroStats(hero){
                 battleItemsLenght: 1,
                 inventory: [],
                 equipment: [],
-                race: hero.race
+                race: hero.race,
+                quests: []
             };
             break;
         default:

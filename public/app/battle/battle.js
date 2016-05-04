@@ -1,4 +1,4 @@
-app.factory('battle', function(Hero, notifier, equipment){
+app.factory('battle', function(Hero, notifier, equipment, Quests){
     return {
         battle: function(hero, minion){  //Otherwise it is used once
             var turnCount = 1,
@@ -80,6 +80,7 @@ app.factory('battle', function(Hero, notifier, equipment){
                     notifier.success("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
                     hero.gold += minion.gold;
                     hero.ss += minion.ss;
+                    Quests.checkHeroQuests();
                     window.location.href = '#/map';
                 }
                 Hero.updateHero(hero)

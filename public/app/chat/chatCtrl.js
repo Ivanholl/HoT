@@ -4,10 +4,10 @@ app.controller('chatCtrl',function ($scope, Hero, chatSocket, messageFormatter) 
 
     var nickName = Hero.currentHero.name;
 
-    $scope.sendMessage = function () {
+    $scope.sendMessage = function (msg) {
         if (nickName != null) {
-            chatSocket.emit('message', nickName, $scope.message);
-            $scope.message = '';
+            chatSocket.emit('message', nickName, msg);
+            $(".chatInput").val("")
         }
     };
 

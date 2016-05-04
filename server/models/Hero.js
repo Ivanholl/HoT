@@ -33,7 +33,8 @@ var heroSchema = mongoose.Schema({
     battleItems: [],
     race: String,
     home: String,
-    newMail: Boolean
+    newMail: Boolean,
+    quests: []
 });
 
 var Hero = mongoose.model('Hero', heroSchema);
