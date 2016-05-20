@@ -2,6 +2,7 @@ body {
   margin: 0px;
   background-image: url("/pictures/background.png");
   font-family: 'Architects Daughter', cursive;
+  cursor: url("/pictures/dwarven_gauntlet_0.png"), auto;
 }
 section {
   margin-top: 40px;
