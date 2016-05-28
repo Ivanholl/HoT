@@ -8,7 +8,7 @@
                 p.text-info MP: 5
                 p.text-primary DM: 3-4
                 p.text-success DF: 2
-            p.text-warning {{humanInfo}}
+            p.text-warning.bigletter {{humanInfo}}
             .btn.btn-info(ng-click="choose('human')") choose
     .raceOption.orc(ng-click="select($event)")
         blockquote
@@ -19,7 +19,7 @@
                 p.text-info MP: 3
                 p.text-primary DM: 4-5
                 p.text-success DF: 3
-            p.text-warning {{orcInfo}}
+            p.text-warning.bigletter {{orcInfo}}
             .btn.btn-info(ng-click="choose('orc')") choose
     .raceOption.elf(ng-click="select($event)")
         blockquote
@@ -30,7 +30,7 @@
                 p.text-info MP: 6
                 p.text-primary DM: 2-3
                 p.text-success DF: 2
-            p.text-warning {{elfInfo}}
+            p.text-warning.bigletter {{elfInfo}}
             .btn.btn-info(ng-click="choose('elf')") choose
     .raceOption.dwarf.selectedRace(ng-click="select($event)")
         blockquote
@@ -41,7 +41,7 @@
                 p.text-info MP: 3
                 p.text-primary DM: 2-3
                 p.text-success DF: 4
-            p.text-warning {{dwarfInfo}}
+            p.text-warning.bigletter {{dwarfInfo}}
             .btn.btn-info(ng-click="choose('dwarf')") choose
     .raceOption.undead(ng-click="select($event)")
         blockquote
@@ -52,7 +52,7 @@
                 p.text-info MP: 4
                 p.text-primary DM: 2-3
                 p.text-success DF: 2
-            p.text-warning {{undeadInfo}}
+            p.text-warning.bigletter {{undeadInfo}}
             .btn.btn-info(ng-click="choose('undead')") choose
 
     .chooseName.hidden

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: bigLetter;
+  src: url("fonts/BlackwoodCastle.ttf");
+}
 body {
   margin: 0px;
   background-image: url("/pictures/background.png");
@@ -111,4 +115,9 @@ footer p {
 .stats {
   margin: 10px;
   float: left;
+}
+.bigletter::first-letter {
+  font-size: 50px;
+  float: left;
+  font-family: bigLetter;
 }
