@@ -7,7 +7,7 @@ module.exports = {
     development: {
         rootPath: rootPath,
         db: 'mongodb://localhost/hot',
-        port: process.env.PORT || 3030
+        port: 3030
     },
     production: {
         rootPath: rootPath,

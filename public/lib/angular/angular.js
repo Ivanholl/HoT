@@ -12,12 +12,12 @@
  * Angular. It can be called as follows:
  *
  * var exampleMinErr = minErr('example');
- * throw exampleMinErr('one', 'This {0} is {1}', foo, bar);
+ * throw exampleMinErr('one', 'This {0} is {1}', foo, tavern);
  *
  * The above creates an instance of minErr in the example namespace. The
  * resulting error will have a namespaced error code of example.one.  The
  * resulting error will replace {0} with the value of foo, and {1} with the
- * value of bar. The object is not restricted in the number of arguments it can
+ * value of tavern. The object is not restricted in the number of arguments it can
  * take.
  *
  * If fewer arguments are specified than necessary for interpolation, the extra
@@ -4450,7 +4450,7 @@ function Browser(window, document, $log, $sniffer) {
    * Register callback function that will be called, when url changes.
    *
    * It's only called when the url is changed from outside of angular:
-   * - user types different url into address bar
+   * - user types different url into address tavern
    * - user clicks on history (forward/back) button
    * - user clicks on a link
    *
@@ -4468,7 +4468,7 @@ function Browser(window, document, $log, $sniffer) {
     // TODO(vojta): refactor to use node's syntax for events
     if (!urlChangeInit) {
       // We listen on both (hashchange/popstate) when available, as some browsers (e.g. Opera)
-      // don't fire popstate when user change the address bar and don't fire hashchange when url
+      // don't fire popstate when user change the address tavern and don't fire hashchange when url
       // changed by push/replaceState
 
       // html5 history api - popstate event
@@ -5399,7 +5399,7 @@ function $TemplateCacheProvider() {
  *   allowing other directives to read the interpolated value.
  *
  * * *Observing interpolated attributes:* Use `$observe` to observe the value changes of attributes
- *   that contain interpolation (e.g. `src="{{bar}}"`). Not only is this very efficient but it's also
+ *   that contain interpolation (e.g. `src="{{tavern}}"`). Not only is this very efficient but it's also
  *   the only way to easily get the actual value because during the linking phase the interpolation
  *   hasn't been evaluated yet and so the value is at this time set to `undefined`.
  *
@@ -9135,7 +9135,7 @@ function LocationHashbangUrl(appBase, hashPrefix) {
     function removeWindowsDriveName (path, url, base) {
       /*
       Matches paths for file protocol on windows,
-      such as /C:/foo/bar, and captures only /foo/bar.
+      such as /C:/foo/tavern, and captures only /foo/tavern.
       */
       var windowsFilePathExp = /^\/?.*?:(\/.*)/;
 
@@ -9429,18 +9429,18 @@ function locationGetterSetter(property, preprocess) {
  * @requires $rootElement
  *
  * @description
- * The $location service parses the URL in the browser address bar (based on the
+ * The $location service parses the URL in the browser address tavern (based on the
  * [window.location](https://developer.mozilla.org/en/window.location)) and makes the URL
- * available to your application. Changes to the URL in the address bar are reflected into
- * $location service and changes to $location are reflected into the browser address bar.
+ * available to your application. Changes to the URL in the address tavern are reflected into
+ * $location service and changes to $location are reflected into the browser address tavern.
  *
  * **The $location service:**
  *
- * - Exposes the current URL in the browser address bar, so you can
+ * - Exposes the current URL in the browser address tavern, so you can
  *   - Watch and observe the URL.
  *   - Change the URL.
  * - Synchronizes the URL with the browser when the user
- *   - Changes the address bar.
+ *   - Changes the address tavern.
  *   - Clicks the back or forward button (or clicks a History link).
  *   - Clicks on a link.
  * - Represents the URL object as a set of methods (protocol, host, port, path, search, hash).

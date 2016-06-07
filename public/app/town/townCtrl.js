@@ -5,7 +5,7 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
         library: false,
         armory: false,
         weaponsmith: false,
-        bar: false,
+        tavern: false,
         merchant: false,
         market: false
     };
@@ -56,9 +56,9 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
                 falcify($scope.buildingList);
                 $scope.buildingList.weaponsmith = true;
                 break;
-            case "bar":
+            case "tavern":
                 falcify($scope.buildingList);
-                $scope.buildingList.bar = true;
+                $scope.buildingList.tavern = true;
                 break;
             case "merchant":
                 falcify($scope.buildingList);
