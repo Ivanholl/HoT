@@ -1,0 +1,9 @@
+.questBook(ng-controller="questBookCtrl")
+   table.table.table-hover(style="width:250px;")
+      thead
+         th Title
+         th(style="float:right;") Progress
+      tbody
+         tr(ng-repeat="quest in questBook")
+            td {{quest.name}}
+            td(style="float:right;") {{quest.progress}}/{{quest.needed}}

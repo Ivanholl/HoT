@@ -17,7 +17,7 @@
                 td.btn-info.equipBtn(ng-if="item.stackable" ng-click="use(item)") use
                 td.btn-info.equipBtn(ng-if="item.battleItem" ng-click="pickForBattle(item)") pick for battle
 
-    .equipped
+   .equipped
       img(src="pictures/inventory.jpg" style="visibility: hidden")
       .item.helm
          img(src="{{hero.equipment[0].pic}}" ng-mouseover="showhelm=true; tooltipItem = hero.equipment[0]" ng-mouseleave="showhelm=false")

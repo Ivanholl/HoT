@@ -8,3 +8,6 @@ ul.nav.nav-tabs.quickAccessBar(ng-controller="QuickAccessCtrl")
    li
       a.btn.btn-warning(ng-click="mail = !mail") Mail Box
       .quickAccessWindow.jumbotron(ng-if="mail" ng-include="'partials/quickAccessBar/mailBox.jade'")
+   li
+      a.btn.btn-warning(ng-click="quests = !quests") Quest Book
+      .quickAccessWindow.jumbotron(ng-if="quests" ng-include="'partials/quickAccessBar/questBook.jade'")

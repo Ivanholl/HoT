@@ -1,16 +1,13 @@
-app.factory("Quests", function (Hero, equipment) {
+app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
     var hero = Hero.currentHero;
-    var quest = {
-        name: "Slay 5 minions",
-        type: "kill",
-        progress: 0,
-        needed: 5,
-        questGiver: "Barman",
-        story: "In order to work together you need to prove yourself!",
-        rewards: ['gold','30','ss','10']
-    };
 
     function updateKillQuest(questNo){
+        hero.quests[questNo].progress++;
+        checkFinished(questNo);
+        Hero.updateHero(hero);
+    }
+
+    function updategatherQuest(questNo){
         hero.quests[questNo].progress++;
         checkFinished(questNo);
         Hero.updateHero(hero);
@@ -22,16 +19,53 @@ app.factory("Quests", function (Hero, equipment) {
         if(quest.progress >= quest.needed){
             equipment.getBonus(hero, hero.quests[questNo].rewards);
             hero.quests.splice(questNo, 1);
-            console.log("FINISHED QUEST")
+
+            if(quest.type == "gather"){
+                var index = hero.inventory.map(function(e) { return e.title; }).indexOf(quest.neededItem);
+                console.log(index);
+                console.log(hero.inventory[index]);
+                if(index > 0) {
+                    hero.inventory.splice(index, 1);
+                }
+            }
+            Hero.updateHero(hero);
+            notifier.success("FINISHED QUEST");
         }
     }
 
     return {
-        checkHeroQuests: function (){
+        checkHeroKillQuests: function (){
             for(var i = 0; i < hero.quests.length; i++){
                 if(hero.quests[i].type == "kill") {
                     updateKillQuest(i);
                 }
+            }
+        },
+        checkHeroGatherQuests: function (item) {
+            for(var i = 0; i < hero.quests.length; i++){
+                if(hero.quests[i].type == "gather") {
+                    if(item.title == hero.quests[i].neededItem){
+                        updategatherQuest(i)
+                    }
+                }
+            }
+        },
+        addQuestToHero: function (name) {
+            var hasThisQuest = false;
+            for(var i = 0; i < hero.quests.length; i++){
+                if(hero.quests[i].name == name) {
+                    hasThisQuest = true;
+                }
+            }
+
+            if(!hasThisQuest) {
+                var questToAdd = QuestResource.getQuestByName(name);
+
+                questToAdd.$promise.then(function (result) {
+                    hero.quests.push(result)
+                    Hero.updateHero(hero);
+                    notifier.success("You have new Quest");
+                })
             }
         }
     }

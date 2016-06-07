@@ -63,6 +63,8 @@ module.exports.seedInitialItems = function() {
     //potions
             Item.create({title:"Small Health Potion",rarity:'common', type:"consumable", battleItem:true, quantity:1, stackable:"yes", weight:0.5, class:"health potion", bonus:['hp','5'], price:25, pic:"/pictures/items/SmallHpPotion.jpg"});
             //Item.create({title:"Small Health Potion", type: 'potion', weight:'2', class:'shield',  bonus:['df','1'],price:70, pic: "/pictures/items/item.jpg"});
+    //quest
+            Item.create({title:"Bag of Gold", rarity:'quest', type: 'test', weight:'1',class:'helm', bonus:['df','0'],price:130, pic: "/pictures/items/moneyBag.jpg"});
 
             console.log('Seed Items Added...');
         }

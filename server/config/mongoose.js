@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
     item = require('../models/Item'),
     auction = require("../models/Auction"),
     mail = require('../models/Mail');
+    quest = require('../models/Quest');
 
 module.exports = function(config) {
 
@@ -41,4 +42,5 @@ module.exports = function(config) {
     zone.seedZones();
     auction.seedAuctions();
     mail.seedMail();
+    quest.seedQuests();
 };

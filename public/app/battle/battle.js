@@ -80,7 +80,7 @@ app.factory('battle', function(Hero, notifier, equipment, Quests){
                     notifier.success("YOU WIN\n" + "you got " + minion.gold + "gold and " + minion.ss + "soul stones!");
                     hero.gold += minion.gold;
                     hero.ss += minion.ss;
-                    Quests.checkHeroQuests();
+                    Quests.checkHeroKillQuests();
                     window.location.href = '#/map';
                 }
                 Hero.updateHero(hero)

@@ -150,7 +150,7 @@ function getHeroStats(hero){
             break;
     }
 }
-var item = {title:"Test", rarity:'common', type: 'test', weight:'1',class:'helm', bonus:['df','0'],price:130, pic: "/pictures/items/item.jpg"};
+var item = {title:"Bag of Gold", rarity:'quest', type: 'test', weight:'1',class:'helm', bonus:['df','0'],price:130, pic: "/pictures/items/moneyBag.jpg"};
 var newHeroMail = {title: "Welcome", from: "HoT Team", to:"", items:[item], message:"Welcome to Heroes Of Trebichnenburg", read:false, date: new Date().toJSON().slice(0,10)};
 
 module.exports = {

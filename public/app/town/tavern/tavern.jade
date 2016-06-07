@@ -3,6 +3,44 @@
       li.active
          .btn.btn-primary(ng-click="sortByType('barShop')") Purchase Items
       li
-         .btn.btn-primary(ng-click="sortByType('barTalk')") Talk
+         .btn.btn-primary(ng-click="talk = !talk") Talk
       li
          .btn.btn-primary(ng-click="sortByType('blackjack')") Play Blackjack
+
+
+   .conversation
+      blockquote(ng-if="talk")
+         p Hello stranger! What brings you around?
+         small
+            cite the Barman
+         .btn.btn-link(ng-click="speak('booze')") -booze
+         .btn.btn-link(ng-click="speak('quest')") -quest
+         .btn.btn-link(ng-click="speak('sad')") -why sad
+
+   blockquote(class="blockquote-reverse" ng-if="talking.quest")
+         p Do you have any work for me?
+         small
+            cite You
+      blockquote(ng-if="talking.quest")
+         p I don't know you good enough but you can do something for me...
+         small
+            cite the Barman
+
+
+      blockquote(class="blockquote-reverse" ng-if="talking.booze")
+         p I wanna get drunk!
+         small
+            cite You
+      blockquote(ng-if="talking.booze")
+         p Here take this!
+         small
+            cite the Barman
+
+      blockquote(class="blockquote-reverse" ng-if="talking.sad")
+         p You look like a small kid that lost his candy..
+         small
+            cite You
+      blockquote(ng-if="talking.sad")
+         p Yeah it's not far from the trought. Look here's the deal. I've lost a bag and I can't seem to find it. If you bring it back to me I'll reward you very well!
+         small
+            cite the Barman

@@ -40,6 +40,7 @@ module.exports = function(app) {
     app.get('/hero', controllers.hero.getHeroByName);
 
     app.get('/api/zone/:index', function (req, res) {controllers.zones.getZoneByIndex(req, res)});
+    app.get('/api/quest/:name', function (req, res) {controllers.quest.getQuestByName(req, res)});
 
     app.get('/api/auctions/:type', function(req, res){controllers.auction.getAuctionsByType(req,res)});
     app.get('/api/auctionsByOwner/:owner', function(req, res){controllers.auction.getAuctionsByOwner(req,res)});

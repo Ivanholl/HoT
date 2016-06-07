@@ -1,4 +1,4 @@
-app.controller('inventoryCtrl', function($scope, equipment, Hero) {
+app.controller('inventoryCtrl', function($scope, equipment, Hero, Quests) {
     $scope.hero = Hero.currentHero;
     $scope.inventory = $scope.hero.inventory;
 
@@ -49,4 +49,7 @@ app.controller('inventoryCtrl', function($scope, equipment, Hero) {
         $scope.inventory = Array.from(new Set($scope.inventory));
         Hero.updateHero($scope.hero)
     })();*/
+   for(var i = 0; i < $scope.inventory.length; i++){
+       Quests.checkHeroGatherQuests($scope.inventory[i])
+   }
 });
