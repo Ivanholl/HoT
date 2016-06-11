@@ -49,7 +49,10 @@ app.controller('inventoryCtrl', function($scope, equipment, Hero, Quests) {
         $scope.inventory = Array.from(new Set($scope.inventory));
         Hero.updateHero($scope.hero)
     })();*/
-   for(var i = 0; i < $scope.inventory.length; i++){
-       Quests.checkHeroGatherQuests($scope.inventory[i])
-   }
+    function checkGatherQuests(){
+        for(var i = 0; i < $scope.inventory.length; i++){
+            Quests.checkHeroGatherQuests($scope.inventory[i])
+        }
+    }
+    checkGatherQuests();
 });

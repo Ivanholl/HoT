@@ -9,6 +9,9 @@ var QuestSchema = mongoose.Schema({
     neededItem: String,
     questGiver: String,
     story: String,
+    finished: Boolean,
+    autoReward: Boolean,
+    rewardLocation: String,
     rewards: [] //'gold','value','ss','value'
 });
 
@@ -31,6 +34,9 @@ module.exports.seedQuests = function() {
                 neededItem: "",
                 questGiver: "Barman",
                 story: "In order to work together you need to prove yourself!",
+                finished: false,
+                autoReward: false,
+                rewardGiver: "Barman",
                 rewards: ['gold','30','ss','10']
             });
             Quest.create({
@@ -42,6 +48,9 @@ module.exports.seedQuests = function() {
                 neededItem: "Bag of Gold",
                 questGiver: "Barman",
                 story: "The Barman lost his bag. He didn't mention what was inside the bag, but he promised a good reward for returning it. Yet it's a bag of gold and I can't get a decision...",
+                finished: false,
+                autoReward: false,
+                rewardGiver: "Barman",
                 rewards: ['gold','0','ss','60']
             });
             console.log('Quests added to database...')

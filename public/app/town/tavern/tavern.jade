@@ -6,7 +6,8 @@
          .btn.btn-primary(ng-click="talk = !talk") Talk
       li
          .btn.btn-primary(ng-click="sortByType('blackjack')") Play Blackjack
-
+      li
+         .btn.btn-danger(ng-if="finishedQuest" ng-click="returnQuest()") Take Quest Reward
 
    .conversation
       blockquote(ng-if="talk")

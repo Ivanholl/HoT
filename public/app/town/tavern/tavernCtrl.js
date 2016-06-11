@@ -6,6 +6,8 @@ app.controller('tavernCtrl', function ($scope, Hero, notifier, Quests) {
         booze: false,
         sad: false
     };
+    $scope.finishedQuest = false;
+    $scope.questToReturn;
 
     $scope.speak = function (about) {
         switch (about) {
@@ -27,6 +29,11 @@ app.controller('tavernCtrl', function ($scope, Hero, notifier, Quests) {
             default: break;
         }
     };
+    $scope.returnQuest = function(){
+        Quests.getQuestRewards($scope.questToReturn);
+        checkToReturn();
+    };
+
     function newQuest(questName){
         Quests.addQuestToHero(questName);
     }
@@ -35,7 +42,22 @@ app.controller('tavernCtrl', function ($scope, Hero, notifier, Quests) {
             array[key] = false;
         }
     }
+    function checkToReturn(){
+        var hasFinished = false;
+        for(var i = 0; i < $scope.hero.quests.length; i++){
+            if($scope.hero.quests[i].finished === true && $scope.hero.quests[i].rewardGiver === "Barman"){
+                hasFinished = true;
+                $scope.finishedQuest = true;
+                $scope.questToReturn = i;
+                break;
+            }
+        }
+        if(!hasFinished){
+            $scope.finishedQuest = false;
+        }
+    };
 
+    checkToReturn();
    /*for (item in $scope.hero.inventory){
         if(item.title == "Bag of Gold"){
             $scope.bagQuest = true;

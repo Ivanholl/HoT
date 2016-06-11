@@ -18,6 +18,10 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
             array[key] = false;
         }
     }
+    function changeHeroLocation(location){
+        $scope.hero.location = location;
+        Hero.updateHero($scope.hero);
+    }
 
     $scope.toMap = function() {
         window.location.href  = '#/map';
@@ -34,6 +38,7 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
 
     $scope.leaveBuilding = function() {
         $scope.inBuilding = false;
+
         falcify($scope.buildingList);
     };
     $scope.enterBuilding = function(building) {

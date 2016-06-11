@@ -16,21 +16,26 @@ app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
     function checkFinished(questNo) {
         var quest = hero.quests[questNo];
 
-        if(quest.progress >= quest.needed){
-            equipment.getBonus(hero, hero.quests[questNo].rewards);
-            hero.quests.splice(questNo, 1);
-
+        if(quest.progress >= quest.needed) {
             if(quest.type == "gather"){
                 var index = hero.inventory.map(function(e) { return e.title; }).indexOf(quest.neededItem);
-                console.log(index);
-                console.log(hero.inventory[index]);
                 if(index > 0) {
                     hero.inventory.splice(index, 1);
                 }
             }
-            Hero.updateHero(hero);
-            notifier.success("FINISHED QUEST");
+            if(quest.autoReward){
+                getQuestRewards(questNo)
+            } else {
+                hero.quests[questNo].finished = true;
+                Hero.updateHero(hero);
+                notifier.success("FINISHED QUEST");
+            }
         }
+    }
+    function getQuestRewards(questNo){
+        equipment.getBonus(hero, hero.quests[questNo].rewards);
+        hero.quests.splice(questNo, 1);
+        Hero.updateHero(hero);
     }
 
     return {
@@ -44,8 +49,8 @@ app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
         checkHeroGatherQuests: function (item) {
             for(var i = 0; i < hero.quests.length; i++){
                 if(hero.quests[i].type == "gather") {
-                    if(item.title == hero.quests[i].neededItem){
-                        updategatherQuest(i)
+                    if(item.title == hero.quests[i].neededItem && hero.quests[i].progress < hero.quests[i].needed){
+                        updategatherQuest(i);
                     }
                 }
             }
@@ -67,6 +72,7 @@ app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
                     notifier.success("You have new Quest");
                 })
             }
-        }
+        },
+        getQuestRewards: getQuestRewards
     }
 });
