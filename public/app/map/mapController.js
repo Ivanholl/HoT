@@ -11,7 +11,7 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
         $scope.erHeroInfoLost = true;
     }*/
 
-    $('#' + curZoneID).addClass('curZone');
+    $('#' + curZoneID).addClass('curZone').append("<div class='arrowCurZone'></div>");
 
     $scope.zoneSelect = function(event){
         var selectedZone = event.target.id;
