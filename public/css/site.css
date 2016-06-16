@@ -61,10 +61,13 @@ footer p {
   width: 1000px;
   margin-left: calc(50% - 500px);
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
-  background-color: #4e5d6c;
+  background-color: #26282c;
   border-left: 3px solid #808080;
   border-right: 3px solid #808080;
   display: inline-block;
+}
+.jumbotron {
+  background-color: #26282c;
 }
 .quickAccessBar {
   float: right;

@@ -1,0 +1,16 @@
+.hero-select-panel {
+    background: url("/pictures/uielements/background.png") center;
+}
+.hero-select-info {
+    padding: 20px 30px;
+}
+.text-holder {
+    background-image: url("/pictures/uielements/input.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 15px 20px;
+    text-align: center;
+}
+.hero-slot {
+    position: relative;
+}
