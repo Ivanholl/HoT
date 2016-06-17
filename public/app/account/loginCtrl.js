@@ -1,5 +1,6 @@
 app.controller('LoginCtrl', function($scope, $location, notifier, identity, auth) {
     $scope.identity = identity;
+    $scope.showLogin = false;
 
     $scope.login = function(user) {
         auth.login(user).then(function(success) {

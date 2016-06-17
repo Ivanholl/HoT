@@ -1,17 +1,9 @@
 extends includes/layout
 block main-content
-    header.nav.navbar-inverse.navbar-fixed-top
-        .container
-            .navbar-header
-                a.navbar-brand.logo(href="#/")
-                    img.logo(src="/pictures/logo.png")
-            .navbar-collapse.collapse
-                ul.nav.navbar-nav
-                    li
-                        a(href="#/") Home
-                    li
-                        a(href='') News
-                div(ng-include="'partials/account/login'")
+    header.container
+        .home-btn(href="#/") Home
+        .new-btn(href='') News
+            div(ng-include="'partials/account/login'")
 
     section
         route-loading-indicator
