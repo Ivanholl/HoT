@@ -89,9 +89,9 @@ footer p {
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
 .login-btn{
-  position: absolute;
-  top: 98px;
-  left: 898px;
+  position: relative;
+  top: 55px;
+  left: 1047px;
   width: 137px;
   height: 25px;
   text-align: center;
@@ -101,9 +101,9 @@ footer p {
   color: whitesmoke;
 }
 .signup-btn{
-  position: absolute;
-  top: 138px;
-  left: 898px;
+  position: relative;
+  top: 70px;
+  left: 1047px;
   width: 137px;
   height: 25px;
   text-align: center;
@@ -113,7 +113,6 @@ footer p {
   color: whitesmoke;
 }
 .login-form {
-  position: absolute;
   position: absolute;
   top: 85px;
   left: 898px;
