@@ -1,11 +1,13 @@
 extends includes/layout
 block main-content
     header.container
+        center
+            h1 Heroes of Trebichenburg
         .home-btn(href="#/") Home
-        .new-btn(href='') News
+        .news-btn(href='') News
         div(ng-include="'partials/account/login'")
 
-    section
+    section#fieled
         route-loading-indicator
         div(ng-if="!isRouteLoading" ng-view)
 

@@ -1,67 +1,83 @@
 #container
-    .jumbotron
-        h2 Hello {{ user.username }}
-        br
-        .row
-            .col-md-4.hero-slot
-                .hero-select-panel Hero Slot 1
-                    .top-left-corner
-                    .top-right-corner
-                    .bot-left-corner
-                    .bot-right-corner
-                    .border-left
-                    .border-right
-                    .border-top
-                    .border-bot
-                    .text-holder
-                        img(src="pictures/symbols/character icon.png")
-                        span {{heroOne.name}}
-                    .hero-select-info(ng-hide="chooseDelete")
-                        .text-primary Race: {{heroOne.race}}
-                        .text-primary Ap: {{heroOne.ap}}
-                        img(src="pictures/symbols/Hp2.png")
-                        span.text-danger  {{heroOne.hp}}/{{heroOne.maxHp}}
-                        br
-                        img(src="pictures/symbols/Mana.png")
-                        span.text-info  {{heroOne.mp}}/{{heroOne.maxMp}}
-                        br
-                        img(src="pictures/symbols/sword.png")
-                        span.text-primary {{heroOne.minDm}}-{{heroOne.maxDm}}
-                        br
-                        img(src="pictures/symbols/deffence.png")
-                        span.text-primary  {{heroOne.df}}
-                        br
-                        img(src="pictures/symbols/strength.png")
-                        span.text-warning  {{heroOne.str}}
-                        br
-                        img(src="pictures/symbols/gold.png")
-                        span.text-success  {{heroOne.gold}}
-                        img(src="pictures/symbols/soul stone2.png")
-                        span.text-success  {{heroOne.ss}}
-                        br
-                        img(src="pictures/symbols/location.png")
-                        span.text-primary  {{heroOne.location}}
+    .pageTitle Hello {{ user.username }}
+    .row
+        .hero-slot
+            .hero-select-panel Hero Slot 1
+                .top-left-corner
+                .top-right-corner
+                .bot-left-corner
+                .bot-right-corner
+                .border-left
+                .border-right
+                .border-top
+                .border-bot
+                .text-holder
+                    img(src="pictures/symbols/character icon.png")
+                    span {{heroOne.name}}
+                .hero-select-info(ng-hide="chooseDelete")
+                    .text-primary Race: {{heroOne.race}}
+                    .text-primary Ap: {{heroOne.ap}}
+                    img(src="pictures/symbols/Hp2.png")
+                    span.text-danger  {{heroOne.hp}}/{{heroOne.maxHp}}
+                    br
+                    img(src="pictures/symbols/Mana.png")
+                    span.text-info  {{heroOne.mp}}/{{heroOne.maxMp}}
+                    br
+                    img(src="pictures/symbols/sword.png")
+                    span.text-primary {{heroOne.minDm}}-{{heroOne.maxDm}}
+                    br
+                    img(src="pictures/symbols/deffence.png")
+                    span.text-primary  {{heroOne.df}}
+                    br
+                    img(src="pictures/symbols/strength.png")
+                    span.text-warning  {{heroOne.str}}
+                    br
+                    img(src="pictures/symbols/gold.png")
+                    span.text-success  {{heroOne.gold}}
+                    img(src="pictures/symbols/soul stone2.png")
+                    span.text-success  {{heroOne.ss}}
+                    br
+                    img(src="pictures/symbols/location.png")
+                    span.text-primary  {{heroOne.location}}
+                .btn-group-justified
+                    .ornament-green-btn.middle-align(ng-click="chooseHero(heroOne)" ng-hide="chooseDelete") Choose Hero
+                    .ornament-blue-btn.middle-align(ng-click="createHero()"  ng-hide="create") Create Hero
+                    .ornament-red-btn.middle-align(ng-click="del(heroOne.name)" ng-hide="chooseDelete") Delete Hero
+
+        .hero-slot.locked
+            .hero-select-panel Hero Slot 2
+                .top-left-corner
+                .top-right-corner
+                .bot-left-corner
+                .bot-right-corner
+                .border-left
+                .border-right
+                .border-top
+                .border-bot
+                .text-holder
+                .panel-heading
+                    .panel-title
+                .panel-body
                     .btn-group-vertical
-                        .btn.btn-success(ng-click="chooseHero(heroOne)" ng-hide="chooseDelete") Choose Hero
-                        .btn.btn-info(ng-click="createHero()"  ng-hide="create") Create Hero
-                        .btn.btn-danger(ng-click="del(heroOne.name)" ng-hide="chooseDelete") Delete Hero
+                        .ornament-green-btn Choose Hero
+                        .ornament-blue-btn Create Hero
+                        .ornament-red-btn Delete Hero
 
-            .col-md-4.hero-slot
-                .panel.panel-primary Hero Slot 2
-                    .panel-heading
-                        .panel-title
-                    .panel-body
-                        .btn-group-vertical
-                            .btn.btn-success.disabled Choose Hero
-                            .btn.btn-info.disabled Choose Hero
-                            .btn.btn-danger.disabled Choose Hero
-
-            .col-md-4.hero-slot
-                .panel.panel-primary Hero Slot 3
-                    .panel-heading
-                        .panel-title
-                    .panel-body
-                        .btn-group-vertical
-                            .btn.btn-success.disabled Choose Hero
-                            .btn.btn-info.disabled Choose Hero
-                            .btn.btn-danger.disabled Choose Hero
+        .hero-slot.locked
+            .hero-select-panel Hero Slot 2
+                .top-left-corner
+                .top-right-corner
+                .bot-left-corner
+                .bot-right-corner
+                .border-left
+                .border-right
+                .border-top
+                .border-bot
+                .text-holder
+                .panel-heading
+                    .panel-title
+                .panel-body
+                    //.btn-group-vertical
+                        .btn.btn-success.disabled Choose Hero
+                        .btn.btn-info.disabled Choose Hero
+                        .btn.btn-danger.disabled Choose Hero

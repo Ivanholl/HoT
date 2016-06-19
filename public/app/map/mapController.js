@@ -7,6 +7,7 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
     $scope.minions = MinionResource.getMinionsByZone(curZoneID);
     $scope.zone = ZoneResource.getZoneByIndex(curZoneID);
     $scope.erHeroInfoLost = false;
+    $scope.class = "";
     /*if (hero.name = "") {
         $scope.erHeroInfoLost = true;
     }*/
@@ -34,20 +35,21 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
     };
 
     $scope.prev = function(event){
-        var newLocation = event.target.text.slice(6);
+        //var newLocation = event.target.text.slice(6);
+        var newLocation = angular.element(event.target).text().slice(6);
         setNewLocation(newLocation);
         changeLocation(newLocation);
         //window.location.href = '#/battle';
     };
 
     $scope.next = function(event){
-        var newLocation = event.target.text.slice(6);
+        var newLocation = angular.element(event.target).text().slice(6);
         setNewLocation(newLocation);
         changeLocation(newLocation);
         //window.location.href = '#/battle';
     };
     $scope.branch = function(event){
-        var newLocation = event.target.text.slice(6);
+        var newLocation = angular.element(event.target).text().slice(6);
         setNewLocation(newLocation);
         changeLocation(newLocation);
         //window.location.href = '#/battle';

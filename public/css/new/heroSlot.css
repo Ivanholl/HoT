@@ -13,4 +13,12 @@
 }
 .hero-slot {
     position: relative;
+    width: 320px;
+    display: inline-block;
+    float: left;
+    height: 428px;
+    margin-left: 15px;
+}
+.locked {
+    cursor: url("/pictures/symbols/padlock-icon.png"), auto !important;
 }

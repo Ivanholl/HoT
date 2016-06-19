@@ -1,4 +1,5 @@
 #container
+   .pageTitle {{hero.location}}
    .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
    #town(ng-style="{'background-image':'url(/pictures/backgrounds/{{hero.location}}.jpg)'}")
       .building(ng-if="buildingList.healer" ng-include="'townPartials/healer/healer.jade'")

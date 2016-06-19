@@ -29,21 +29,25 @@
   background-color: rgba(10,0,5,0.6);
 }
 .avatar {
-  height: 75px;
-  width: 75px;
-  border: 1px solid #000;
-  border-radius: 50%;
+    position: relative;
+    height: 75px;
+    width: 75px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    z-index: 2;
 }
 .vs {
   height: 100px;
   width: 100px;
   background-image: url("/pictures/vs.png");
   background-size: 100% 100%;
+  -webkit-filter: drop-shadow(1px 1px 5px white);
+  filter: drop-shadow(1px 1px 5px white);
 }
 .enemyBarList {
   position: absolute;
   list-style: none;
-  top: 15px;
+  top: 0;
   right: 75px;
 }
 .enemyBarList .mpBar {
@@ -52,17 +56,43 @@
 .heroBarList {
   position: absolute;
   list-style: none;
-  top: 15px;
+  top: 0px;
   left: 75px;
 }
-.statBar {
-  border: 1px solid #000;
-  border-radius: 7px;
-  width: 200px;
-  margin: 0;
+.statBar-left {
+    border: 1px solid #000;
+    border-radius: 0 7px 7px 0;
+    width: 200px;
+    margin: 0px 0 0 -1px;    
 }
-.statList .statBar {
-  width: 100px;
+.statBar-right {
+    border: 1px solid #000;
+    border-radius: 7px 0 0 7px;
+    width: 200px;
+    margin: 0px 0 0 -1px;
+}
+.statBar-hero-hp{
+    width: 150px !important;
+    left: -9px;
+    position: relative;
+    border-radius: 13px 7px 7px 0px;
+}
+.statBar-hero-mp{
+    position: relative;
+    left: 3px;
+}
+.statBar-enemy-hp{
+    width: 150px !important;
+    right: -9px;
+    position: relative;
+    border-radius: 7px 13px 7px 7px;
+}
+.statBar-enemy-mp{
+    position: relative;
+    right: -27px;
+}
+.statList .statBar-left, .statBar-right {
+  width: 120px;
 }
 .mpBar {
   width: 150px;

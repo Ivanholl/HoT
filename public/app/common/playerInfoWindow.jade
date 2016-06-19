@@ -1,12 +1,13 @@
 ul.statList
     li
+        .circle(style="top:-5px;")
         img.avatar(src="{{hero.avatar}}")
         ul.heroBarList(ng-if="!fullInfo")
             li
-                .progress.statBar
+                .progress.statBar-left.statBar-hero-hp
                     .progress-bar.progress-bar-danger(style="width: {{hero.hp / (hero.maxHp / 100)}}%;") {{hero.hp}}/{{hero.maxHp}}
             li
-                .progress.statBar.mpBar
+                .progress.statBar-left.statBar-hero-mp
                     .progress-bar.progress-bar-info(style="width: {{hero.mp / (hero.maxMp / 100)}}%;") {{hero.mp}}/{{hero.maxMp}}
     li
         img(src="pictures/symbols/character icon.png")

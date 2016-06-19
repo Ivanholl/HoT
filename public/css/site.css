@@ -10,10 +10,7 @@ body {
   font-family: 'Architects Daughter', cursive;
   cursor: url("/pictures/cursor/glove_cursor.gif"), auto;
 }
-button:hover,
-a:hover,
-.btn:hover,
-.round-button:hover {
+button:hover,a:hover,.btn:hover,.round-button:hover {
   cursor: url("/pictures/cursor/glove_cursor.gif"), auto !important;
 }
 .mouseDown {
@@ -57,9 +54,13 @@ footer p {
   height: 40px;
 }
 #fieled {
-  background: url("/pictures/site.png")no-repeat;
-  background-position: 153px 0px;
-  background-size: 81% 101%;
+    position: relative;
+    left: 50%;
+    margin-left: -650px;
+    width: 1300px;
+    height: 1100px;
+    background: url("/pictures/site.png")no-repeat;
+    background-size: 100% 100%;
 }
 #container {
   width: 1000px;
@@ -67,10 +68,7 @@ footer p {
   margin-left: calc(50% - 500px);
   padding-top: 170px;
 }
-.container {
-  position: absolute;
-  z-index: 10;
-}
+
 .jumbotron {
   background-color: #26282c;
 }
@@ -88,38 +86,12 @@ footer p {
   z-index: 3;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
-.login-btn{
-  position: relative;
-  top: 55px;
-  left: 1047px;
-  width: 137px;
-  height: 25px;
+.pageTitle {
   text-align: center;
-  font-size: 15px;
-  text-transform: uppercase;
   font-weight: 900;
-  color: whitesmoke;
+  font-size: 40px;
+  margin: 25px 0 5px 0;
 }
-.signup-btn{
-  position: relative;
-  top: 70px;
-  left: 1047px;
-  width: 137px;
-  height: 25px;
-  text-align: center;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 900;
-  color: whitesmoke;
-}
-.login-form {
-  position: absolute;
-  top: 85px;
-  left: 898px;
-  width: 135px;
-  height: 125px;
-}
-
 /**********************************************HERO CREATE*********/
 .raceOption {
   width: 100px;
@@ -170,4 +142,14 @@ footer p {
   font-size: 50px;
   float: left;
   font-family: bigLetter;
+}
+.middle-align {
+    margin: 0 auto;
+}
+.inline {
+    display: inline-block;
+}
+.bot-align {
+    position: absolute;
+    bottom: 0;
 }

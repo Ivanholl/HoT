@@ -1,10 +1,19 @@
 #container
+    .pageTitle Map
     .quickAccessBar(ng-include="'partials/quickAccessBar/quickAccessBar.jade'")
     //.jumbotron
     #error(ng-if="erHeroInfoLost")
         h1 ERROR HERO INFORMATION LOST
         h2 plese refresh page
     #map
+        .top-left-corner
+        .top-right-corner
+        .bot-left-corner
+        .bot-right-corner
+        .border-left
+        .border-right
+        .border-top
+        .border-bot
         .btn.btn-default.dropdown.closed
             .dropdown-toggle(data-toggle="dropdown" role="button" aria-expanded="false") Choose Map
                 .caret
@@ -16,114 +25,125 @@
 
         img(src="/pictures/map.jpg" style="visibility: hidden")
 
-        #hzone1.round-button(ng-click="zoneSelect($event)")
-        #hzone2.round-button(ng-click="zoneSelect($event)")
-        #hzone3.round-button(ng-click="zoneSelect($event)")
-        #hzone4.round-button(ng-click="zoneSelect($event)")
-        #hzone5.round-button(ng-click="zoneSelect($event)")
-        #hzone6.round-button(ng-click="zoneSelect($event)")
-        #hzone7.round-button(ng-click="zoneSelect($event)")
-        #hzone8.round-button(ng-click="zoneSelect($event)")
-        #hzone9.round-button(ng-click="zoneSelect($event)")
-        #hzone10.round-button(ng-click="zoneSelect($event)")
-        #hzone11.round-button(ng-click="zoneSelect($event)")
-        #hzone12.round-button(ng-click="zoneSelect($event)")
+        #hzone1.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Gates of Kymeria")
+        #hzone2.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Kymerian fields")
+        #hzone3.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Naga Camp")
+        #hzone4.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone5.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone6.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone7.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone8.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone9.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone10.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone11.round-button.grey(ng-click="zoneSelect($event)")
+        #hzone12.round-button.grey(ng-click="zoneSelect($event)")
         #htown.round-button.town(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Kymeria")
 
-        #ozone1.round-button(ng-click="zoneSelect($event)")
-        #ozone2.round-button(ng-click="zoneSelect($event)")
-        #ozone3.round-button(ng-click="zoneSelect($event)")
-        #ozone4.round-button(ng-click="zoneSelect($event)")
-        #ozone5.round-button(ng-click="zoneSelect($event)")
-        #ozone6.round-button(ng-click="zoneSelect($event)")
-        #ozone7.round-button(ng-click="zoneSelect($event)")
-        #ozone8.round-button(ng-click="zoneSelect($event)")
-        #ozone9.round-button(ng-click="zoneSelect($event)")
-        #ozone10.round-button(ng-click="zoneSelect($event)")
-        #ozone11.round-button(ng-click="zoneSelect($event)")
-        #ozone12.round-button(ng-click="zoneSelect($event)")
+        #ozone1.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Camp entrance")
+        #ozone2.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Round to orc settlement 1")
+        #ozone3.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Gol Ugur oasis")
+        #ozone4.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone5.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone6.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone7.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone8.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone9.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone10.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone11.round-button.grey(ng-click="zoneSelect($event)")
+        #ozone12.round-button.grey(ng-click="zoneSelect($event)")
         #otown.round-button.town(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Gol Ugur")
 
-        #ezone1.round-button(ng-click="zoneSelect($event)")
-        #ezone2.round-button(ng-click="zoneSelect($event)")
-        #ezone3.round-button(ng-click="zoneSelect($event)")
-        #ezone4.round-button(ng-click="zoneSelect($event)")
-        #ezone5.round-button(ng-click="zoneSelect($event)")
-        #ezone6.round-button(ng-click="zoneSelect($event)")
-        #ezone7.round-button(ng-click="zoneSelect($event)")
-        #ezone8.round-button(ng-click="zoneSelect($event)")
-        #ezone9.round-button(ng-click="zoneSelect($event)")
-        #ezone10.round-button(ng-click="zoneSelect($event)")
-        #ezone11.round-button(ng-click="zoneSelect($event)")
-        #ezone12.round-button(ng-click="zoneSelect($event)")
+        #ezone1.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Elasia gardens")
+        #ezone2.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Road to Elasia Harbor")
+        #ezone3.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Elasia Harbor")
+        #ezone4.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone5.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone6.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone7.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone8.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone9.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone10.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone11.round-button.grey(ng-click="zoneSelect($event)")
+        #ezone12.round-button.grey(ng-click="zoneSelect($event)")
         #etown.round-button.town(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Elasia")
 
-        #uzone1.round-button(ng-click="zoneSelect($event)")
-        #uzone2.round-button(ng-click="zoneSelect($event)")
-        #uzone3.round-button(ng-click="zoneSelect($event)")
-        #uzone4.round-button(ng-click="zoneSelect($event)")
-        #uzone5.round-button(ng-click="zoneSelect($event)")
-        #uzone6.round-button(ng-click="zoneSelect($event)")
-        #uzone7.round-button(ng-click="zoneSelect($event)")
-        #uzone8.round-button(ng-click="zoneSelect($event)")
-        #uzone9.round-button(ng-click="zoneSelect($event)")
-        #uzone10.round-button(ng-click="zoneSelect($event)")
-        #uzone11.round-button(ng-click="zoneSelect($event)")
-        #uzone12.round-button(ng-click="zoneSelect($event)")
+        #uzone1.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="East of Napsonein")
+        #uzone2.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Northern Napsonein coast")
+        #uzone3.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Road to Undead village 1")
+        #uzone4.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone5.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone6.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone7.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone8.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone9.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone10.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone11.round-button.grey(ng-click="zoneSelect($event)")
+        #uzone12.round-button.grey(ng-click="zoneSelect($event)")
         #utown.round-button.town(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Napsonein")
 
         #dzone1.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Outer hall of Dum Todir")
         #dzone2.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Mine shaft 1")
         #dzone3.round-button(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Mine shaft 2")
-        #dzone4.round-button(ng-click="zoneSelect($event)")
-        #dzone5.round-button(ng-click="zoneSelect($event)")
-        #dzone6.round-button(ng-click="zoneSelect($event)")
-        #dzone7.round-button(ng-click="zoneSelect($event)")
-        #dzone8.round-button(ng-click="zoneSelect($event)")
-        #dzone9.round-button(ng-click="zoneSelect($event)")
-        #dzone10.round-button(ng-click="zoneSelect($event)")
-        #dzone11.round-button(ng-click="zoneSelect($event)")
-        #dzone12.round-button(ng-click="zoneSelect($event)")
+        #dzone4.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone5.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone6.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone7.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone8.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone9.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone10.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone11.round-button.grey(ng-click="zoneSelect($event)")
+        #dzone12.round-button.grey(ng-click="zoneSelect($event)")
         #dtown.round-button.town(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Dum Todir")
 
-        #azone1.round-button.orange(ng-click="zoneSelect($event)")
-        #azone2.round-button.orange(ng-click="zoneSelect($event)")
-        #azone3.round-button.orange(ng-click="zoneSelect($event)")
-        #azone4.round-button.orange(ng-click="zoneSelect($event)")
-        #azone5.round-button.orange(ng-click="zoneSelect($event)")
-        #azone6.round-button.orange(ng-click="zoneSelect($event)")
-        #atown.round-button.town(ng-click="zoneSelect($event)")
+        #azone1.round-button.orange.grey(ng-click="zoneSelect($event)")
+        #azone2.round-button.orange.grey(ng-click="zoneSelect($event)")
+        #azone3.round-button.orange.grey(ng-click="zoneSelect($event)")
+        #azone4.round-button.orange.grey(ng-click="zoneSelect($event)")
+        #azone5.round-button.orange.grey(ng-click="zoneSelect($event)")
+        #azone6.round-button.orange.grey(ng-click="zoneSelect($event)")
+        #atown.round-button.town(ng-click="zoneSelect($event)" data-toggle="tooltip" data-placement="bottom" data-original-title="Trebichenburg")
 
-        div
-            a.round-button.legend.legendTown
-            span.legendText town
-            br
-            a.round-button.curZone.legend
-            span.legendText current location
-            br
-            a.round-button.selectedZone.legend
-            span.legendText selected zone
-
+    div
+        a.round-button.legend.legendTown
+        span.legendText town
+        br
+        a.round-button.curZone.legend
+        span.legendText current location
+        br
+        a.round-button.selectedZone.legend
+        span.legendText selected zone
+        br
+        a.round-button.grey.legend
+        span.legendText under development    
+            
     .zone-info
-        .list-group
-            .list-group-item.active {{zone.name}}
-            .list-group-item.text-warning {{zone.info}}
-            .list-group-item.zoneDetails
-                table.table-striped.table-hover.zone-info-table(ng-if="zone.movementOptions.hasBattle")
-                    thead
-                        tr
-                            th.text-primary Minions in this zone
-                    tbody
-                         tr(ng-repeat="minion in minions")
-                            td {{minion.name}}
-                img.zone-pic(src="/pictures/backgrounds/{{zone.index}}.jpg")
+        .top-left-corner
+        .top-right-corner
+        .bot-left-corner
+        .bot-right-corner
+        .border-left
+        .border-right
+        .border-top
+        .border-bot
+        .text-holder
+            {{zone.name}}
+        .zoneDetails
+            .text-warning {{zone.info}}            
+            table.table-striped.table-hover.zone-info-table(ng-if="zone.movementOptions.hasBattle")
+                thead
+                    tr
+                        th.text-primary Minions in this zone
+                tbody
+                     tr(ng-repeat="minion in minions")
+                        td {{minion.name}}
+            img.zone-pic(src="/pictures/backgrounds/{{zone.index}}.jpg")
 
-
-        a#prev.btn.btn-success(ng-if="zone.movementOptions.hasPrevZone" ng-class="class" ng-click="prev($event)") Go to {{zone.movementOptions.prevZone}}
-        a#branch.btn.btn-success(ng-if="zone.movementOptions.hasBranchZone" ng-class="class" ng-click="branch($event)") Go to {{zone.movementOptions.branchZone}}
-        a#next.btn.btn-success(ng-if="zone.movementOptions.hasNextZone" ng-class="class" ng-click="next($event)") Go to {{zone.movementOptions.nextZone}}
-        .btn.btn-danger(ng-if="zone.movementOptions.hasBattle" ng-class="class" ng-click="battle($event)") Battle
-        .btn.btn-info(ng-if="zone.movementOptions.isTown" ng-class="class" ng-click="enter($event)") Enter
+        .map-btn-holder
+            #prev.ornament-green-btn.inline(ng-if="zone.movementOptions.hasPrevZone" ng-class="class" ng-click="prev($event)") Go to {{zone.movementOptions.prevZone}}
+            #branch.ornament-green-btn.inline(ng-if="zone.movementOptions.hasBranchZone" ng-class="class" ng-click="branch($event)") Go to {{zone.movementOptions.branchZone}}
+            #next.ornament-green-btn.inline(ng-if="zone.movementOptions.hasNextZone" ng-class="class" ng-click="next($event)") Go to {{zone.movementOptions.nextZone}}
+            .ornament-red-btn.inline(ng-if="zone.movementOptions.hasBattle" ng-class="class" ng-click="battle($event)") Battle
+            .ornament-blue-btn.inline(ng-if="zone.movementOptions.isTown" ng-class="class" ng-click="enter($event)") Enter
 
 
     div(ng-include="'partials/chat/chat.jade'")

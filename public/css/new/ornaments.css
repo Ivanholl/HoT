@@ -10,7 +10,7 @@
 .top-right-corner {
     position: absolute;
     top: 0;
-    right: 14px;
+    right: 0;
     background: url("/pictures/uielements/corner ornament.png") no-repeat;
     background-size: contain;
     height: 95px;
@@ -33,7 +33,7 @@
 .bot-right-corner {
     position: absolute;
     bottom: 0;
-    right: 14px;
+    right: 0;
     background: url("/pictures/uielements/corner ornament.png") no-repeat;
     background-size: contain;
     height: 95px;
@@ -44,20 +44,21 @@
 }
 .border-left {
     position: absolute;
-    left: 10px;
+    left: -6px;
     background: url("/pictures/uielements/vertical-border.png") repeat-y;
     background-size: 100% 100%;
     width: 30px;
-    height: 93%;
+    height: 99%;
     z-index: 2;
  }
 .border-right {
     position: absolute;
-    right: 11px;
+    top: 0;
+    right: -4px;
+    width: 30px;
+    height: 100%;
     background: url("/pictures/uielements/vertical-border.png") repeat-y;
     background-size: 100% 100%;
-    width: 30px;
-    height: 94%;
     z-index: 2;
 }
 .border-top {
@@ -66,7 +67,7 @@
     background: url("/pictures/uielements/horisontal-border.png")repeat-x;
     background-size: 100% 100%;
     height: 30px;
-    width: 91%;
+    width: 95%;
     z-index: 2;
 }
 .border-bot {
@@ -75,6 +76,49 @@
     background: url("/pictures/uielements/horisontal-border.png")repeat-x;
     background-size: 100% 100%;
     height: 30px;
-    width: 91%;
+    width: 94%;
     z-index: 2;
+}
+.ornament-red-btn {
+    background-image: url("/pictures/uielements/ornament-red-btn.png");
+    width: 120px;
+    height: 40px;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 37px;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 6;
+}
+.ornament-green-btn {
+    background-image: url("/pictures/uielements/ornament-green-btn.png");
+    width: 120px;
+    height: 40px;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 37px;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 6;
+}
+.ornament-blue-btn {
+    background-image: url("/pictures/uielements/ornament-blue-btn.png");
+    width: 120px;
+    height: 40px;
+    background-size: 100% 100%;
+    text-align: center;
+    line-height: 37px;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 6;
+}
+.circle {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    height: 85px;
+    width: 85px;
+    background: url("/pictures/uielements/circle.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
 }

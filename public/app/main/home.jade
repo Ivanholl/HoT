@@ -1,43 +1,42 @@
-#fieled
-    #container
-        h1 Heroes of Trebichenburg
-        h2 browser PRG without levels
+#container
+    .pageTitle browser PRG without levels
 
-        .alert.alert-danger(ng-hide="identity.isAuthenticated()")
-            strong Please Log In.
+    .alert.alert-danger(ng-hide="identity.isAuthenticated()")
+        strong Please Log In.
 
-        .alert.alert-warning(ng-if="identity.isAuthenticated()")
-            strong Do not refresh browser! Otherwise Hero data might be lost!
-        a.btn.btn-success(ng-audio-hover="sounds/mouseHover.mp3" volume-hover="1.0" href="#/hero" ng-show="identity.isAuthenticated()")
-            |Play Now
+    .alert.alert-warning(ng-if="identity.isAuthenticated()")
+        strong Do not refresh browser! Otherwise Hero data might be lost!
 
-        a(href="/auth/facebook/token") >Sign in with Facebook
+    .play-now(ng-audio-hover="sounds/mouseHover.mp3" volume-hover="1.0" ng-click="play()" ng-show="identity.isAuthenticated()")
+        span Play Now
 
-        //.news
-        div
-            h2 NEWS
+    //a(href="/auth/facebook/token") >Sign in with Facebook
 
-            blockquote.blockquote-reverse
-                p We've got chat now!
-                small information by
-                    cite(title="Source Title") HoT&trade;
+    //.news
+    div
+        h2 NEWS
 
-            blockquote
-                p Sounds have been added.
-                small information by
-                    cite(title="Source Title") HoT&trade;
+        blockquote.blockquote-reverse
+            p We've got chat now!
+            small information by
+                cite(title="Source Title") HoT&trade;
 
-            blockquote.blockquote-reverse
-                p Pictures! Lot's of item pictures have been added.
-                small information by
-                    cite(title="Source Title") HoT&trade;
+        blockquote
+            p Sounds have been added.
+            small information by
+                cite(title="Source Title") HoT&trade;
 
-            blockquote
-                p Items have been added to the game.
-                small information by
-                    cite(title="Source Title") HoT&trade;
+        blockquote.blockquote-reverse
+            p Pictures! Lot's of item pictures have been added.
+            small information by
+                cite(title="Source Title") HoT&trade;
 
-            blockquote.blockquote-reverse
-                p Map movement options have been inproved.
-                small information by
-                    cite(title="Source Title") HoT&trade;
+        blockquote
+            p Items have been added to the game.
+            small information by
+                cite(title="Source Title") HoT&trade;
+
+        blockquote.blockquote-reverse
+            p Map movement options have been inproved.
+            small information by
+                cite(title="Source Title") HoT&trade;

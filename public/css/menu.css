@@ -1,0 +1,125 @@
+.container {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    margin-left: -500px;
+    width: 1000px;
+    height: 200px;
+}
+.container h1 {
+    position: relative;
+    top: 10px;
+    font-size: 42px;
+}
+.login-box {
+    width: 100%;
+    height: 100%;
+}
+.login-btn{
+    position: relative;
+    top: 22px;
+    left: 591px;
+    width: 137px;
+    height: 25px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: whitesmoke;
+}
+.signup-btn{
+    position: relative;
+    top: -45px;
+    left: 591px;
+    width: 137px;
+    height: 25px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: whitesmoke;
+}
+.login-form {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: rgb(166,166,166);
+    z-index: 100;
+    height: 150px;
+    margin-top: -150px;
+    width: 300px;
+    margin-left: -150px;
+    padding: 20px;
+}
+.popup-top {
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    background: url("/pictures/uielements/popup-top.png") no-repeat;
+    background-size: contain;
+    height: 40px;
+    width: 103%;
+    z-index: 5;
+}
+.home-btn {
+    position: relative;
+    top: 30px;
+    left: 233px;
+    width: 137px;
+    height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.news-btn {
+    position: relative;
+    top: 46px;
+    left: 233px;
+    width: 137px;
+    height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.Acc {
+    position: relative;
+    top: 12px;
+    left: -256px;
+    width: 137px;
+    height: 25px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: whitesmoke;
+}
+.options {
+    position: relative;
+    top: -51px;
+    left: -256px;
+    width: 137px;
+    height: 25px;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: whitesmoke;
+}
+.play-now{
+    position: relative;
+    top: -217px;
+    left: 428px;
+    width: 135px;
+    height: 50px;
+    z-index: 11;
+}
+.play-now span{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-weight: 900;
+}

@@ -2,7 +2,7 @@ var app = angular.module('app', ['ngResource', 'ngRoute','btford.socket-io','ngA
     .value('toastr', toastr);
 
 app.config(function($routeProvider, $locationProvider) {
-    // $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 
     var routeUserChecks = {
         adminRole: {
