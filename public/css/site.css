@@ -67,10 +67,7 @@ footer p {
   margin-left: calc(50% - 500px);
   padding-top: 170px;
 }
-.container {
-  position: absolute;
-  z-index: 10;
-}
+
 .jumbotron {
   background-color: #26282c;
 }
@@ -88,38 +85,12 @@ footer p {
   z-index: 3;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
-.login-btn{
-  position: relative;
-  top: 55px;
-  left: 1047px;
-  width: 137px;
-  height: 25px;
+.pageTitle {
   text-align: center;
-  font-size: 15px;
-  text-transform: uppercase;
   font-weight: 900;
-  color: whitesmoke;
+  font-size: 40px;
+  margin: 10px 0 20px 0;
 }
-.signup-btn{
-  position: relative;
-  top: 70px;
-  left: 1047px;
-  width: 137px;
-  height: 25px;
-  text-align: center;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 900;
-  color: whitesmoke;
-}
-.login-form {
-  position: absolute;
-  top: 85px;
-  left: 898px;
-  width: 135px;
-  height: 125px;
-}
-
 /**********************************************HERO CREATE*********/
 .raceOption {
   width: 100px;

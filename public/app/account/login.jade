@@ -1,14 +1,16 @@
 .login-box(ng-controller="LoginCtrl")
     div(ng-hide="identity.isAuthenticated()")
         div.login-form(ng-if="showLogin")
-            .btn.btn-danger(ng-click="login(user)") Login
+            .popup-top
             input.form-control(type="text", placeholder="Username", ng-model="user.username")
             input.form-control(type="password", placeholder="Password", ng-model="user.password")
+            .ornament-red-btn(ng-click="login(user)") Login
+
         .login-btn(ng-click="showLogin = !showLogin") Login
         .signup-btn(href="#/signup") Sign Up
 
     ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
-        li.dropdown
+        li.dropdown.Acc
             a.dropdown-toggle(href="", data-toggle="dropdown")
                 | {{ identity.currentUser.username }}
                 span.caret
@@ -19,3 +21,4 @@
                     a(href="#/profile") Profile
                 li
                     a(href="#" ng-click="logout()") Sign Out
+        .options Options
