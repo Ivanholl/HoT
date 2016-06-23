@@ -39,6 +39,7 @@
                     br
                     img(src="pictures/symbols/location.png")
                     span.text-primary  {{heroOne.location}}
+                    
                 .btn-group-justified
                     .ornament-green-btn.middle-align(ng-click="chooseHero(heroOne)" ng-hide="chooseDelete") Choose Hero
                     .ornament-blue-btn.middle-align(ng-click="createHero()"  ng-hide="create") Create Hero
@@ -58,7 +59,7 @@
                 .panel-heading
                     .panel-title
                 .panel-body
-                    .btn-group-vertical
+                    //.btn-group-vertical
                         .ornament-green-btn Choose Hero
                         .ornament-blue-btn Create Hero
                         .ornament-red-btn Delete Hero
@@ -78,6 +79,3 @@
                     .panel-title
                 .panel-body
                     //.btn-group-vertical
-                        .btn.btn-success.disabled Choose Hero
-                        .btn.btn-info.disabled Choose Hero
-                        .btn.btn-danger.disabled Choose Hero

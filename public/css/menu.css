@@ -17,7 +17,7 @@
 }
 .login-btn{
     position: relative;
-    top: 22px;
+    top: 14px;
     left: 591px;
     width: 137px;
     height: 25px;
@@ -29,7 +29,7 @@
 }
 .signup-btn{
     position: relative;
-    top: -45px;
+    top: -51px;
     left: 591px;
     width: 137px;
     height: 25px;
@@ -63,9 +63,9 @@
 }
 .home-btn {
     position: relative;
-    top: 30px;
-    left: 233px;
-    width: 137px;
+    top: 23px;
+    left: 242px;
+    width: 130px;
     height: 25px;
     text-align: center;
     text-transform: uppercase;
@@ -73,9 +73,9 @@
 }
 .news-btn {
     position: relative;
-    top: 46px;
-    left: 233px;
-    width: 137px;
+    top: 38px;
+    left: 242px;
+    width: 130px;
     height: 25px;
     text-align: center;
     text-transform: uppercase;
@@ -107,7 +107,7 @@
 }
 .play-now{
     position: relative;
-    top: -217px;
+    top: -197px;
     left: 428px;
     width: 135px;
     height: 50px;
