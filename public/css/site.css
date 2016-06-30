@@ -73,10 +73,26 @@ footer p {
   background-color: #26282c;
 }
 .quickAccessBar {
-  float: right;
-  margin: 5px;
-  display: inline-block;
-  list-style: none;
+    margin: 5px;
+    display: inline-block;
+    list-style: none;
+    background: url("/pictures/uielements/background.png") center;
+}
+.quickAccessBar-tab{
+    height: 50px;
+    width: 50px;
+}
+.inventory-tab {
+    background: url("/pictures/icons/inventory.png") no-repeat -10px -8px;
+}
+.char-info {
+    background: url("/pictures/icons/char-info.png") no-repeat -10px -8px;
+}
+.quests{
+    background: url("/pictures/icons/quests.png") no-repeat -10px -8px;
+}
+.mail{
+    background: url("/pictures/icons/mail.png") no-repeat -10px -8px;
 }
 .quickAccessWindow {
   padding: 5px;

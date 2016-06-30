@@ -1,13 +1,16 @@
-ul.nav.nav-tabs.quickAccessBar(ng-controller="QuickAccessCtrl")
-   li
-      a.btn.btn-warning(ng-click="inventory()") Inventory
-      .quickAccessWindow.jumbotron(ng-if="inventoryShow" ng-include="'partials/quickAccessBar/inventoryWindow.jade'")
-   li
-      a.btn.btn-warning(ng-click="charInfo = !charInfo") Character Info
-      .quickAccessWindow.jumbotron(ng-if="charInfo" ng-include="'partials/common/playerInfoWindow'")
-   li
-      a.btn.btn-warning(ng-click="mail = !mail") Mail Box
-      .quickAccessWindow.jumbotron(ng-if="mail" ng-include="'partials/quickAccessBar/mailBox.jade'")
-   li
-      a.btn.btn-warning(ng-click="quests = !quests") Quest Book
-      .quickAccessWindow.jumbotron(ng-if="quests" ng-include="'partials/quickAccessBar/questBook.jade'")
+div(ng-controller="QuickAccessCtrl" style="float: right;")
+    .line-start
+    ul.nav.nav-tabs.quickAccessBar
+        li
+            .quickAccessBar-tab.inventory-tab(ng-click="inventory()"  data-toggle="tooltip" data-placement="bottom" data-original-title="Inventory")
+            .quickAccessWindow.jumbotron(ng-if="inventoryShow" ng-include="'partials/quickAccessBar/inventoryWindow.jade'")
+        li
+            .quickAccessBar-tab.char-info(ng-click="charInfo = !charInfo" data-toggle="tooltip" data-placement="bottom" data-original-title="Character Info")
+            .quickAccessWindow.jumbotron(ng-if="charInfo" ng-include="'partials/common/playerInfoWindow'")  
+        li
+            .quickAccessBar-tab.quests(ng-click="quests = !quests" data-toggle="tooltip" data-placement="bottom" data-original-title="Quests")
+            .quickAccessWindow.jumbotron(ng-if="quests" ng-include="'partials/quickAccessBar/questBook.jade'")
+        li
+            .quickAccessBar-tab.mail(ng-click="mail = !mail" data-toggle="tooltip" data-placement="bottom" data-original-title="Mail")
+            .quickAccessWindow.jumbotron(ng-if="mail" ng-include="'partials/quickAccessBar/mailBox.jade'")     
+    .line-end

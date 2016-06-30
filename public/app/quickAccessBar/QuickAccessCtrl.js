@@ -5,5 +5,5 @@ app.controller('QuickAccessCtrl', function($scope, identity, Hero){
     $scope.inventory = function(){
         $scope.inventoryShow = !$scope.inventoryShow;
     }
-
+    $('.quickAccessBar-tab').tooltip();
 });

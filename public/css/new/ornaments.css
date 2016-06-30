@@ -122,3 +122,22 @@
     background-size: 100% 100%;
     z-index: 1;
 }
+.line-start {
+    background: url("/pictures/uielements/line start.png") no-repeat;
+    height: 62px;
+    width: 25px;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+    left: 17px;
+}
+.line-end {
+    background: url("/pictures/uielements/line end.png") no-repeat;
+    height: 62px;
+    width: 25px;
+    background-size: 100% 100%;
+    display: inline-block;
+    float: right;
+    position: relative;
+    right: 17px;
+}
