@@ -7,6 +7,7 @@ var itemSchema = mongoose.Schema({
     bonus: [String],
     price: Number,
     class: String,
+    twoHands: Boolean,
     pic: String,
     rarity: String,  //common<rare<epic<legendary,setItem,unique,quest
     stackable: String, //"yes" / "no"
@@ -51,6 +52,8 @@ module.exports.seedInitialItems = function() {
     //swords
             Item.create({title:"Wooden Sword", rarity: 'common',type: 'weapon', weight:'1', class:'sword',  bonus:['maxDm','1'],price:70, pic: "/pictures/items/WoodenSword.png"});
             Item.create({title:"Basic Sword",rarity: 'common', type: 'weapon', weight:'2', class:'sword',  bonus:['maxDm','2'],price:140, pic: "/pictures/items/BasicSword.png"});
+    //spears
+            Item.create({title:"Simple Spear", rarity: 'common',type: 'weapon', weight:'1', class:'spear', twoHands:true, bonus:['maxDm','1'],price:60, pic: "/pictures/items/simpleSpear.jpg"});
     //axes
             Item.create({title:"Woodsman Axe",rarity: 'common', type: 'weapon', weight:'1', class:'axe',  bonus:['maxDm','1'],price:71, pic: "/pictures/items/WoodsmanAxe.png"});
             Item.create({title:"War Axe",rarity: 'common', type: 'weapon', weight:'2',class:'axe',  bonus:['maxDm','2'],price:135, pic: "/pictures/items/WarAxe.png"});

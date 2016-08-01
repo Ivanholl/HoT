@@ -4,7 +4,14 @@ app.factory('equipment', function() {
             var slot = GetSlotNumb(item);
 
             if (!hero.equipment[slot]) {
-                hero.equipment[slot] = item;
+                if (item.twoHands){
+                    hero.equipment[slot] = item;
+                    /*TODO refactor hardcoded*/
+                    hero.equipment[8] = item;
+
+                } else {
+                    hero.equipment[slot] = item;
+                }
                 getBonus(hero, item);
             }
         },
@@ -12,8 +19,15 @@ app.factory('equipment', function() {
             var slot = GetSlotNumb(item);
 
             if (hero.equipment[slot]) {
+                if (item.twoHands){
+                    hero.equipment[slot] = null;
+                    /*TODO refactor hardcoded*/
+                    hero.equipment[8] = null;
+
+                } else {
+                    hero.equipment[slot] = null;
+                }
                 removeBonus(hero, item);
-                hero.equipment[slot] = null;
             }
         },
         use: function (hero, item) {
