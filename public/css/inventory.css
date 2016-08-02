@@ -15,10 +15,11 @@
   text-align: center;
 }
 .item {
-  position: absolute;
-  width: 80px;
-  height: 105px;
-  table-layout: fixed;
+    position: absolute;
+    width: 80px;
+    height: 105px;
+    table-layout: fixed;
+    box-shadow: inset 0px 0px 20px 1px rgba(0,0,0,0.75);
 }
 .toolTip {
   position: absolute;
@@ -97,4 +98,9 @@
 .ring {
   top: 550px;
   left: 205px;
+}
+.btn-unequip {
+    position: absolute;
+    top: 0;
+    left: 0;
 }

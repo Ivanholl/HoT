@@ -1,11 +1,15 @@
 .itemTooltip(ng-controller="ItemTooltipCtrl")
-   .itemPic(ng-class="tooltipItem.rarity" ng-style="{'background-image':'url({{tooltipItem.pic}})'}")
-   #itemTitle(ng-class="tooltipItem.rarity") {{tooltipItem.title}}
-   .itemType {{tooltipItem.rarity}} {{tooltipItem.type}}
-   .itemClass {{tooltipItem.class}}
-   hr
-   .itemWeight Weight: {{tooltipItem.weight}}
-   .itemSell Sell: {{tooltipItem.price / 2}}
-   .bonusList
-      ul
-         li(ng-repeat="row in displayBonus") {{row}}
+    .itemPic(ng-class="tooltipItem.rarity" ng-style="{'background-image':'url({{tooltipItem.pic}})'}")
+    #itemTitle(ng-class="tooltipItem.rarity") {{tooltipItem.title}}
+    .itemType {{tooltipItem.rarity}} {{tooltipItem.type}}
+    .itemClass {{tooltipItem.class}}
+    hr
+    .itemWeight Weight: {{tooltipItem.weight}}
+    .itemSell Sell: {{tooltipItem.price / 2}}
+    .bonusList
+        ul
+            li(ng-repeat="row in displayBonus") {{row}}
+            
+    .secBonusList(ng-if="displaySecBonus.length > 0") bonus for sec item
+        ul
+            li(ng-repeat="bonus in displaySecBonus") {{bonus}} 

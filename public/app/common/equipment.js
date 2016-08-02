@@ -1,7 +1,7 @@
 app.factory('equipment', function() {
     return {
         equip: function (hero, item) {
-            var slot = GetSlotNumb(item);
+            var slot = GetSlotNumb(hero, item, true);
 
             if (!hero.equipment[slot]) {
                 if (item.twoHands){
@@ -13,10 +13,15 @@ app.factory('equipment', function() {
                     hero.equipment[slot] = item;
                 }
                 getBonus(hero, item);
+                //bonus for 2 daggers
+                if (hero.equipment[5].title === item.title && slot !== 5) {
+                    getSecBonus(hero, item)
+                }
             }
         },
         unequip: function (hero, item) {
-            var slot = GetSlotNumb(item);
+            //debugger;
+            var slot = GetSlotNumb(hero, item);
 
             if (hero.equipment[slot]) {
                 if (item.twoHands){
@@ -28,6 +33,11 @@ app.factory('equipment', function() {
                     hero.equipment[slot] = null;
                 }
                 removeBonus(hero, item);
+
+                //bonus for 2 daggers
+                if (hero.equipment[5].title === item.title && slot !== 5) {
+                    removeSecBonus(hero, item)
+                }
             }
         },
         use: function (hero, item) {
@@ -64,20 +74,41 @@ app.factory('equipment', function() {
             //eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
         }
     }
-
+    function getSecBonus(hero, item) {
+        for (var i = 0; i < item.secBonus.length; i += 2) {
+            hero[item.secBonus[i]] += (+item.secBonus[i+1]);
+            //eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
+        }
+    }
     function removeBonus(hero, item) {
         for (var i = 0; i < item.bonus.length; i += 2) {
             hero[item.bonus[i]] -= +item.bonus[i+1];
             //eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
         }
     }
+    function removeSecBonus(hero, item) {
+        for (var i = 0; i < item.secBonus.length; i += 2) {
+            hero[item.secBonus[i]] -= +item.secBonus[i+1];
+            //eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
+        }
+    }
 
-    function GetSlotNumb(item) {
-        console.log(swtichArmor(item));
+    function GetSlotNumb(hero, item, on) {
+        //debugger;
+        //console.log(swtichArmor(item));
         switch (item.type) {
             case "armor" : return swtichArmor(item);
             case "weapon" : return 5;
             case "shield"  : return 8;
+            case "double-weapon" :
+                if (!on && hero.equipment[8] && hero.equipment[8].title === hero.equipment[5].title) {
+                    return 8;
+                } else if (on && hero.equipment[5] && hero.equipment[5].title === item.title) {
+                    return 8;
+                } else {
+                    return 5;
+                }
+                break;
         }
     }
 

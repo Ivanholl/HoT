@@ -7,7 +7,7 @@
             .ornament-red-btn.middle-align(ng-click="login(user)") Login
             
         .login-btn(ng-click="showLogin = !showLogin") Login
-        .signup-btn(href="#/signup") Sign Up
+        a.signup-btn(href="#/signup") Sign Up
 
     ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()")
         li.dropdown.Acc

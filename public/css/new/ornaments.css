@@ -44,6 +44,7 @@
 }
 .border-left {
     position: absolute;
+    top: 0;
     left: -6px;
     background: url("/pictures/uielements/vertical-border.png") repeat-y;
     background-size: 100% 100%;
