@@ -12,8 +12,7 @@ ul.statList
     li
         img(src="pictures/symbols/character icon.png")
         span {{hero.name}}
-    li(ng-if="fullInfo")
-        .text-primary Ap: {{hero.ap}}
+
     li(ng-if="fullInfo")
         //img(src="pictures/symbols/Hp2.png" title="Health")
         //span  {{hero.hp}}/{{hero.maxHp}}
@@ -54,4 +53,66 @@ ul.statList
         div(ng-repeat="item in hero.battleItems")
             span.text-info(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
             span(ng-if="item.quantity")  ({{item.quantity}})
-            .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
+            .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")                
+
+
+//for char-info in quick access bar
+table.table-hover.table-condensed.attr-table(ng-if="fullInfo")
+    thead
+        tr
+            th  
+    tbody
+        tr 
+            td
+                img(src="pictures/symbols/ap.png" title="Ascention")
+            td
+                | ascention points:
+            td
+                span.text-primary  {{hero.ap}}
+            td 
+                .glyphicon.glyphicon-question-sign
+        tr
+            td
+                img(src="pictures/symbols/strength.png" title="Strenght")
+            td
+                | strenght:
+            td
+                span.text-warning {{hero.str}}                
+            td
+                .glyphicon.glyphicon-question-sign
+        tr 
+            td
+                img(src="pictures/symbols/sword.png" title="Demage")
+            td
+                | demage:
+            td
+                span.text-warning {{hero.minDm}}-{{hero.maxDm}}
+            td
+                .glyphicon.glyphicon-question-sign
+        tr
+            td
+                img(src="pictures/symbols/deffence.png" title="Defense")
+            td
+                | defense:
+            td
+                span.text-warning  {{hero.df}}                
+            td
+                .glyphicon.glyphicon-question-sign
+        tr
+            td
+                img(src="pictures/symbols/weight.png" title="Weight")
+            td
+                | weight:
+            td                
+                span.text-warning  {{hero.weight}}                
+            td
+                .glyphicon.glyphicon-question-sign
+        tr
+            td
+                img(src="pictures/symbols/strength.png" title="Strenght")
+            td
+                | strenght:
+            td
+                span.text-warning {{hero.str}}                
+            td
+        

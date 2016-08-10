@@ -10,6 +10,10 @@ body {
   font-family: 'Architects Daughter', cursive;
   cursor: url("/pictures/cursor/glove_cursor.gif"), auto;
 }
+a, a:hover, a:focus {
+    text-decoration: none;
+    color: white;
+}
 button:hover,a:hover,.btn:hover,.round-button:hover {
   cursor: url("/pictures/cursor/glove_cursor.gif"), auto !important;
 }
@@ -99,8 +103,11 @@ footer p {
   position: absolute;
   margin-top: 5px;
   left: 50%;
-  z-index: 5;
+  z-index: 6;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+}
+.attr-table {
+    width: 170px;
 }
 .pageTitle {
   text-align: center;
