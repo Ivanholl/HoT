@@ -188,7 +188,7 @@ module.exports = {
             }
         });
     },
-    updateHero: function(req,res){
+    updateHero: function(req, res){
         var updatedUserData = req.body;
 
         Hero.update({name: req.params.name}, updatedUserData).exec(function(err, hero) {

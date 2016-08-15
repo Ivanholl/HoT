@@ -129,14 +129,15 @@
             |{{zone.name}}
         .zoneDetails
             .text-warning {{zone.info}}            
-            table.table-hover.zone-info-table(ng-if="zone.movementOptions.hasBattle")
-                thead
-                    tr
-                        th.text-primary Minions in this zone
-                tbody
-                     tr(ng-repeat="minion in minions")
-                        td {{minion.name}}
-            img.zone-pic(src="/pictures/backgrounds/{{zone.index}}.jpg")
+            .second-row
+                table.table-hover.zone-info-table(ng-if="zone.movementOptions.hasBattle")
+                    thead
+                        tr
+                            th.text-primary Minions in this zone
+                    tbody
+                         tr(ng-repeat="minion in minions")
+                            td {{minion.name}}
+                img.zone-pic(src="/pictures/backgrounds/{{zone.index}}.jpg")
 
         .map-btn-holder
             #prev.ornament-green-btn.inline(ng-if="zone.movementOptions.hasPrevZone" ng-class="class" ng-click="prev($event)") Go to {{zone.movementOptions.prevZone}}

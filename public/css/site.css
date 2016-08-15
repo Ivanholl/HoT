@@ -99,12 +99,13 @@ footer p {
     background: url("/pictures/icons/mail.png") no-repeat -10px -8px;
 }
 .quickAccessWindow {
-  padding: 5px;
-  position: absolute;
-  margin-top: 5px;
-  left: 50%;
-  z-index: 6;
-  box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
+    background: url("/pictures/uielements/background.png") center;
+    padding: 5px;
+    position: absolute;
+    margin-top: 5px;
+    left: 50%;
+    z-index: 10;
+    box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
 }
 .attr-table {
     width: 170px;
@@ -175,4 +176,14 @@ footer p {
 .bot-align {
     position: absolute;
     bottom: 0;
+}
+
+
+.charrInfo{
+    width: 500px;
+    padding: 15px;
+}
+.char-stat-table{
+    display: inline-block;
+    float: left;
 }

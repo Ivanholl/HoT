@@ -1,5 +1,6 @@
 .hero-select-panel {
     background: url("/pictures/uielements/background.png") center;
+    height: 100%;
 }
 .hero-select-info {
     padding: 20px 30px;

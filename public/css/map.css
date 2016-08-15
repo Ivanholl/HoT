@@ -24,9 +24,12 @@
   display: inline-block;
 }
 .zoneDetails {
-    height: 140px;
+    height: 160px;
     width: 410px;
     margin-left: 25px;
+}
+.second-row{
+    height: 115px;
 }
 .round-button {
   width: 15px;
@@ -100,13 +103,23 @@
   position: relative;
   font-weight: 600;
   width: 460px;
-  height: 300px;
+  height: 320px;
   float: right;
   box-shadow: 0 0 17px 3px rgba(0,0,0,0.56);
   background: url("/pictures/uielements/background.png") center;
 }
+
 .map-btn-holder {
     position: relative;
     top: 45px;
     left: 35px;
+    width: 390px;
+    z-index: 6;
 }
+.map-btn-holder .inline{
+    float: left;
+}
+/*.map-btn-holder .inline:last-of-type {
+    position: relative;
+    top: -16px;
+}*/

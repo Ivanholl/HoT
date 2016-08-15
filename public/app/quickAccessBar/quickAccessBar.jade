@@ -6,11 +6,12 @@ div(ng-controller="QuickAccessCtrl" style="float: right;")
             .quickAccessWindow.jumbotron(ng-if="inventoryShow" ng-include="'partials/quickAccessBar/inventoryWindow.jade'")
         li
             .quickAccessBar-tab.char-info(ng-click="charInfo = !charInfo" data-toggle="tooltip" data-placement="bottom" data-original-title="Character Info")
-            .quickAccessWindow.jumbotron(ng-if="charInfo" ng-include="'partials/common/playerInfoWindow'")  
+            .quickAccessWindow.jumbotron(ng-if="charInfo" ng-include="'partials/quickAccessBar/charrInfo'")  
         li
             .quickAccessBar-tab.quests(ng-click="quests = !quests" data-toggle="tooltip" data-placement="bottom" data-original-title="Quests")
             .quickAccessWindow.jumbotron(ng-if="quests" ng-include="'partials/quickAccessBar/questBook.jade'")
         li
             .quickAccessBar-tab.mail(ng-click="mail = !mail" data-toggle="tooltip" data-placement="bottom" data-original-title="Mail")
-            .quickAccessWindow.jumbotron(ng-if="mail" ng-include="'partials/quickAccessBar/mailBox.jade'")     
+            .quickAccessWindow.jumbotron(ng-if="mail" ng-include="'partials/quickAccessBar/mailBox.jade'")    
+                
     .line-end

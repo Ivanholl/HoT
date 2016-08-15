@@ -1,10 +1,10 @@
 .inventory {
-  padding: 0;
-  width: 500px;
+    padding: 25px;
+    width: 550px;
 }
 .equipped {
   background-image: url("/pictures/inventory.jpg");
-  display: inline;
+  display: inline-block;
   float: left;
   position: relative;
 }
