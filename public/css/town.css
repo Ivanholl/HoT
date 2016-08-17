@@ -5,13 +5,15 @@
 }
 #town {
   width: 990px;
-  height: 800px;
+  height: 630px;
   background-size: 100% 100%;
 }
 .building {
-  width: 500px;
-  background-color: rgba(10,0,5,0.6);
-  border: 1px solid #fff;
+    background-size: cover;
+    width: 990px;
+    height: 630px;
+    background-color: rgba(10,0,5,0.6);
+    border: 1px solid #fff;
 }
 .salesTable {
   background-color: rgba(0,0,0,0.4);
@@ -33,11 +35,6 @@
 }
 .armoryBuilding {
   background-image: url("/pictures/backgrounds/buildings/armory.png");
-}
-.building {
-  background-size: cover;
-  width: 990px;
-  height: 800px;
 }
 .conversation {
   width: 800px;

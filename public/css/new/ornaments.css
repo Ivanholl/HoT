@@ -123,6 +123,16 @@
     background-size: 100% 100%;
     z-index: 1;
 }
+.under-circle {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    height: 130px;
+    width: 135px;
+    background: url("/pictures/uielements/under-circle.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+}
 .line-start {
     background: url("/pictures/uielements/line start.png") no-repeat;
     height: 62px;

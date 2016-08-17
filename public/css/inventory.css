@@ -1,6 +1,11 @@
 .inventory {
-    padding: 25px;
-    width: 550px;
+    padding: 30px 25px;
+    width: 350px;
+    text-align: center;
+}
+.inventory span {
+    position: relative;
+    top: -20px;
 }
 .equipped {
   background-image: url("/pictures/inventory.jpg");
@@ -23,10 +28,16 @@
 }
 .toolTip {
   position: absolute;
-  z-index: 3;
+  z-index: 15;
+}
+.quantity{
+    position: relative;
+    top: -15px;
+    left: 13px;
+    color: white;
 }
 .equipBtn {
-  with: 30px;
+  width: 30px;
 }
 .itemInfo {
   width: 200px;
@@ -39,6 +50,52 @@
   border-radius: 10px;
   padding: 3px;
 }
+
+.slotsHolder {
+    position: relative;
+    margin: auto;
+    height: 100%;
+    width: 92%;
+    z-index: 10;
+}
+.slot {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    background: url("/pictures/uielements/slot.png") no-repeat;
+}
+.itemInSlot {
+    width: 91%;
+    height: 88%;
+    position: relative;
+    top: 3px;
+    left: 1px;
+    border-radius: 11px;
+    background-size: 100% 100%;
+}
+.rClickOptions{
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    text-align: center;
+    z-index: 1;
+}
+.circle img {
+    width: 100%;
+    height: 100%;
+}
+.quickAccessWindow .circle {
+    right: 135px;
+    top: -33px;
+    z-index: 3;
+}
+.quickAccessWindow .under-circle {
+    top: -40px;
+    right: 111px;
+}
+
+
 .uncommon,
 .item:hover .itemInfo {
   visibility: visible;

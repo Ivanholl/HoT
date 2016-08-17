@@ -1,11 +1,17 @@
 app.controller('inventoryCtrl', function($scope, equipment, Hero, Quests) {
     $scope.hero = Hero.currentHero;
     $scope.inventory = $scope.hero.inventory;
+    $scope.rightClick = [];
+
+    for (var i = 0; i < $scope.inventory.length; i++) {
+        $scope.rightClick[i] = false;
+    }
+
 
     $scope.equip = function (item) {
         equipment.equip($scope.hero, item);
         Hero.updateHero($scope.hero);
-    };
+    };    
     $scope.unequip = function(item) {
         equipment.unequip($scope.hero, item);
         Hero.updateHero($scope.hero);
@@ -55,4 +61,25 @@ app.controller('inventoryCtrl', function($scope, equipment, Hero, Quests) {
         }
     }
     checkGatherQuests();
+
+    $scope.handleClick = function (evt, index) {
+        var isRightClickMenuBtn = angular.element(evt.target).hasClass("equipBtn")
+
+        if (!isRightClickMenuBtn) {
+            switch(evt.which) {
+                case 1: //left click
+                    $scope.rightClick[index] = false;
+                    break;
+                case 2:
+                    // in case you need some middle click things
+                    break;
+                case 3: //right click
+                    $scope.rightClick[index] = true;
+                    break;
+                default:
+                    alert("you have a strange mouse!");
+                    break;
+            }
+        }
+    }
 });

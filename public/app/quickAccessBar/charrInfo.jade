@@ -134,3 +134,14 @@
                     span.text-warning {{hero.str}}       
                 td
                     .glyphicon.glyphicon-question-sign
+                        
+    h3 Battle Items:  
+    
+    .slot(ng-repeat="item in hero.battleItems" ng-mousedown="handleClick($event, $index)" oncontextmenu="return false")
+        .itemInSlot(ng-class="item.rarity" ng-style="{'background-image':'url({{item.pic}})'}" ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false")
+        .quantity(ng-if="item.stackable")  {{item.quantity}}
+        .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
+        
+        .rClickOptions(ng-if="rightClick[$index]")
+            .btn-info.equipBtn(ng-if="item.stackable" ng-click="use(item)") use
+            .btn-info.equipBtn(ng-if="item.battleItem" ng-click="pickForBattle(item)") pick for battle
