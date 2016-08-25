@@ -1,95 +1,86 @@
-app.factory('equipment', function() {
-    return {
-        equip: function (hero, item) {
-            var slot = GetSlotNumb(hero, item, true);
+app.service('equipment', function() {
+    function equip(hero, item) {
+        var slot = GetSlotNumb(hero, item, true);
 
-            if (!hero.equipment[slot]) {
-                if (item.twoHands){
-                    hero.equipment[slot] = item;
-                    /*TODO refactor hardcoded*/
-                    hero.equipment[8] = item;
+        if (!hero.equipment[slot]) {
+            if (item.twoHands){
+                hero.equipment[slot] = item;
+                /*TODO refactor hardcoded*/
+                hero.equipment[8] = item;
 
-                } else {
-                    hero.equipment[slot] = item;
-                }
-                getBonus(hero, item);
-                //bonus for 2 daggers
-                if (hero.equipment[5].title === item.title && slot !== 5) {
-                    getSecBonus(hero, item)
-                }
-            }
-        },
-        unequip: function (hero, item) {
-            //debugger;
-            var slot = GetSlotNumb(hero, item);
-
-            if (hero.equipment[slot]) {
-                if (item.twoHands){
-                    hero.equipment[slot] = null;
-                    /*TODO refactor hardcoded*/
-                    hero.equipment[8] = null;
-
-                } else {
-                    hero.equipment[slot] = null;
-                }
-                removeBonus(hero, item);
-
-                //bonus for 2 daggers
-                if (hero.equipment[5].title === item.title && slot !== 5) {
-                    removeSecBonus(hero, item)
-                }
-            }
-        },
-        use: function (hero, item) {
-            getBonus(hero, item);
-            if (item.quantity > 1) {
-                item.quantity--;
-                hero.weight -= item.weight;
             } else {
-                var btlIndex = hero.battleItems.indexOf(item);
-                hero.battleItems.splice(btlIndex, 1);
-                hero.weight -= item.weight;
+                hero.equipment[slot] = item;
             }
-        },
-        useBattleItem: function (hero, item) {
             getBonus(hero, item);
-            if (item.quantity > 1) {
-                item.quantity--;
-                hero.weight -= item.weight;
-            } else {
-                var btlIndex = hero.battleItems.indexOf(item);
-                hero.battleItems.splice(btlIndex, 1);
-                hero.weight -= item.weight;
-            }
-        },
-        getBonus: function (hero, bonus) {
-            for (var i = 0; i < bonus.length; i += 2) {
-                hero[bonus[i]] += (+bonus[i+1]);
+            //bonus for 2 daggers
+            if (hero.equipment[5].title === item.title && slot !== 5) {
+                getSecBonus(hero, item)
             }
         }
-    };
+    }
+    function unequip(hero, item) {
+        //debugger;
+        var slot = GetSlotNumb(hero, item);
+
+        if (hero.equipment[slot]) {
+            if (item.twoHands){
+                hero.equipment[slot] = null;
+                /*TODO refactor hardcoded*/
+                hero.equipment[8] = null;
+
+            } else {
+                hero.equipment[slot] = null;
+            }
+            removeBonus(hero, item);
+
+            //bonus for 2 daggers
+            if (hero.equipment[5].title === item.title && slot !== 5) {
+                removeSecBonus(hero, item)
+            }
+        }
+    }
+    function use(hero, item) {
+        getBonus(hero, item);
+        if (item.quantity > 1) {
+            item.quantity--;
+            hero.weight -= item.weight;
+        } else {
+            var btlIndex = hero.battleItems.indexOf(item);
+            hero.battleItems.splice(btlIndex, 1);
+            hero.weight -= item.weight;
+        }
+    }
+    function useBattleItem(hero, item) {
+        getBonus(hero, item);
+        if (item.quantity > 1) {
+            item.quantity--;
+            hero.weight -= item.weight;
+        } else {
+            var btlIndex = hero.battleItems.indexOf(item);
+            hero.battleItems.splice(btlIndex, 1);
+            hero.weight -= item.weight;
+        }
+    }
+
     function getBonus(hero, item) {
         for (var i = 0; i < item.bonus.length; i += 2) {
             hero[item.bonus[i]] += (+item.bonus[i+1]);
-            //eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
         }
     }
+
     function getSecBonus(hero, item) {
         for (var i = 0; i < item.secBonus.length; i += 2) {
             hero[item.secBonus[i]] += (+item.secBonus[i+1]);
-            //eval("hero." + eval("item.bonus[i]") + "+=" + eval("item.bonus[i+1]"))
         }
     }
     function removeBonus(hero, item) {
         for (var i = 0; i < item.bonus.length; i += 2) {
             hero[item.bonus[i]] -= +item.bonus[i+1];
-            //eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
         }
     }
     function removeSecBonus(hero, item) {
         for (var i = 0; i < item.secBonus.length; i += 2) {
             hero[item.secBonus[i]] -= +item.secBonus[i+1];
-            //eval("hero." + eval("item.bonus[i]") + "-=" + eval("item.bonus[i+1]"))
         }
     }
 
@@ -121,7 +112,15 @@ app.factory('equipment', function() {
             case "gloves" : return 6;
         }
     }
+
+    return {
+        equip: equip,
+        unequip: unequip,
+        use: use,
+        useBattleItem: useBattleItem
+    }
 });
+
 /*switch (item.class) {
     case "helm" : return 0;
     case "chest" : return 1;

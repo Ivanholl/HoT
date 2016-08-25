@@ -1,4 +1,4 @@
-app.factory('notifier', function(toastr) {
+app.service('notifier', function(toastr) {
     return {
         success: function(msg) {
             toastr.success(msg);

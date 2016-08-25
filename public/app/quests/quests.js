@@ -1,4 +1,4 @@
-app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
+app.service("Quests", function (Hero, QuestResource, notifier) {
     var hero = Hero.currentHero;
 
     function updateKillQuest(questNo){
@@ -6,13 +6,11 @@ app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
         checkFinished(questNo);
         Hero.updateHero(hero);
     }
-
     function updategatherQuest(questNo){
         hero.quests[questNo].progress++;
         checkFinished(questNo);
         Hero.updateHero(hero);
     }
-
     function checkFinished(questNo) {
         var quest = hero.quests[questNo];
 
@@ -33,46 +31,51 @@ app.factory("Quests", function (Hero, equipment, QuestResource, notifier) {
         }
     }
     function getQuestRewards(questNo){
-        equipment.getBonus(hero, hero.quests[questNo].rewards);
+        var rewards = hero.quests[questNo].rewards;
+        for (var i = 0; i < rewards.length; i += 2) {
+            hero[rewards[i]] += (+rewards[i+1]);
+        }
         hero.quests.splice(questNo, 1);
         Hero.updateHero(hero);
     }
+    function checkHeroKillQuests(){
+        for(var i = 0; i < hero.quests.length; i++){
+            if(hero.quests[i].type == "kill") {
+                updateKillQuest(i);
+            }
+        }
+    }
+    function checkHeroGatherQuests(item) {
+        for(var i = 0; i < hero.quests.length; i++){
+            if(hero.quests[i].type == "gather") {
+                if(item.title == hero.quests[i].neededItem && hero.quests[i].progress < hero.quests[i].needed){
+                    updategatherQuest(i);
+                }
+            }
+        }
+    }
+    function addQuestToHero(name) {
+        var hasThisQuest = false;
+        for(var i = 0; i < hero.quests.length; i++){
+            if(hero.quests[i].name == name) {
+                hasThisQuest = true;
+            }
+        }
 
+        if(!hasThisQuest) {
+            var questToAdd = QuestResource.getQuestByName(name);
+
+            questToAdd.$promise.then(function (result) {
+                hero.quests.push(result)
+                Hero.updateHero(hero);
+                notifier.success("You have new Quest");
+            })
+        }
+    }
     return {
-        checkHeroKillQuests: function (){
-            for(var i = 0; i < hero.quests.length; i++){
-                if(hero.quests[i].type == "kill") {
-                    updateKillQuest(i);
-                }
-            }
-        },
-        checkHeroGatherQuests: function (item) {
-            for(var i = 0; i < hero.quests.length; i++){
-                if(hero.quests[i].type == "gather") {
-                    if(item.title == hero.quests[i].neededItem && hero.quests[i].progress < hero.quests[i].needed){
-                        updategatherQuest(i);
-                    }
-                }
-            }
-        },
-        addQuestToHero: function (name) {
-            var hasThisQuest = false;
-            for(var i = 0; i < hero.quests.length; i++){
-                if(hero.quests[i].name == name) {
-                    hasThisQuest = true;
-                }
-            }
-
-            if(!hasThisQuest) {
-                var questToAdd = QuestResource.getQuestByName(name);
-
-                questToAdd.$promise.then(function (result) {
-                    hero.quests.push(result)
-                    Hero.updateHero(hero);
-                    notifier.success("You have new Quest");
-                })
-            }
-        },
+        checkHeroKillQuests: checkHeroKillQuests,
+        checkHeroGatherQuests: checkHeroGatherQuests,
+        addQuestToHero: addQuestToHero,
         getQuestRewards: getQuestRewards
     }
 });

@@ -11,7 +11,7 @@ var QuestSchema = mongoose.Schema({
     story: String,
     finished: Boolean,
     autoReward: Boolean,
-    rewardLocation: String,
+    rewardGiver: String,
     rewards: [] //'gold','value','ss','value'
 });
 
