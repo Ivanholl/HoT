@@ -38,4 +38,6 @@ app.controller('mailCtrl', function($scope, MailResource, Hero){
             alert('Inventory too heavy increase your Strength!');
         }
     };
+
+    $(".dragable").draggable();       
 });

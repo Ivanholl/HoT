@@ -11,7 +11,7 @@ app.controller('inventoryCtrl', function($scope, equipment, Hero, Quests) {
     $scope.equip = function (item) {
         equipment.equip($scope.hero, item);
         Hero.updateHero($scope.hero);
-    };    
+    };
     $scope.unequip = function(item) {
         equipment.unequip($scope.hero, item);
         Hero.updateHero($scope.hero);
@@ -82,4 +82,6 @@ app.controller('inventoryCtrl', function($scope, equipment, Hero, Quests) {
             }
         }
     }
+
+    $(".dragable").draggable();      
 });

@@ -115,18 +115,21 @@
 }
 .circle {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -33px;
+    right: 0;
+    left: 0;
+    margin: auto;    
     height: 85px;
     width: 85px;
     background: url("/pictures/uielements/circle.png") no-repeat;
     background-size: 100% 100%;
-    z-index: 1;
+    z-index: 3;
 }
 .under-circle {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    right: 0;
+    left: 0;
+    margin: auto;
     height: 130px;
     width: 135px;
     background: url("/pictures/uielements/under-circle.png") no-repeat;
@@ -151,4 +154,14 @@
     float: right;
     position: relative;
     right: 17px;
+}
+.close-btn {
+    background: url("/pictures/uielements/exit.png") no-repeat;
+    height: 30px;
+    width: 30px;
+    background-size: 100% 100%;
+    position: relative;
+    right: 0px;
+    top: 0px;
+    z-index: 5;
 }

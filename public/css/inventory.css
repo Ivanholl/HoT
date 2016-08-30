@@ -85,7 +85,7 @@
     width: 100%;
     height: 100%;
 }
-.quickAccessWindow .circle {
+/*.quickAccessWindow .circle {
     right: 135px;
     top: -33px;
     z-index: 3;
@@ -93,7 +93,7 @@
 .quickAccessWindow .under-circle {
     top: -40px;
     right: 111px;
-}
+}*/
 
 
 .uncommon,
