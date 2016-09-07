@@ -12,6 +12,13 @@
     padding: 15px 20px;
     text-align: center;
 }
+.text-holder-big {
+    background-image: url("/pictures/uielements/input-big.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 15px 20px;
+    text-align: center;
+}
 .hero-slot {
     position: relative;
     width: 320px;

@@ -12,6 +12,6 @@ div(ng-controller="QuickAccessCtrl" style="float: right;")
             .quickAccessWindow.jumbotron.dragable(ng-if="quests" ng-include="'partials/quickAccessBar/questBook.jade'")
         li
             .quickAccessBar-tab.mail(ng-click="mailOpen()" data-toggle="tooltip" data-placement="bottom" data-original-title="Mail")
-            .quickAccessWindow.jumbotron.dragable(ng-if="mail" ng-include="'partials/quickAccessBar/mailBox.jade'")    
+            .quickAccessWindow.jumbotron.dragable(ng-if="mail" ng-include="'quickAccessBar/mail/mailBox.jade'")    
                 
     .line-end

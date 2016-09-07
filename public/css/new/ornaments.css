@@ -118,7 +118,7 @@
     top: -33px;
     right: 0;
     left: 0;
-    margin: auto;    
+    margin: auto;
     height: 85px;
     width: 85px;
     background: url("/pictures/uielements/circle.png") no-repeat;
@@ -127,6 +127,7 @@
 }
 .under-circle {
     position: absolute;
+    top: -40px;
     right: 0;
     left: 0;
     margin: auto;
@@ -164,4 +165,8 @@
     right: 0px;
     top: 0px;
     z-index: 5;
+}
+.btn-holder {
+    position: relative;
+    z-index: 6;
 }

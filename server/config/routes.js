@@ -9,6 +9,9 @@ module.exports = function(app) {
     app.get('/townPartials/:partialArea/:partialName', function (req, res) {
         res.render('../../public/app/town/' + req.params.partialArea + '/' + req.params.partialName);
     });
+    app.get('/quickAccessBar/:partialArea/:partialName', function (req, res) {
+        res.render('../../public/app/quickAccessBar/' + req.params.partialArea + '/' + req.params.partialName);
+    });
 
     app.get('/api/users', auth.isInRole('admin'), controllers.users.getAllUsers);
     app.post('/api/users', controllers.users.createUser);

@@ -1,0 +1,70 @@
+.top-left-corner
+.top-right-corner
+.bot-left-corner
+.bot-right-corner
+.border-left
+.border-right
+.border-top
+.border-bot 
+.close-btn(ng-click="mailOpen()")
+.circle
+    img(src="/pictures/icons/mail.png", alt="")
+.under-circle
+    
+.mailBox(ng-controller="mailCtrl")
+    h2.text-holder Mailbox
+    
+    table.mailTable
+        thead
+            tr
+                th title
+                th.datePart date
+        tbody
+            tr.text-holder-big(ng-repeat="mail in mailList")
+                td(ng-click="write = false; displayMail(mail);") {{mail.title}}
+                td.datePart(ng-click="write = false; displayMail(mail);") {{mail.date}}
+    
+    .btn-holder    
+        .ornament-blue-btn.newMailBtn(ng-click="write = true; read = false;") Write New
+    
+    
+    .mailOpened(ng-if="read")
+        .paper
+            .heading-part
+                .close-btn(ng-click="close()")   
+                h4.mail-title {{mailToDisplay.title}}                     
+                span from: {{mailToDisplay.from}}
+                span(style="float:right") {{mailToDisplay.date}}
+                hr
+                
+            .middle-part
+                p {{mailToDisplay.message}}
+                .mailItemHolder(ng-repeat="item in mailToDisplay.items")
+                    img(src="{{item.pic}}" ng-mouseover="showItem=true; tooltipItem = item" ng-mouseleave="showItem=false")
+                    .toolTip(ng-if="showItem" ng-include="'partials/tooltips/itemTooltip.jade'")
+                    .btn.btn-info(ng-click="takeItem(item, mailToDisplay)") take
+                
+        .bottom-part
+            .btn.btn-default(ng-click="close()") Close
+            .btn.btn-primary(ng-click="write = true; read = false;") Answer
+         
+         
+    .modal-content(style="width:500px" ng-if="write")
+        .modal-header
+            .close-btn(ng-click="close()")        
+            span to:
+            input.sendMail(ng-model="newMail.to")
+            span.modal-title about:
+            input.sendMail(ng-model="newMail.title")
+        .modal-body
+            textarea.sendMail.sendText(ng-model="newMail.message")        
+            .mailItemHolder(ng-click="pickItem()") pick
+            .mailItemHolder pick
+            .mailItemHolder pick
+            .mailItemHolder pick
+            .mailItemHolder pick
+        .modal-footer
+            .btn.btn-default(ng-click="close()") Close
+            .btn.btn-success(ng-click="send()") Send
+            
+            

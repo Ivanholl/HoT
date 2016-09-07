@@ -1,3 +1,44 @@
+.mailBox {
+    min-width: 300px;
+    height: auto;
+    padding: 20px;
+}
+.mailBox .btn-holder{
+    left: 15px;
+}
+.mailTable {
+    min-width: 250px;
+    width: 100%;
+}
+.mailTable .text-holder-big{
+    height: 30px;
+}
+.mailTable .datePart{
+    float: right;
+    padding-top: 6px;
+    padding-right: 5px;
+}
+
+.mailOpened {
+    color: #555;
+}
+.paper{
+    width: 500px;
+    max-height: 740px;
+    background-image: url("/pictures/paper.jpg");
+    background-size: 100% auto;
+    padding: 15px
+}
+.heading-part{
+    height: auto;
+}
+.middle-part{}
+.bottom-part{}
+.mail-title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
 .unreadTitle {
   color: #f00;
 }
