@@ -1,10 +1,12 @@
 app.controller('mapController', function($scope, identity, Hero, MinionResource, ZoneResource){
+    debugger;
     var hero = Hero.currentHero,
         curZoneID = hero.location,
         lastSelectedZone = curZoneID;
 
     $scope.user = identity.currentUser;
     $scope.minions = MinionResource.getMinionsByZone(curZoneID);
+    $scope.allMinions = MinionResource.getAllMinions();
     $scope.zone = ZoneResource.getZoneByIndex(curZoneID);
     $scope.erHeroInfoLost = false;
     $scope.class = "";
@@ -18,11 +20,12 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
         var selectedZone = event.target.id;
 
         $scope.minions = MinionResource.getMinionsByZone(selectedZone);
+        //$scope.minions = sortMinionsByZone(selectedZone);
         $scope.zone = ZoneResource.getZoneByIndex(selectedZone);
 
         $("#" + selectedZone).addClass('selectedZone');
 
-        if (lastSelectedZone != selectedZone) {
+        if (lastSelectedZone != selectedZone) { 
             $("#" + lastSelectedZone).removeClass('selectedZone');
             lastSelectedZone = selectedZone;
         }
@@ -71,6 +74,12 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
         } else {
             window.location.href = '#/battle';
         }
+    }
+    function sortMinionsByZone(zone){
+        var minions = $scope.allMinions.filter(function(obj, zone) {
+          return obj.location == zone;
+        });
+        return minions;
     }
 
     $('.town').tooltip();

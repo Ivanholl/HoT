@@ -7,7 +7,8 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
         weaponsmith: false,
         tavern: false,
         merchant: false,
-        market: false
+        market: false,
+        arena: false
     };
 
     $scope.townSound = ngAudio.load("sounds/townAmbient.mp3");
@@ -72,6 +73,10 @@ app.controller('townCtrl', function($scope, Hero, ngAudio) {
             case "market":
                 falcify($scope.buildingList);
                 $scope.buildingList.market = true;
+                break;
+            case "arena":
+                falcify($scope.buildingList);
+                $scope.buildingList.arena = true;
                 break;
             default: break;
         }

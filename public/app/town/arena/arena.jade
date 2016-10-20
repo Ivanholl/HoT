@@ -1,0 +1,9 @@
+div(ng-controller="arenaCtrl")
+    a.btn(ng-click="joinQueue()") find match 
+    a.btn(ng-click="leaveQueue()") leave queue
+    
+    div(ng-repeat="player in heroesInQueue")
+        p {{heroesInQueue.length}} players in queue
+        p {{player}} join the queue
+        
+    h3(ng-show="inQueue") Searching for Oponent...

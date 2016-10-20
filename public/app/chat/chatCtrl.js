@@ -14,8 +14,10 @@ app.controller('chatCtrl',function ($scope, Hero, chatSocket, messageFormatter) 
     $scope.$on('socket:broadcast', function (event, data) {
         $scope.$apply(function () {
             $scope.messageLog = messageFormatter(
-                new Date(), data.source,
-                data.payload) + $scope.messageLog;
+                new Date(),
+                data.source,
+                data.payload
+            ) + $scope.messageLog;
         });
     });
 

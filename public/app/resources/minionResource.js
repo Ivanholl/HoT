@@ -1,7 +1,7 @@
 app.factory('MinionResource', function($resource) {
 	var lastZoneRequest,
 		minionsByZone,
-		cashedAllMinions;
+		cashedAllMinions = [];
 
 	function getMinionsByZone(zone, one) {
 		if (lastZoneRequest != zone || !minionsByZone) {
@@ -26,12 +26,22 @@ app.factory('MinionResource', function($resource) {
 			return minionsByZone;
 		}
 	}
+
 	return {
 		getAllMinions: function () {
-			if (!cashedAllMinions) {
-				cashedAllMinions = $resource('api/minions/:location').query();
-			}
-			return cashedAllMinions;
+			// debugger;
+			// if (cashedAllMinions.length === 0) {
+			//
+			// 	var temp = $resource('api/minions').query({isArray:true});
+			// 	temp.$promise.then(function (result) {
+			// 	    cashedAllMinions = result;
+			// 		//console.log(result);
+			// 		return result;
+			// 	});
+			// } else {
+			// 	return cashedAllMinions
+			// }
+
 		},
 		getMinionsByZone: getMinionsByZone
 	}

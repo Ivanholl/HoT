@@ -9,6 +9,7 @@
       .building(ng-if="buildingList.tavern" ng-include="'townPartials/tavern/tavern.jade'")
       .building(ng-if="buildingList.merchant" ng-include="'townPartials/merchant/merchant.jade'")
       .building(ng-if="buildingList.market" ng-include="'townPartials/market/market.jade'")
+      .building(ng-if="buildingList.arena" ng-include="'townPartials/arena/arena.jade'")
 
       //#merchant.buildingSelect(ng-click="enterBuilding('merchant')")
 
@@ -36,6 +37,8 @@
             a.btn.btn-warning(ng-click="enterBuilding('market')") Market Place
          li
             a.btn.btn-warning(ng-click="enterBuilding('tavern')") Tavern
+        li
+           a.btn.btn-warning(ng-click="enterBuilding('arena')") Arena
 
       .btn.btn-danger(ng-if="!inBuilding" ng-click="toMap()") Back to Map
       .btn.btn-success(ng-click="makeHome()") Make this city my Home
