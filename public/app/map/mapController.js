@@ -1,5 +1,5 @@
 app.controller('mapController', function($scope, identity, Hero, MinionResource, ZoneResource){
-    debugger;
+    // debugger;
     var hero = Hero.currentHero,
         curZoneID = hero.location,
         lastSelectedZone = curZoneID;
@@ -25,7 +25,7 @@ app.controller('mapController', function($scope, identity, Hero, MinionResource,
 
         $("#" + selectedZone).addClass('selectedZone');
 
-        if (lastSelectedZone != selectedZone) { 
+        if (lastSelectedZone != selectedZone) {
             $("#" + lastSelectedZone).removeClass('selectedZone');
             lastSelectedZone = selectedZone;
         }

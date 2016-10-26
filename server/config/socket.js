@@ -1,5 +1,6 @@
 var lastMassages = [];
 
+var playersInQueue = [];
 module.exports = function (io) {
     io.on('connection', function (socket) {
 
@@ -11,22 +12,36 @@ module.exports = function (io) {
             });
         });
 
-        var playersInQueue = [];
         socket.on('joinQueue', function (player) {
-            playersInQueue.push(player);
-            console.log(playersInQueue);
+            var newPlayer = new Object();
+            newPlayer.name = player;
+            newPlayer.id = socket.id;
+            //check if allready in queue and remove if so
+            for (var i = 0; i < playersInQueue.length; i++) {
+                if (playersInQueue[i].name === player) {
+                    playersInQueue.splice(i, 1)
+                }
+            }
+            playersInQueue.push(newPlayer);
+
             io.sockets.emit('joinQueue', {
-                playersInQueue: playersInQueue,
+                playersWaiting: playersInQueue,
             });
         });
+
         socket.on('leaveQueue', function (player) {
-            var index = playersInQueue.indexOf(player);
-            if (index > -1) {
-                playersInQueue.splice(index, 1);
+            for (var i = 0; i < playersInQueue.length; i++) {
+                if (playersInQueue[i].name === player) {
+                    playersInQueue.splice(i, 1)
+                }
             }
             io.sockets.emit('leaveQueue', {
                 playersInQueue: playersInQueue,
             });
         });
+
+        setInterval(function(){
+            
+        }, 3000);
     });
 };

@@ -4,6 +4,6 @@ div(ng-controller="arenaCtrl")
     
     div(ng-repeat="player in heroesInQueue")
         p {{heroesInQueue.length}} players in queue
-        p {{player}} join the queue
+        p {{player.name}} joined the queue
         
     h3(ng-show="inQueue") Searching for Oponent...

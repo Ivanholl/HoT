@@ -16,15 +16,13 @@ app.controller('arenaCtrl', function($scope, Hero, arenaSocket){
 
     $scope.$on('socket:joinQueue', function (event, data) {
         $scope.$apply(function () {
-            $scope.heroesInQueue = data.playersInQueue;
-            console.log($scope.heroesInQueue);
+            $scope.heroesInQueue = data.playersWaiting;
         });
     });
 
     $scope.$on('socket:leaveQueue', function (event, data) {
         $scope.$apply(function () {
             $scope.heroesInQueue = data.playersInQueue;
-            console.log($scope.heroesInQueue);
         });
     });
 });

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource', 'ngRoute','btford.socket-io','ngAudio'])
+var app = angular.module('app', ['ngResource', 'ngRoute', 'btford.socket-io', 'ngAudio'])
     .value('toastr', toastr);
 
 app.config(function($routeProvider, $locationProvider) {
