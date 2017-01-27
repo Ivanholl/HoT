@@ -53,4 +53,5 @@ ul.statList
         div(ng-repeat="item in hero.battleItems")
             span.text-info(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
             span(ng-if="item.quantity")  ({{item.quantity}})
-            .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")                
+            //- .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")    
+            item-tooltip.toolTip(ng-if="tooltip")            

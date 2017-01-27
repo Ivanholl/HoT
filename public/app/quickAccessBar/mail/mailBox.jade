@@ -11,7 +11,7 @@
     img(src="/pictures/icons/mail.png", alt="")
 .under-circle
     
-.mailBox(ng-controller="mailCtrl")
+.mailBox
     h2.text-holder Mailbox
     
     table.mailTable
@@ -41,7 +41,8 @@
                 p {{mailToDisplay.message}}
                 .mailItemHolder(ng-repeat="item in mailToDisplay.items")
                     img(src="{{item.pic}}" ng-mouseover="showItem=true; tooltipItem = item" ng-mouseleave="showItem=false")
-                    .toolTip(ng-if="showItem" ng-include="'partials/tooltips/itemTooltip.jade'")
+                    //- .toolTip(ng-if="showItem" ng-include="'partials/tooltips/itemTooltip.jade'")
+                    item-tooltip.toolTip(ng-if="showItem")
                     .btn.btn-info(ng-click="takeItem(item, mailToDisplay)") take
                 
         .bottom-part

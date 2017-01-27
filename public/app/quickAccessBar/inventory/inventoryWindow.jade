@@ -10,7 +10,7 @@
 .circle
     img(src="/pictures/icons/inventory.png", alt="")
 .under-circle
-.inventory(ng-controller="inventoryCtrl")                
+.inventory              
     h2.text-holder Inventory
     span inventory weight {{hero.weight}}/{{hero.str}}
     span(ng-if="herp.str-hero.weight >= 3") 3 str left
@@ -18,9 +18,10 @@
     .slotsHolder
         .slot(ng-repeat="item in inventory" ng-mousedown="handleClick($event, $index)" oncontextmenu="return false")
             .itemInSlot(ng-class="item.rarity" ng-style="{'background-image':'url({{item.pic}})'}" ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false")
-            .quantity(ng-if="item.stackable")  {{item.quantity}}
-            .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
-                
+            .quantity(ng-if="item.stackable")  {{item.quantity}}            
+            //- .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
+            item-tooltip.toolTip(ng-if="tooltip")
+                    
             .rClickOptions(ng-if="rightClick[$index]")
                 .btn-info.equipBtn(ng-if="!item.stackable" ng-click="equip(item)") equip
                 .btn-info.equipBtn(ng-if="item.stackable" ng-click="use(item)") use

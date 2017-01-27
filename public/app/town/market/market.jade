@@ -37,7 +37,8 @@ div(ng-controller="marketCtrl")
                tbody
                   tr(ng-repeat="item in inventory")
                      td(ng-mouseover="tooltip=true; tooltipItem = item" ng-mouseleave="tooltip=false") {{item.title}}
-                        .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
+                        //- .toolTip(ng-if="tooltip" ng-include="'partials/tooltips/itemTooltip.jade'")
+                        item-tooltip.toolTip(ng-if="tooltip")
                      td
                         .btn-info(style="float:right;" ng-click="chooseItem(item)") Choose
       span.col-md-2 {{auctionItem.title}}
